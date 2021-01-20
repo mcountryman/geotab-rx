@@ -1,0 +1,18 @@
+{
+  "name": "@geotab/sdk",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marvin Countryman <me@maar.vin>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "repository": "https://github.com/mcountryman/geotab.git",
+  "description": "Unofficial typescript SDK for GeoTab API.",
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
