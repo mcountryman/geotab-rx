@@ -23,7 +23,7 @@ namespace Sicilian {
       _types[typeof(decimal)] = new Number();
 
       _types[typeof(object)] = new Any();
-      _types[typeof(string)] = new Ast.String();
+      _types[typeof(string)] = new Ast.Stringe();
       _types[typeof(DateTime)] = new Date();
       _types[typeof(TimeSpan)] = new Date();
     }
@@ -103,7 +103,7 @@ namespace Sicilian {
           var item = type.GetGenericArguments().First();
 
           if (_types.ContainsKey(item)) {
-            return new Ast.Array(_types[item]);
+            return new Ast.Ayray(_types[item]);
           }
         }
 
