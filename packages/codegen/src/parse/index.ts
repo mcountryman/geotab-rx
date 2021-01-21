@@ -13,7 +13,7 @@ export function parse(xml: string | Buffer): IParseResult {
   const $ = load(xml);
   const cache = new Cache();
 
-  $("member[name^=\"T:\"]") //
+  $('member[name^="T:"]') //
     .each((_, el) => tryCacheModel($, cache, $(el)));
 
   return {
@@ -43,7 +43,7 @@ export function tryCacheModel(
   cache.add(name, {
     name,
     type: "model",
-    comment: tryGetComment(el),
+    comment: tryGetComment($, el),
     properties: getProperties($, name, cache),
 
     baseType: () => cache.get(baseTypeName),
@@ -57,13 +57,14 @@ export function getProperties(
 ): IProperty[] {
   const properties = new Set<IProperty>();
 
-  $(`member[name^="P:${parentName}"],member[name^="F:${parentName}"]`) //
-    .each((_, el) => tryStoreProperty($(el), properties, cache));
+  $(`member[name^="P:${parentName}."],member[name^="F:${parentName}."]`) //
+    .each((_, el) => tryStoreProperty($, $(el), properties, cache));
 
   return Array.from(properties);
 }
 
 export function tryStoreProperty(
+  $: Root,
   el: Cheerio,
   store: Set<IProperty>,
   cache: Cache
@@ -101,7 +102,7 @@ export function tryStoreProperty(
     } else {
       // Attempt to extrapolate type from summary and default to `System.Object` if not found
       const summaryGuess = el
-        .find("summary see[cref^=\"T:\"]")
+        .find('summary see[cref^="T:"]')
         .attr("cref")
         ?.substring(2);
 
@@ -117,7 +118,7 @@ export function tryStoreProperty(
 
   store.add({
     name,
-    comment: tryGetComment(el),
+    comment: tryGetComment($, el),
 
     type: () => cache.get(typeName, array, nullable),
   });
@@ -127,8 +128,13 @@ export function tryStoreProperty(
  * Attempt to generate typedoc formatted comment string from XML doc
  * @param el
  */
-export function tryGetComment(el: Cheerio): string | undefined {
-  const summary = el.find("summary").html()?.trim();
+export function tryGetComment($: Root, el: Cheerio): string | undefined {
+  const summaryEl = el.find("summary");
+  const summary = summaryEl
+    .html()
+    ?.trim()
+    ?.replace(/[\n\r]/, "\n  *");
+
   if (!summary) return;
 
   return `

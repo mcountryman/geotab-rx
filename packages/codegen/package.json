@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "case": "^1.6.3",
+    "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.5",
     "isomorphic-fetch": "^3.0.0",
     "yargs": "^16.2.0"

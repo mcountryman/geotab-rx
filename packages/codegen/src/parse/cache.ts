@@ -25,6 +25,7 @@ export class Cache {
     this._nameMap.set("System.Int64", intrinsic("number"));
     this._nameMap.set("System.Uint64", intrinsic("number"));
     this._nameMap.set("System.Float", intrinsic("number"));
+    this._nameMap.set("System.Single", intrinsic("number"));
     this._nameMap.set("System.Double", intrinsic("number"));
     this._nameMap.set("System.Decimal", intrinsic("number"));
 
@@ -32,6 +33,7 @@ export class Cache {
     this._nameMap.set("System.Object", intrinsic("any"));
     this._nameMap.set("System.String", intrinsic("string"));
     this._nameMap.set("System.Boolean", intrinsic("boolean"));
+    this._nameMap.set("System.TimeSpan", intrinsic("Date"));
     this._nameMap.set("System.DateTime", intrinsic("Date"));
 
     // GeoTab `id`
@@ -60,7 +62,7 @@ export class Cache {
     if (!name) return;
     const type = this._nameMap.get(name);
     if (!type) return;
-    
+
     return {
       ...type,
       array,
