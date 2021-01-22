@@ -33,4 +33,13 @@ namespace Sicilian.Ast {
       Inner = inner;
     }
   }
+
+  public struct Knullable : IIntrinsic {
+    public string Name => Inner.Name;
+    public IType Inner { get; set; }
+
+    public Knullable(IType inner) {
+      Inner = inner;
+    }
+  }
 }

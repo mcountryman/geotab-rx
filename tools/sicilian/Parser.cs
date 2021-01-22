@@ -100,10 +100,17 @@ namespace Sicilian {
 
         if (enumerable != null) {
           Console.WriteLine($"Checking '{type}' not registered!");
-          var item = type.GetGenericArguments().First();
+          var inner = type.GetGenericArguments().First();
 
-          if (_types.ContainsKey(item)) {
-            return new Ast.Ayray(_types[item]);
+          if (_types.ContainsKey(inner)) {
+            return new Ayray(_types[inner]);
+          }
+        }
+
+        if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>)) {
+          var inner = type.GetGenericArguments().First();
+          if (_types.ContainsKey(inner)) {
+            return new Knullable(_types[inner]);
           }
         }
 
@@ -114,7 +121,7 @@ namespace Sicilian {
 
     public async Task<Docs?> ParseDocs(MemberInfo member) {
       return new Docs {
-        Summary = member.GetXmlDocsSummary(),
+        Summary = member.GetXmlDocsRemarks(),
       };
     }
 

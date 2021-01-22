@@ -3,9 +3,11 @@ namespace Sicilian.Ast {
     public string? Summary { get; set; }
 
     public override string ToString() {
-      return @$"
-          Summary: {Summary}
-      ";
+      if (!string.IsNullOrEmpty(Summary)) {
+        return "// " + Summary;
+      }
+
+      return "";
     }
   }
 }

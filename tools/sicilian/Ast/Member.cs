@@ -1,4 +1,5 @@
 using System;
+using CaseExtensions;
 
 namespace Sicilian.Ast {
   public struct Member {
@@ -7,7 +8,14 @@ namespace Sicilian.Ast {
     public Lazy<IType?> Type { get; set; }
 
     public override string ToString() {
-      return $"{Name}: {Type.Value?.Name}";
+      var name = Name.ToCamelCase();
+      var type = Type.Value;
+
+      if (type is Knullable nullable) {
+        return Docs + name + "?: " + type.Name;
+      }
+
+      return Docs + name + ": " + type?.Name; ;
     }
   }
 }
