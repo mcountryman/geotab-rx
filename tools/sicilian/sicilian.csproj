@@ -6,9 +6,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CaseExtensions" Version="1.1.0" />
-    <PackageReference Include="Namotion.Reflection" Version="1.0.15" />
+    <Content Include="Reinforced.Typings.settings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="NuGet.Protocol" Version="5.8.1" />
-    <PackageReference Include="System.Linq.Async" Version="5.0.0" />
+    <PackageReference Include="Reinforced.Typings" Version="1.5.9" />
   </ItemGroup>
 </Project>

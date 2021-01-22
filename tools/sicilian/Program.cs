@@ -8,26 +8,57 @@ using NuGet.Common;
 using NuGet.Packaging;
 using NuGet.Protocol;
 using NuGet.Protocol.Core.Types;
+using Reinforced.Typings;
+using Reinforced.Typings.Fluent;
 
 namespace Sicilian {
   class Program {
+    static readonly string Target =
+      Path.GetDirectoryName(Assembly.GetExecutingAssembly()?.Location) ??
+      throw new Exception("Failed to locate executing assembly");
+
     static async Task Main(string[] args) {
       await Download(CancellationToken.None);
-      // var assembly = Assembly.Load("Geotab.Checkmate.ObjectModel");
-      // var parser = new Parser();
-      // var roots = await parser.Parse(
-      //   assembly,
-      //   type => type.Namespace.StartsWith("Geotab.Checkmate.ObjectModel")
-      // );
 
-      // var i = 0;
-      // foreach (var root in roots) {
-      //   Console.WriteLine(root);
+      var assemblyLocation = Path.Combine(Target, "Geotab.Checkmate.ObjectModel.dll");
+      var assembly = Assembly.LoadFile(assemblyLocation);
 
-      //   i++;
-      //   if (i > 5)
-      //     break;
-      // }
+      var operations = new FilesOperations();
+      var context = new ExportContext(new[] { assembly }, operations) {
+        TargetFile = @"C:\Users\marvinc\Development\_\geotab\packages\mygeotab\src\index.ts",
+        Hierarchical = true,
+        TargetDirectory = @"C:\Users\marvinc\Development\_\geotab\packages\mygeotab\src",
+        ConfigurationMethod = Configure,
+      };
+
+      var exporter = new TsExporter(context);
+
+      exporter.Export();
+    }
+
+    public static void Configure(ConfigurationBuilder builder) {
+      builder.Global(config => config
+        .TabSymbol("  ")
+        .UseModules()
+        .ReorderMembers()
+        .GenerateDocumentation()
+        .CamelCaseForProperties()
+      );
+
+      var assemblyLocation = Path.Combine(Target, "Geotab.Checkmate.ObjectModel.dll");
+      var assembly = Assembly.LoadFile(assemblyLocation);
+
+      builder.TryLookupDocumentationForAssembly(assembly);
+
+      builder.ExportAsEnums(
+        assembly.ExportedTypes.Where(x => x.Namespace.StartsWith("Geotab.Checkmate.ObjectModel") && x.IsEnum),
+        config => config.UseString()
+      );
+      
+      builder.ExportAsInterfaces(
+        assembly.ExportedTypes.Where(x => x.Namespace.StartsWith("Geotab.Checkmate.ObjectModel") && x.IsClass), 
+        config => config.WithPublicProperties()
+      );
     }
 
     static async Task Download(CancellationToken cancellationToken) {
@@ -56,11 +87,12 @@ namespace Sicilian {
 
       using var packageReader = new PackageArchiveReader(packageStream);
       foreach (var file in await packageReader.GetFilesAsync(cancellationToken))
-        packageReader.ExtractFile(
-          file,
-          Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-          logger
-        );
+        if (Path.GetFileName(file).StartsWith("Geotab.Checkmate.ObjectModel"))
+          packageReader.ExtractFile(
+            file,
+            Path.Combine(Target, Path.GetFileName(file)),
+            logger
+          );
     }
   }
 }
