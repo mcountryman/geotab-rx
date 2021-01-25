@@ -11,8 +11,14 @@
   "scripts": {
     "build": "tsc -b tsconfig.build.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "^6.6.3",
+    "uuid-random": "^1.3.2"
+  },
   "devDependencies": {
     "typescript": "^4.1.3"
+  },
+  "optionalDependencies": {
+    "isomorphic-fetch": "^3.0.0"
   }
 }

@@ -35,9 +35,9 @@ namespace Sicilian {
       var assemblyLocation = Path.Combine(ExecutablePath, "Geotab.Checkmate.ObjectModel.dll");
       var assembly = Assembly.LoadFile(assemblyLocation);
 
-      var operations = new FilesOperations();
+      var operations = new CustomFileOperations();
       var context = new ExportContext(new[] { assembly }, operations) {
-        TargetFile = TargetPath + "/index.ts",
+        TargetFile = TargetPath + "/models.ts",
         Hierarchical = false,
         TargetDirectory = TargetPath,
         ConfigurationMethod = Configure,
@@ -61,25 +61,36 @@ namespace Sicilian {
           .GenerateDocumentation()
           .CamelCaseForProperties()
           .AutoOptionalProperties()
+          .DontWriteWarningComment()
         );
 
       builder.TryLookupDocumentationForAssembly(assembly);
 
       builder.ExportAsEnums(
-        assembly.ExportedTypes.Where(x => x.Namespace.StartsWith("Geotab.Checkmate.ObjectModel") && x.IsEnum),
+        assembly.ExportedTypes.Where(x =>
+          x.Namespace?.StartsWith("Geotab.Checkmate.ObjectModel") == true &&
+          x.IsEnum
+        ),
         config => config
           .UseString()
           .WithCodeGenerator<CustomEnumGenerator>()
       );
 
+      var idType = assembly.ExportedTypes
+        .First(type => type.Name == "Id" && type.Namespace == "Geotab.Checkmate.ObjectModel");
+
       builder.ExportAsInterfaces(
-        assembly.ExportedTypes.Where(x => x.Namespace.StartsWith("Geotab.Checkmate.ObjectModel") && x.IsClass),
+        assembly.ExportedTypes.Where(x =>
+          x.Namespace?.StartsWith("Geotab.Checkmate.ObjectModel") == true &&
+          x.Name != "Id" &&
+          x.IsClass
+        ),
         config => config
-          .WithCodeGenerator<CustomInterfaceGenerator>()
-          .WithPublicProperties()
-          .Substitute(typeof(Id), new RtSimpleTypeName("string"))
+          .Substitute(idType, new RtSimpleTypeName("string"))
           .Substitute(typeof(TimeSpan), new RtSimpleTypeName("Date"))
           .Substitute(typeof(DateTime), new RtSimpleTypeName("Date"))
+          .WithCodeGenerator<CustomInterfaceGenerator>()
+          .WithPublicProperties()
       );
     }
 
@@ -108,21 +119,31 @@ namespace Sicilian {
       );
 
       using var packageReader = new PackageArchiveReader(packageStream);
-      foreach (var file in await packageReader.GetFilesAsync(cancellationToken))
-        if (Path.GetFileName(file).StartsWith("Geotab.Checkmate.ObjectModel"))
+      foreach (var file in await packageReader.GetFilesAsync(cancellationToken)) {
+        if (Path.GetFileName(file).StartsWith("Geotab.Checkmate.ObjectModel")) {
           packageReader.ExtractFile(
             file,
             Path.Combine(ExecutablePath, Path.GetFileName(file)),
             logger
           );
+        }
+      }
+    }
+  }
+
+  class CustomFileOperations : FilesOperations {
+    protected override void ExportCore(StreamWriter tw, ExportedFile file) {
+      tw.WriteLine("/* eslint-disable @typescript-eslint/no-empty-interface */");
+
+      base.ExportCore(tw, file);
     }
   }
 
   class CustomInterfaceGenerator : InterfaceCodeGenerator {
-    public override RtInterface GenerateNode(
+    public override RtInterface? GenerateNode(
       Type element,
-       RtInterface result,
-       TypeResolver resolver
+      RtInterface result,
+      TypeResolver resolver
     ) {
       var r = base.GenerateNode(element, result, resolver);
       if (r == null)
@@ -135,12 +156,23 @@ namespace Sicilian {
         .Select(member => member.FixDoc())
         .ToList();
 
+      // Special cases where base impl field(s) nullablility doesn't match child
+      if (element.Name == "Device" || element.Name == "Diagnostic") {
+        var baseType = r.Implementees.First();
+        var baseNameWrapped = $"Partial<{baseType.TypeName}>";
+
+        r.Implementees.RemoveAt(0);
+        r.Implementees.Add(new RtSimpleTypeName(baseNameWrapped));
+      }
+
+      Context.Location.CurrentNamespace.CompilationUnits.Add(new RtRaw("\n"));
+
       return r;
     }
   }
 
   class CustomEnumGenerator : EnumGenerator {
-    public override RtEnum GenerateNode(
+    public override RtEnum? GenerateNode(
       Type element,
       RtEnum result,
       TypeResolver resolver
@@ -151,6 +183,8 @@ namespace Sicilian {
 
       r.FixDoc();
       r.Values.ForEach(value => value.Documentation?.FixDoc());
+
+      Context.Location.CurrentNamespace.CompilationUnits.Add(new RtRaw("\n"));
 
       return r;
     }

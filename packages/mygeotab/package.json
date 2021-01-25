@@ -9,10 +9,14 @@
   "repository": "https://github.com/mcountryman/geotab.git",
   "description": "Unofficial typescript models for MyGeoTab API.",
   "scripts": {
-    "build": "tsc -b tsconfig.build.json"
+    "build": "tsc -b tsconfig.build.json",
+    "generate": "yarn generate:stage1 && yarn generate:stage2",
+    "generate:stage1": "dotnet run --project ../../tools/sicilian",
+    "generate:stage2": "prettier --write src/index.ts"
   },
   "dependencies": {},
   "devDependencies": {
+    "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   }
 }
