@@ -20,9 +20,12 @@ using System.Collections.Generic;
 
 namespace Sicilian {
   class Program {
+    /// <summary>Path to directory containing calling executable</summary>
     static readonly string ExecutablePath =
       Path.GetDirectoryName(Assembly.GetExecutingAssembly()?.Location) ??
       throw new Exception("Failed to locate executing assembly");
+
+    /// <summary>Path to typescript models output</summary>
     static readonly string TargetPath =
       Path.Combine(
         ExecutablePath,
@@ -30,11 +33,14 @@ namespace Sicilian {
       );
 
     static async Task Main(string[] args) {
+      // Download Geotab Nuget package to disk.
       await Download(CancellationToken.None);
 
+      // Load assembly
       var assemblyLocation = Path.Combine(ExecutablePath, "Geotab.Checkmate.ObjectModel.dll");
       var assembly = Assembly.LoadFile(assemblyLocation);
 
+      // Initialize export
       var operations = new CustomFileOperations();
       var context = new ExportContext(new[] { assembly }, operations) {
         TargetFile = TargetPath + "/models.ts",
@@ -45,14 +51,17 @@ namespace Sicilian {
 
       var exporter = new TsExporter(context);
 
+      // Go baby! go!
       exporter.Export();
     }
 
+    /// <summary>Configure typescript export</summary>
     public static void Configure(ConfigurationBuilder builder) {
-
+      // Load Geotab assembly _again_
       var assemblyLocation = Path.Combine(ExecutablePath, "Geotab.Checkmate.ObjectModel.dll");
       var assembly = Assembly.LoadFile(assemblyLocation);
 
+      // Set global export settings
       builder
         .Global(config => config
           .TabSymbol("  ")
@@ -64,8 +73,10 @@ namespace Sicilian {
           .DontWriteWarningComment()
         );
 
+      // Attempt to resolve docs.xml from disk.
       builder.TryLookupDocumentationForAssembly(assembly);
 
+      // Configure enum export
       builder.ExportAsEnums(
         assembly.ExportedTypes.Where(x =>
           x.Namespace?.StartsWith("Geotab.Checkmate.ObjectModel") == true &&
@@ -76,12 +87,16 @@ namespace Sicilian {
           .WithCodeGenerator<CustomEnumGenerator>()
       );
 
+      // Resolve ID type so we can subsitute with string
       var idType = assembly.ExportedTypes
         .First(type => type.Name == "Id" && type.Namespace == "Geotab.Checkmate.ObjectModel");
 
+      // Configure class -> interface export
       builder.ExportAsInterfaces(
         assembly.ExportedTypes.Where(x =>
+          // Only export types in this namespace
           x.Namespace?.StartsWith("Geotab.Checkmate.ObjectModel") == true &&
+          // Skip ID type
           x.Name != "Id" &&
           x.IsClass
         ),
@@ -94,6 +109,10 @@ namespace Sicilian {
       );
     }
 
+    /// <summary>
+    ///   Download nuget package progromatically and save to disk to avoid issues resolving
+    ///   docs.xml file for Geotab later.  We do this because .NET5 loads assembly from 
+    /// <summary>
     static async Task Download(CancellationToken cancellationToken) {
       var repo = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
       var cache = new SourceCacheContext();
@@ -133,6 +152,7 @@ namespace Sicilian {
 
   class CustomFileOperations : FilesOperations {
     protected override void ExportCore(StreamWriter tw, ExportedFile file) {
+      // Disable lint rule for empty interfaces
       tw.WriteLine("/* eslint-disable @typescript-eslint/no-empty-interface */");
 
       base.ExportCore(tw, file);
@@ -156,7 +176,7 @@ namespace Sicilian {
         .Select(member => member.FixDoc())
         .ToList();
 
-      // Special cases where base impl field(s) nullablility doesn't match child
+      // Special cases where base impl field(s) nullability doesn't match child
       if (element.Name == "Device" || element.Name == "Diagnostic") {
         var baseType = r.Implementees.First();
         var baseNameWrapped = $"Partial<{baseType.TypeName}>";
@@ -206,6 +226,7 @@ namespace Sicilian {
       return member;
     }
 
+    /// <summary>Regex hacks to best-effort convert XML documentation to jsdoc</summary>
     public static void FixDoc(this RtJsdocNode doc) {
       if (doc?.Description == null)
         return;
