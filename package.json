@@ -13,9 +13,11 @@
   "scripts": {
     "test": "jest",
     "build": "lerna run build",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+    "doc": "typedoc"
   },
   "devDependencies": {
+    "@strictsoftware/typedoc-plugin-monorepo": "^0.3.1",
     "@types/jest": "^26.0.20",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
@@ -27,6 +29,7 @@
     "lerna": "^3.22.1",
     "prettier": "^2.2.1",
     "ts-jest": "^26.4.4",
+    "typedoc": "^0.17.3",
     "typescript": "^4.1.3"
   }
 }

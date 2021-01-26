@@ -1,12 +1,11 @@
 import {
-  ICredentials,
   IDevice,
   IDeviceSearch,
   ILoginResult,
   IUser,
   IUserSearch,
 } from "@geotab/mygeotab";
-import { Subject, merge, BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { map, multicast, publish } from "rxjs/operators";
 import { Repo } from "./repository";
 import { RpcClient } from "./rpc/client";

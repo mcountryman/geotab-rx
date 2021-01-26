@@ -1,3 +1,4 @@
+import { ICredentials } from "@geotab/mygeotab";
 import { from, iif, merge, Observable, of, Subject, throwError } from "rxjs";
 import {
   bufferTime,
@@ -14,7 +15,6 @@ import {
 } from "rxjs/operators";
 import uuid from "uuid-random";
 import { IRpcClient } from ".";
-import { ICredentials } from "../../../mygeotab/src";
 import {
   IHttpAdapter,
   IHttpResponse,
@@ -28,14 +28,16 @@ const BATCH_METHOD = "ExecuteMultiCall";
 
 export class RpcClient implements IRpcClient {
   constructor(
+    /** The HTTP endpoint. */
     public endPoint: string,
+    /** The credentials to pass to rpc calls. */
     public credentials?: Partial<ICredentials>,
+    /** The HTTP adapter. */
     private _adapter?: IHttpAdapter,
-    bufferTimeMs = 500,
-    private readonly _tx$ = new Subject<IRpcRequest>(),
-    private readonly _rx$ = new Subject<IRpcResponse>()
+    /** The millisecond threshold to group requests into single batch call.  */
+    bufferTimeMs = 500
   ) {
-    _tx$
+    this._tx$
       .pipe(
         bufferTime(bufferTimeMs),
         publish((multi$) =>
@@ -52,9 +54,10 @@ export class RpcClient implements IRpcClient {
             .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
         )
       )
-      .subscribe(_rx$);
+      .subscribe(this._rx$);
   }
 
+  /** @inheritdoc */
   call<TRet>(method: string, params: unknown): Observable<TRet> {
     const id = uuid();
 
@@ -76,6 +79,9 @@ export class RpcClient implements IRpcClient {
     );
   }
 
+  /**
+   * Resolves configured {@link IHttpAdapter} or default {@link FetchHttpAdapter}.
+   */
   getAdapter(): Observable<IHttpAdapter> {
     return iif(
       () => !this._adapter,
@@ -88,6 +94,9 @@ export class RpcClient implements IRpcClient {
       from([this._adapter!])
     );
   }
+
+  private readonly _tx$ = new Subject<IRpcRequest>();
+  private readonly _rx$ = new Subject<IRpcResponse>();
 }
 
 /**
@@ -155,7 +164,7 @@ function toBatch<TReq extends IRpcRequest>(
     req$.pipe(
       filter((req) => req.length > 1),
       map(
-        (calls): IRpcBatchRequest<TReq[]> => ({
+        (calls): IRpcBatchRequest => ({
           method: BATCH_METHOD,
           params: {
             calls,

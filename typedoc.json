@@ -1,0 +1,11 @@
+{
+  "name": "@geotab",
+  "out": "docs",
+  "mode": "modules",
+  "theme": "default",
+  "exclude": "*.spec.ts",
+  "external-modulemap": ".*packages\/([^\/]+)\/.*",
+  "preserveConstEnums": "true",
+  "ignoreCompilerErrors": "false",
+  "stripInternal": "false"
+}
