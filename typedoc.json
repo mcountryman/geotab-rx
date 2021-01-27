@@ -1,11 +1,8 @@
 {
-  "name": "@geotab",
+  "name": "geotab-rx",
   "out": "dist/docs",
-  "mode": "modules",
   "theme": "default",
   "exclude": "*.spec.ts",
-  "external-modulemap": ".*packages/([^/]+)/.*",
-  "preserveConstEnums": "true",
-  "ignoreCompilerErrors": "false",
-  "stripInternal": "false"
+  "entryPoints": ["src/index.ts"],
+  "excludePrivate": true
 }

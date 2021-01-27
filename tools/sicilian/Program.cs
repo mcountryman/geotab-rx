@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Geotab.Checkmate.ObjectModel;
 using NuGet.Common;
 using NuGet.Packaging;
 using NuGet.Protocol;
@@ -17,6 +16,9 @@ using Reinforced.Typings.Generators;
 using System.Text.RegularExpressions;
 using ReverseMarkdown;
 using System.Collections.Generic;
+using CaseExtensions;
+using Reinforced.Typings.ReferencesInspection;
+using Reinforced.Typings.Ast.Dependency;
 
 namespace Sicilian {
   class Program {
@@ -25,12 +27,16 @@ namespace Sicilian {
       Path.GetDirectoryName(Assembly.GetExecutingAssembly()?.Location) ??
       throw new Exception("Failed to locate executing assembly");
 
+    static readonly string TargetPath = Path.Combine(
+      ExecutablePath,
+      "../../../../../src/mygeotab"
+    );
+
     /// <summary>Path to typescript models output</summary>
-    static readonly string TargetPath =
-      Path.Combine(
-        ExecutablePath,
-        "../../../../../packages/mygeotab/src"
-      );
+    static readonly string TargetPathNormalized =
+      Path
+        .GetFullPath(new Uri(TargetPath).LocalPath)
+        .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
 
     static async Task Main(string[] args) {
       // Download Geotab Nuget package to disk.
@@ -43,15 +49,16 @@ namespace Sicilian {
       // Initialize export
       var operations = new CustomFileOperations();
       var context = new ExportContext(new[] { assembly }, operations) {
-        TargetFile = TargetPath + "/models.ts",
-        Hierarchical = false,
-        TargetDirectory = TargetPath,
+        TargetFile = TargetPathNormalized + "/models.ts",
+        Hierarchical = true,
+        TargetDirectory = TargetPathNormalized,
         ConfigurationMethod = Configure,
       };
 
       var exporter = new TsExporter(context);
 
-      // Go baby! go!
+      exporter.Initialize();
+      FixPathCasing(context);
       exporter.Export();
     }
 
@@ -71,6 +78,7 @@ namespace Sicilian {
           .CamelCaseForProperties()
           .AutoOptionalProperties()
           .DontWriteWarningComment()
+          .WithReferencesProcessor<CustomReferenceProcessor>()
         );
 
       // Attempt to resolve docs.xml from disk.
@@ -148,6 +156,33 @@ namespace Sicilian {
         }
       }
     }
+
+    static void FixPathCasing(ExportContext context) {
+      var contextType = context.GetType();
+      var mapProperty = contextType.GetProperty("TypesToFilesMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+      var map = mapProperty.GetValue(context) as IDictionary<string, IEnumerable<Type>>;
+
+      foreach (var mapped in map.Keys.ToArray()) {
+        var local = mapped.Substring(TargetPathNormalized.Length);
+        var updated = local;
+
+        updated = TargetPathNormalized + FixPath(updated);;
+
+        map[updated] = map[mapped];
+        map.Remove(mapped);
+      }
+    }
+
+    public static string FixPath(string path) {
+      path = Regex.Replace(path, @"[\\\/]I(.+)\.ts$", "/$1.ts");
+      path = string.Join(Path.DirectorySeparatorChar,
+        path
+          .Split("\\")
+          .Select(part => part.ToSnakeCase())
+      );
+
+      return path;
+    }
   }
 
   class CustomFileOperations : FilesOperations {
@@ -156,6 +191,30 @@ namespace Sicilian {
       tw.WriteLine("/* eslint-disable @typescript-eslint/no-empty-interface */");
 
       base.ExportCore(tw, file);
+    }
+  }
+
+  class CustomReferenceProcessor : ReferenceProcessorBase {
+    public override IEnumerable<RtImport> FilterImports(IEnumerable<RtImport> imports, ExportedFile file) {
+      return imports.Select((import) => {
+        import.From = string.Join("/", import.From
+          .Split("/")
+          .Select(Program.FixPath)
+        );
+
+        return import;
+      });
+    }
+
+    public override IEnumerable<RtReference> FilterReferences(IEnumerable<RtReference> references, ExportedFile file) {
+      return references.Select(reference => {
+        reference.Path = string.Join("/", reference.Path
+          .Split("/")
+          .Select(Program.FixPath)
+        );
+
+        return reference;
+      });
     }
   }
 
