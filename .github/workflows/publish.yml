@@ -36,10 +36,20 @@ jobs:
         env:
           CI: true
 
-      - name: lerna publish github
+      - name: npm authenticate
+        run: |
+          yarn logout
+          echo "@geotab:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: lerna publish
         run: yarn lerna publish from-package --yes
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: github publish docs
         uses: peaceiris/actions-gh-pages@v3
