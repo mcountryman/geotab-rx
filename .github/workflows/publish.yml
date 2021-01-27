@@ -36,6 +36,9 @@ jobs:
         env:
           CI: true
 
+      - name: yarn update `.npmrc`
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
+
       - name: lerna publish github
         run: yarn lerna publish from-package --registry "https://npm.pkg.github.com" --yes
         env:

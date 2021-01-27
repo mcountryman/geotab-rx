@@ -1,6 +1,7 @@
 # :sigh:
 .DS_Store
 
+.npmrc
 .idea/
 .vscode/
 
