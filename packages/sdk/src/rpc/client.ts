@@ -37,24 +37,22 @@ export class RpcClient implements IRpcClient {
     /** The millisecond threshold to group requests into single batch call.  */
     bufferTimeMs = 500
   ) {
-    this._tx$
-      .pipe(
-        bufferTime(bufferTimeMs),
-        publish((multi$) =>
-          merge(
-            multi$.pipe(toBatch(this.credentials)),
-            multi$.pipe(toSingle(this.credentials))
-          )
-        ),
-
-        withLatestFrom(this.getAdapter()),
-        mergeMap(([req, adapter]) =>
-          adapter
-            .post(this.endPoint, serialize(req))
-            .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
+    this._rx$ = this._tx$.pipe(
+      bufferTime(bufferTimeMs),
+      publish((multi$) =>
+        merge(
+          multi$.pipe(toBatch(this.credentials)),
+          multi$.pipe(toSingle(this.credentials))
         )
+      ),
+
+      withLatestFrom(this.getAdapter()),
+      mergeMap(([req, adapter]) =>
+        adapter
+          .post(this.endPoint, serialize(req))
+          .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
       )
-      .subscribe(this._rx$);
+    );
   }
 
   /** @inheritdoc */
@@ -95,8 +93,8 @@ export class RpcClient implements IRpcClient {
     );
   }
 
+  private readonly _rx$: Observable<IRpcResponse>;
   private readonly _tx$ = new Subject<IRpcRequest>();
-  private readonly _rx$ = new Subject<IRpcResponse>();
 }
 
 /**
