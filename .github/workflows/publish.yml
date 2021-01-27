@@ -4,17 +4,19 @@ on:
 
 jobs:
   publish:
-    name: publish
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - name: git checkout
+      - name: checkout
         uses: actions/checkout@v2
 
-      - name: yarn setup
+      - name: setup node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: "14"
-
+          node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn build
       - run: yarn test

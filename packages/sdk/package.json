@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "rxjs": "^6.6.3",
-    "uuid-random": "^1.3.2"
+    "uuid-random": "^1.3.2",
+    "@geotab/mygeotab": "0.1.0"
   },
   "devDependencies": {
     "typescript": "^4.1.3"
