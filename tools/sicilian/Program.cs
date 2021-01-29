@@ -33,7 +33,7 @@ namespace Sicilian {
     );
 
     /// <summary>Path to typescript models output</summary>
-    static readonly string TargetPathNormalized =
+    public static readonly string TargetPathNormalized =
       Path
         .GetFullPath(new Uri(TargetPath).LocalPath)
         .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
@@ -166,7 +166,7 @@ namespace Sicilian {
         var local = mapped.Substring(TargetPathNormalized.Length);
         var updated = local;
 
-        updated = TargetPathNormalized + FixPath(updated);;
+        updated = TargetPathNormalized + FixPath(updated);
 
         map[updated] = map[mapped];
         map.Remove(mapped);
@@ -174,7 +174,7 @@ namespace Sicilian {
     }
 
     public static string FixPath(string path) {
-      path = Regex.Replace(path, @"[\\\/]I(.+)\.ts$", "/$1.ts");
+      path = Regex.Replace(path, @"[\\\/]I?([a-zA-Z_]+(?:\.ts)?)$", "/$1");
       path = string.Join(Path.DirectorySeparatorChar,
         path
           .Split("\\")
@@ -197,24 +197,35 @@ namespace Sicilian {
   class CustomReferenceProcessor : ReferenceProcessorBase {
     public override IEnumerable<RtImport> FilterImports(IEnumerable<RtImport> imports, ExportedFile file) {
       return imports.Select((import) => {
-        import.From = string.Join("/", import.From
+        var from = string.Join("/", import.From
           .Split("/")
           .Select(Program.FixPath)
         );
 
+        Console.WriteLine("frm = " + from);
+        Console.WriteLine("frm2 = " + import.From);
+
+        var path = Path.GetDirectoryName(file.FileName).Replace("\\", "/");
+        var absolute = from.Replace("\\", "/");
+
+        absolute = Path
+          .Combine(Program.TargetPathNormalized, absolute.Replace("../", ""))
+          .Replace("\\", "/");
+        // absolute = Path.GetFullPath(new Uri(absolute).LocalPath);
+
+        from = Path
+          .GetRelativePath(path, absolute)
+          .Replace("\\", "/");
+
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
+
+        import.From = from;
         return import;
       });
     }
 
     public override IEnumerable<RtReference> FilterReferences(IEnumerable<RtReference> references, ExportedFile file) {
-      return references.Select(reference => {
-        reference.Path = string.Join("/", reference.Path
-          .Split("/")
-          .Select(Program.FixPath)
-        );
-
-        return reference;
-      });
+      return references;
     }
   }
 
