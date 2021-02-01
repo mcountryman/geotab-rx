@@ -2,6 +2,9 @@
 **/*.ts
 *.ts
 
+# docs
+./dist/docs
+
 # definitions
 !**/*.d.ts
 !*.d.ts
