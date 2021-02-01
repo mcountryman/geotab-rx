@@ -14,6 +14,27 @@
   </a>
 </p>
 
-Unofficial typescript GeoTab SDK.
+An unofficial typescript GeoTab SDK.
 
-### [Documentation](https://mcountryman.github.io/geotab-rx/index.html)
+## Installation
+
+Using yarn
+
+```bash
+yarn add geotab-rx
+```
+
+Using npm
+
+```bash
+npm i geotab-rx
+```
+
+## Examples
+
+User credential authentication
+
+```typescript
+const geotab = new Geotab();
+await geotab.authenticate("MY_USERNAME", "MY_PASSWORD");
+```
