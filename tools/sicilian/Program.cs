@@ -29,7 +29,7 @@ namespace Sicilian {
 
     static readonly string TargetPath = Path.Combine(
       ExecutablePath,
-      "../../../../../src/mygeotab"
+      "../../../../../src/models"
     );
 
     /// <summary>Path to typescript models output</summary>
@@ -57,8 +57,9 @@ namespace Sicilian {
 
       var exporter = new TsExporter(context);
 
+      // Export
       exporter.Initialize();
-      FixPathCasing(context);
+      FixExportPaths(context);
       exporter.Export();
     }
 
@@ -157,7 +158,7 @@ namespace Sicilian {
       }
     }
 
-    static void FixPathCasing(ExportContext context) {
+    static void FixExportPaths(ExportContext context) {
       var contextType = context.GetType();
       var mapProperty = contextType.GetProperty("TypesToFilesMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
       var map = mapProperty.GetValue(context) as IDictionary<string, IEnumerable<Type>>;
@@ -166,6 +167,7 @@ namespace Sicilian {
         var local = mapped.Substring(TargetPathNormalized.Length);
         var updated = local;
 
+        updated = updated.Replace("Geotab/Checkmate/ObjectModel", "");
         updated = TargetPathNormalized + FixPath(updated);
 
         map[updated] = map[mapped];
@@ -174,10 +176,12 @@ namespace Sicilian {
     }
 
     public static string FixPath(string path) {
-      path = Regex.Replace(path, @"[\\\/]I?([a-zA-Z_]+(?:\.ts)?)$", "/$1");
+      path = path.Replace("\\", "/");
+      path = path.Replace("Geotab/Checkmate/ObjectModel/", "");
+      path = Regex.Replace(path, @"I?([a-zA-Z_]+(?:\.ts)?)$", "$1");
       path = string.Join(Path.DirectorySeparatorChar,
         path
-          .Split("\\")
+          .Split("/")
           .Select(part => part.ToSnakeCase())
       );
 
@@ -197,29 +201,19 @@ namespace Sicilian {
   class CustomReferenceProcessor : ReferenceProcessorBase {
     public override IEnumerable<RtImport> FilterImports(IEnumerable<RtImport> imports, ExportedFile file) {
       return imports.Select((import) => {
-        var from = string.Join("/", import.From
-          .Split("/")
-          .Select(Program.FixPath)
-        );
+        var source = Path.GetDirectoryName(file.FileName);
+        var target = Path.GetFullPath(import.From, Program.TargetPathNormalized);
 
-        Console.WriteLine("frm = " + from);
-        Console.WriteLine("frm2 = " + import.From);
-
-        var path = Path.GetDirectoryName(file.FileName).Replace("\\", "/");
-        var absolute = from.Replace("\\", "/");
-
-        absolute = Path
-          .Combine(Program.TargetPathNormalized, absolute.Replace("../", ""))
-          .Replace("\\", "/");
-        // absolute = Path.GetFullPath(new Uri(absolute).LocalPath);
-
-        from = Path
-          .GetRelativePath(path, absolute)
+        var updated = Path
+          .GetRelativePath(source, target)
           .Replace("\\", "/");
 
-        System.Diagnostics.Process.GetCurrentProcess().Kill();
+        updated = Program.FixPath(import.From);
+        updated = updated.StartsWith(".")
+          ? updated
+          : "./" + updated;
 
-        import.From = from;
+        import.From = updated;
         return import;
       });
     }

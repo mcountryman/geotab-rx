@@ -11,7 +11,11 @@
     "test": "jest",
     "build": "tsc -b tsconfig.build.json",
     "watch": "jest --watch",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "generate": "yarn generate:clean && yarn generate:dotnet && yarn generate:pretty",
+    "generate:clean": "rimraf ./src/models",
+    "generate:dotnet": "dotnet run --project tools/sicilian",
+    "generate:pretty": "prettier --write ./src/models"
   },
   "dependencies": {
     "rxjs": "^6.6.3",
@@ -28,6 +32,7 @@
     "eslint-plugin-react": "^7.22.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
   },
