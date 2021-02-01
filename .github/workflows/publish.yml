@@ -42,14 +42,14 @@ jobs:
         with:
           token: ${{ secrets.NODE_AUTH_TOKEN }}
 
-      - name: publish github
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          registry: https://npm.pkg.github.com
-
       - name: publish docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/docs
+
+      - name: publish tag
+        if: steps.publish.outputs.type != 'none'
+        run: |
+          git tag ${{ steps.publish.outputs.version }}
+          git push -f origin ${{ steps.publish.outputs.version }}
