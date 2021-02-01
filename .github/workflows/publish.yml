@@ -36,11 +36,19 @@ jobs:
         env:
           CI: true
 
-      - uses: JS-DevTools/npm-publish@v1
+      - id: publish
+        name: publish npm
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NODE_AUTH_TOKEN }}
 
-      - name: github publish docs
+      - name: publish github
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          registry: https://npm.pkg.github.com
+
+      - name: publish docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
