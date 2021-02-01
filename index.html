@@ -73,10 +73,23 @@
 						<img alt="coveralls github" src="https://img.shields.io/coveralls/github/mcountryman/geotab-rx?style=flat-square">
 					</a>
 				</p>
-				<p>Unofficial typescript GeoTab SDK.</p>
-				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
-					<h3><a href="https://mcountryman.github.io/geotab-rx/index.html">Documentation</a></h3>
+				<p>An unofficial typescript GeoTab SDK.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
 				</a>
+				<p>Using yarn</p>
+				<pre><code class="language-bash"><span style="color: #000000">yarn add geotab-rx</span>
+</code></pre>
+				<p>Using npm</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm i geotab-rx</span>
+</code></pre>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h2>Examples</h2>
+				</a>
+				<p>User credential authentication</p>
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">geotab</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Geotab</span><span style="color: #000000">();</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #795E26">authenticate</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;MY_USERNAME&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;MY_PASSWORD&quot;</span><span style="color: #000000">);</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
