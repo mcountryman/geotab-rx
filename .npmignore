@@ -1,16 +1,7 @@
-# source
-**/*.ts
-*.ts
+# everything
+*
 
-# docs
-./dist/docs
-
-# definitions
-!**/*.d.ts
-!*.d.ts
-
-# configuration
-package-lock.json
-tslint.json
-tsconfig.json
-.prettierrc
+# exception manifest, type defs, sources
+!package.json
+!dist/**/*.d.ts
+!dist/**/*.js
