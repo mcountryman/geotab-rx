@@ -1,4 +1,4 @@
-# @geotab
+# geotab-rx
 
 Unofficial typescript GeoTab SDK.
 
