@@ -12,7 +12,7 @@ import {
   timeout,
   withLatestFrom,
 } from "rxjs/operators";
-import { ICredentials } from "src/models/credentials";
+import { ICredentials } from "../models/credentials";
 import uuid from "uuid-random";
 import { IRpcClient } from ".";
 import {

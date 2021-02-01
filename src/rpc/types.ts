@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { ICredentials } from "src/models/credentials";
+import { ICredentials } from "../models/credentials";
 
 /** The rpc call represented as request object */
 export interface IRpcRequest<TParams = unknown> {

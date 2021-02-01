@@ -9,7 +9,7 @@
   "description": "Unofficial Typescript Geotab SDK.",
   "scripts": {
     "test": "jest",
-    "build": "tsc -b tsconfig.build.json",
+    "build": "tsc -b tsconfig.json",
     "watch": "jest --watch",
     "doc": "typedoc",
     "generate": "yarn generate:clean && yarn generate:dotnet && yarn generate:pretty",
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "rxjs": "^6.6.3",
-    "typedoc": "^0.20.19",
     "uuid-random": "^1.3.2"
   },
   "devDependencies": {
@@ -34,6 +33,7 @@
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
+    "typedoc": "^0.20.20",
     "typescript": "^4.1.3"
   },
   "optionalDependencies": {
