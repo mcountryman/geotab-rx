@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { ICredentials } from "@geotab/mygeotab";
+import { ICredentials } from "src/models/credentials";
 
 /** The rpc call represented as request object */
 export interface IRpcRequest<TParams = unknown> {

@@ -1,12 +1,10 @@
-import {
-  IDevice,
-  IDeviceSearch,
-  ILoginResult,
-  IUser,
-  IUserSearch,
-} from "@geotab/mygeotab";
 import { BehaviorSubject } from "rxjs";
 import { map, multicast, publish } from "rxjs/operators";
+import { IDevice } from "./models/device";
+import { IDeviceSearch } from "./models/device_search";
+import { ILoginResult } from "./models/login_result";
+import { IUser } from "./models/user";
+import { IUserSearch } from "./models/user_search";
 import { Repo } from "./repository";
 import { RpcClient } from "./rpc/client";
 

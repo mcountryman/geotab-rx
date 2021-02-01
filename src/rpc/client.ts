@@ -1,4 +1,3 @@
-import { ICredentials } from "@geotab/mygeotab";
 import { from, iif, merge, Observable, of, Subject, throwError } from "rxjs";
 import {
   bufferTime,
@@ -13,6 +12,7 @@ import {
   timeout,
   withLatestFrom,
 } from "rxjs/operators";
+import { ICredentials } from "src/models/credentials";
 import uuid from "uuid-random";
 import { IRpcClient } from ".";
 import {
