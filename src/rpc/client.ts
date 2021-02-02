@@ -7,6 +7,7 @@ import {
   map,
   mergeMap,
   publish,
+  share,
   switchMap,
   tap,
   timeout,
@@ -20,25 +21,45 @@ import {
   IHttpResponse,
   IRpcBatchRequest,
   IRpcBatchResponse,
+  IRpcError,
   IRpcRequest,
   IRpcResponse,
+  RpcError,
 } from "./types";
 
 const BATCH_METHOD = "ExecuteMultiCall";
 
+export interface IRpcClientOpts {
+  /** The default HTTP endPoint. */
+  endPoint: string;
+  /** The default credentials. */
+  credentials?: Partial<ICredentials>;
+  /** The default HTTP adapter. */
+  adapter?: IHttpAdapter;
+  /**
+   * The time in milliseconds to wait before throwing timeout errors.
+   * @default 1000
+   * */
+  timeoutMs?: number;
+  /**
+   * The time in milliseconds to wait for batch request candidates.
+   * @default 100
+   * */
+  bufferTimeMs?: number;
+}
+
 export class RpcClient implements IRpcClient {
-  constructor(
-    /** The HTTP endpoint. */
-    public endPoint: string,
-    /** The credentials to pass to rpc calls. */
-    public credentials?: Partial<ICredentials>,
-    /** The HTTP adapter. */
-    private _adapter?: IHttpAdapter,
-    /** The millisecond threshold to group requests into single batch call.  */
-    bufferTimeMs = 500
-  ) {
-    this._rx$ = this._tx$.pipe(
-      bufferTime(bufferTimeMs),
+  public endPoint: string;
+  public credentials?: Partial<ICredentials>;
+
+  constructor(opts: IRpcClientOpts) {
+    this.endPoint = opts.endPoint;
+    this.credentials = opts.credentials;
+    this._adapter = opts.adapter;
+    this._timeoutMs = opts.timeoutMs ?? 5000;
+
+    this._rx$ = this._tx$.asObservable().pipe(
+      bufferTime(opts.bufferTimeMs ?? 100),
       publish((multi$) =>
         merge(
           multi$.pipe(toBatch(this.credentials)),
@@ -51,7 +72,8 @@ export class RpcClient implements IRpcClient {
         adapter
           .post(this.endPoint, serialize(req))
           .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
-      )
+      ),
+      share()
     );
   }
 
@@ -59,19 +81,19 @@ export class RpcClient implements IRpcClient {
   call<TRet>(method: string, params: unknown): Observable<TRet> {
     const id = uuid();
 
-    this._tx$.next({
-      id,
-      method,
-      params,
-      jsonrpc: "2.0",
-    });
-
-    return this._rx$.pipe(
-      filter((res) => res.id === id),
-      first(),
-      timeout(5000),
+    return new Observable<IRpcResponse>((observer) => {
+      this._rx$.subscribe(observer);
+      this._tx$.next({
+        id,
+        method,
+        params,
+        jsonrpc: "2.0",
+      });
+    }).pipe(
+      first((res) => res.id === id),
+      timeout(this._timeoutMs),
       switchMap((res) => {
-        if (res.error) return throwError(res.error);
+        if (res.error) return throwError(new RpcError(res.error));
         return of(res.result as TRet);
       })
     );
@@ -93,6 +115,8 @@ export class RpcClient implements IRpcClient {
     );
   }
 
+  private _adapter?: IHttpAdapter;
+  private readonly _timeoutMs: number;
   private readonly _rx$: Observable<IRpcResponse>;
   private readonly _tx$ = new Subject<IRpcRequest>();
 }
@@ -127,9 +151,10 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
             );
 
           // Pipe duplicated error using supplied requests
-          if (res.error)
+          const error = res.error;
+          if (error)
             return from(batchReq.params.calls).pipe(
-              map((call) => toErrResponse(call, res.error))
+              map((call) => toErrResponse(call, error))
             );
         }
 
@@ -202,7 +227,7 @@ function toOkResponse<TRpcRequest extends IRpcRequest, TRes>(
 
 function toErrResponse<TRpcRequest extends IRpcRequest>(
   req: TRpcRequest,
-  err: any
+  err: IRpcError
 ): IRpcResponse {
   return {
     id: req.id,

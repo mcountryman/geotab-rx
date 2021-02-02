@@ -22,7 +22,9 @@ export class Geotab {
   readonly users = new Repo<IUser, IUserSearch>(this.client, "User");
   readonly devices = new Repo<IDevice, IDeviceSearch>(this.client, "Device");
 
-  constructor(readonly client = new RpcClient(DEFAULT_END_POINT)) {
+  constructor(
+    readonly client = new RpcClient({ endPoint: DEFAULT_END_POINT })
+  ) {
     this._endPoint.subscribe((endPoint) => (client.endPoint = endPoint));
   }
 

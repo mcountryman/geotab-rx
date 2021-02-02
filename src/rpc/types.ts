@@ -24,7 +24,7 @@ export interface IRpcRequest<TParams = unknown> {
   jsonrpc: "2.0";
 }
 
-export interface IRpcResponse<TResult = unknown, TError = unknown> {
+export interface IRpcResponse<TResult = unknown> {
   /**
    * This member is REQUIRED.
    * It MUST be the same as the value of the id member in the Request Object.
@@ -35,7 +35,7 @@ export interface IRpcResponse<TResult = unknown, TError = unknown> {
    * This member is REQUIRED on error.
    * This member MUST NOT exist if there was no error triggered during invocation.
    */
-  error?: TError;
+  error?: IRpcError;
   /**
    * This member is REQUIRED on success.
    * This member MUST NOT exist if there was an error invoking the method.
@@ -67,6 +67,16 @@ export interface IRpcBatchResponse extends IRpcResponse {
   result?: unknown[];
 }
 
+/** Represents JSONRPC response error object. */
+export interface IRpcError {
+  /** The number that indicates the error type. */
+  code: number;
+  /** The primitive or structured value that contains additional information. */
+  data?: unknown;
+  /** The message describing the error. */
+  message: string;
+}
+
 /** Http response */
 export interface IHttpResponse {
   /** The JSON encoded body. */
@@ -83,4 +93,14 @@ export interface IHttpAdapter {
    * @returns The JSON serialized body.
    */
   post(url: string, body: string): Observable<IHttpResponse>;
+}
+
+export class RpcError extends Error {
+  constructor(
+    public readonly error: IRpcError,
+    public readonly code = error.code
+  ) {
+    super();
+    this.message = error.message;
+  }
 }
