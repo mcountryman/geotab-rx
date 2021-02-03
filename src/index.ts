@@ -19,13 +19,14 @@ export class Geotab {
     return false;
   }
 
-  readonly users = new Repo<IUser, IUserSearch>(this.client, "User");
-  readonly devices = new Repo<IDevice, IDeviceSearch>(this.client, "Device");
+  readonly users = new Repo<IUser, IUserSearch>(this._client, "User");
+  readonly devices = new Repo<IDevice, IDeviceSearch>(this._client, "Device");
 
   constructor(
-    readonly client = new RpcClient({ endPoint: DEFAULT_END_POINT })
+    private readonly _client = new RpcClient({ endPoint: DEFAULT_END_POINT }),
+    private readonly _endPoint = new BehaviorSubject<string>(DEFAULT_END_POINT)
   ) {
-    this._endPoint.subscribe((endPoint) => (client.endPoint = endPoint));
+    this._endPoint.subscribe((endPoint) => (_client.endPoint = endPoint));
   }
 
   async authenticate(userName: string, password?: string): Promise<void>;
@@ -35,7 +36,7 @@ export class Geotab {
     database?: string
   ): Promise<void> {
     //
-    this.client
+    this._client
       .call<ILoginResult>("Authenticate", {
         userName,
         password,
@@ -54,6 +55,4 @@ export class Geotab {
         )
       );
   }
-
-  private readonly _endPoint = new BehaviorSubject(DEFAULT_END_POINT);
 }
