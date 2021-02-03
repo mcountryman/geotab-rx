@@ -7,15 +7,15 @@ import {
   map,
   mergeMap,
   publish,
-  share,
+  refCount,
   switchMap,
   tap,
   timeout,
   withLatestFrom,
 } from "rxjs/operators";
-import { ICredentials } from "../models/credentials";
 import uuid from "uuid-random";
 import { IRpcClient } from ".";
+import { ICredentials } from "../models/credentials";
 import {
   IHttpAdapter,
   IHttpResponse,
@@ -73,7 +73,8 @@ export class RpcClient implements IRpcClient {
           .post(this.endPoint, serialize(req))
           .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
       ),
-      share()
+      publish(),
+      refCount()
     );
   }
 
@@ -144,18 +145,26 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
           const batchReq = req as IRpcBatchRequest;
           const batchRes = res as IRpcBatchResponse;
 
+          const throwErr = (err: IRpcError) =>
+            from(batchReq.params.calls).pipe(
+              map((call) => toErrResponse(call, err))
+            );
+
           // Pipe results as direct `IRpcResponse`s
-          if (batchRes.result)
+          if (batchRes.result) {
+            if (!(batchRes.result instanceof Array))
+              return throwErr({ code: 69, message: "" });
+
             return from(batchRes.result).pipe(
               map((res, i) => toOkResponse(batchReq.params.calls[i], res))
             );
+          }
 
           // Pipe duplicated error using supplied requests
-          const error = res.error;
-          if (error)
-            return from(batchReq.params.calls).pipe(
-              map((call) => toErrResponse(call, error))
-            );
+          if (res.error) return throwErr(res.error);
+
+          // Malformed response
+          return throwErr({ code: 69, message: "" });
         }
 
         return of(res);

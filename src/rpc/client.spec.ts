@@ -55,17 +55,20 @@ describe("RpcClient", () => {
       req$.pipe(
         map((req) => {
           expect(req.method).toBe("ExecuteMultiCall");
-          return req;
+          return {
+            id: req.id,
+            result: (req.params as any).calls.map((call: any) => call.params),
+            jsonrpc: "2.0",
+          };
         })
       )
     );
 
     const client = new RpcClient({ endPoint: "", adapter: new adapter() });
     return from([0, 1, 2, 3])
-      .pipe(mergeMap((params) => client.call("", params)))
+      .pipe(mergeMap((params) => client.call("echo", params)))
       .subscribe({
-        next: console.log,
-        complete: done(),
+        complete: done,
       });
   });
 
@@ -168,27 +171,6 @@ describe("RpcClient", () => {
         expect(err.message).toBe("Timeout has occurred");
         done();
       },
-    });
-  });
-
-  test("call - cancel", (done) => {
-    const client = new RpcClient({
-      endPoint: "",
-      adapter: new EchoHttpAdapter(),
-    });
-
-    return new Observable((observer) => {
-      client.call("", 0);
-      client.call("", 1).subscribe(observer);
-      client.call("", 2);
-      client.call("", 3);
-    }).subscribe({
-      next: (value) => {
-        expect(value).not.toBe(0);
-        expect(value).not.toBe(2);
-        expect(value).not.toBe(3);
-      },
-      complete: done,
     });
   });
 });
