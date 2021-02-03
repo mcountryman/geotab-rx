@@ -55,7 +55,6 @@ export class RpcClient implements IRpcClient {
   constructor(opts: IRpcClientOpts) {
     this.endPoint = opts.endPoint;
     this.credentials = opts.credentials;
-    this._adapter = opts.adapter;
     this._timeoutMs = opts.timeoutMs ?? 5000;
 
     this._rx$ = this._tx$.asObservable().pipe(
@@ -67,7 +66,7 @@ export class RpcClient implements IRpcClient {
         )
       ),
 
-      withLatestFrom(this.getAdapter()),
+      withHttpAdapter(opts),
       mergeMap(([req, adapter]) =>
         adapter
           .post(this.endPoint, serialize(req))
@@ -79,7 +78,10 @@ export class RpcClient implements IRpcClient {
   }
 
   /** @inheritdoc */
-  call<TRet>(method: string, params: unknown): Observable<TRet> {
+  call<TRet, TParams = unknown>(
+    method: string,
+    params: TParams
+  ): Observable<TRet> {
     const id = uuid();
 
     return new Observable<IRpcResponse>((observer) => {
@@ -100,23 +102,6 @@ export class RpcClient implements IRpcClient {
     );
   }
 
-  /**
-   * Resolves configured {@link IHttpAdapter} or default {@link FetchHttpAdapter}.
-   */
-  getAdapter(): Observable<IHttpAdapter> {
-    return iif(
-      () => !this._adapter,
-      from(import("./adapters/fetch_adapter")).pipe(
-        map((imp) => imp.FetchHttpAdapter),
-        map((FetchHttpAdapter) => new FetchHttpAdapter()),
-        tap((adapter) => (this._adapter = adapter))
-      ),
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      from([this._adapter!])
-    );
-  }
-
-  private _adapter?: IHttpAdapter;
   private readonly _timeoutMs: number;
   private readonly _rx$: Observable<IRpcResponse>;
   private readonly _tx$ = new Subject<IRpcRequest>();
@@ -243,4 +228,15 @@ function toErrResponse<TRpcRequest extends IRpcRequest>(
     error: err,
     jsonrpc: "2.0",
   };
+}
+
+function withHttpAdapter<T>(opts: IRpcClientOpts) {
+  const adapter$ = opts.adapter
+    ? of(opts.adapter)
+    : from(import("./adapters/fetch_adapter")).pipe(
+      map((imp) => imp.FetchHttpAdapter),
+      map((FetchHttpAdapter) => new FetchHttpAdapter())
+    );
+
+  return (observer: Observable<T>) => observer.pipe(withLatestFrom(adapter$));
 }

@@ -14,5 +14,5 @@ export interface IRpcClient {
    * @returns JSONRPC call result.
    * @throws If JSONRPC responds with error.
    */
-  call<TParams, TRet>(method: string, params: TParams): Observable<TRet>;
+  call<TRet, TParams = unknown>(method: string, params: TParams): Observable<TRet>;
 }

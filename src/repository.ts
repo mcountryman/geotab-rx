@@ -1,17 +1,19 @@
 import { Observable } from "rxjs";
+import { filter, map, mergeMap, tap } from "rxjs/operators";
+import { IFeedResult } from "./models/feed_result";
 import { IRpcClient } from "./rpc";
 
 export class Repo<TEntity, TSearch> {
   constructor(
     /** The rpc client. */
-    private readonly _client: IRpcClient,
-    /** 
-     * The type name of entity 
-     * 
+    protected readonly _client: IRpcClient,
+    /**
+     * The type name of entity
+     *
      * @remarks Used in all requests dispatched from `Repo` to denote what object type to
      * return.
      * */
-    private readonly _typeName: string
+    protected readonly _typeName: string
   ) {}
 
   /**
@@ -46,7 +48,7 @@ export class Repo<TEntity, TSearch> {
    */
   find(): Observable<TEntity[]>;
   /**
-   * Get entities with record limit supplied by @param searchOrLimit. 
+   * Get entities with record limit supplied by @param searchOrLimit.
    * @param searchOrLimit The number of records to return.
    */
   find(searchOrLimit?: number): Observable<TEntity[]>;
@@ -59,7 +61,7 @@ export class Repo<TEntity, TSearch> {
    * Get entities by supplied search condition and limit records by supplied limit.
    * @param searchOrLimit - The search conditions
    * @param limit - The entity limit
-   * @throws When both @param searchOrLimit and @param limit are `number`s. 
+   * @throws When both @param searchOrLimit and @param limit are `number`s.
    */
   find(
     searchOrLimit?: number | Partial<TSearch>,
@@ -82,4 +84,31 @@ export class Repo<TEntity, TSearch> {
       resultsLimit,
     });
   }
+}
+
+export class FeedRepo<TEntity, TSearch> extends Repo<TEntity, TSearch> {
+  constructor(
+    private readonly _poll$: Observable<number>,
+    client: IRpcClient,
+    typeName: string,
+  ) {
+    super(client, typeName);
+  }
+
+  observe(search?: Partial<TSearch>): Observable<TEntity[]> {
+    return this._poll$.pipe(
+      mergeMap(() => this._client.call<IFeedResult<TEntity>>("GetFeed", {
+        search,
+        typeName: this._typeName,
+        fromVersion: this._fromVersion,
+        resultsLimit: 0,
+      })),
+      tap(feed => this._fromVersion = feed.toVersion),
+      filter(feed => !!feed.data),
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      map(feed => feed.data!)
+    );
+  }
+
+  private _fromVersion?: number;
 }
