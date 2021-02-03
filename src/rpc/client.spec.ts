@@ -173,6 +173,32 @@ describe("RpcClient", () => {
       },
     });
   });
+
+  test("call - cancel", (done) => {
+    const adapter = mockHttpAdapter((req$) =>
+      req$.pipe(map((req) => done("Request was not cancelled after unsubscribe.")))
+    );
+
+    const client = new RpcClient({
+      endPoint: "",
+      adapter: new adapter(),
+    });
+
+    client
+      .call("", 0)
+      .subscribe({
+        next: (value) => {
+          expect(value).not.toBe(0);
+          expect(value).not.toBe(2);
+          expect(value).not.toBe(3);
+        },
+        error: done,
+        complete: done,
+      })
+      .unsubscribe();
+
+    setTimeout(done, 300);
+  });
 });
 
 function mockHttpAdapter(
