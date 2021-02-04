@@ -1,6 +1,5 @@
-import { BehaviorSubject, interval, merge, Observable } from "rxjs";
-import { first, map, multicast, publish, tap } from "rxjs/operators";
-import { ICredentials } from "./models/credentials";
+import { BehaviorSubject, interval, Observable } from "rxjs";
+import { first, share, switchMap, tap } from "rxjs/operators";
 import { IDevice } from "./models/device";
 import { IDeviceSearch } from "./models/device_search";
 import { IExceptionEvent } from "./models/exceptions/exception_event";
@@ -31,10 +30,13 @@ export class Geotab extends RpcClient {
     return this._isAuthenticated$.asObservable();
   }
 
+  public get poll$(): Observable<number> {
+    return this._poll$;
+  }
+
   readonly users = new Repo<IUser, IUserSearch>(this, "User");
   readonly devices = new Repo<IDevice, IDeviceSearch>(this, "Device");
   readonly events = new FeedRepo<IExceptionEvent, IExceptionEventSearch>(
-    interval(1000),
     this,
     "ExceptionEvent"
   );
@@ -42,8 +44,9 @@ export class Geotab extends RpcClient {
   constructor(opts: IGeotabOpts = {}) {
     super({ ...opts, endPoint: DEFAULT_END_POINT });
 
-    // this._interval$ = new BehaviorSubject(opts.pollIntervalMs ?? 1000);
-    this._isAuthenticated$ = new BehaviorSubject<boolean>(false);
+    if (opts.pollIntervalMs) {
+      // this._pollInterval$.next(opts.pollIntervalMs);
+    }
   }
 
   async authenticate(
@@ -76,5 +79,10 @@ export class Geotab extends RpcClient {
       .toPromise();
   }
 
-  private readonly _isAuthenticated$: BehaviorSubject<boolean>;
+  private readonly _pollInterval$ = new BehaviorSubject(1000);
+  private readonly _isAuthenticated$ = new BehaviorSubject<boolean>(false);
+
+  private readonly _poll$ = this._pollInterval$.pipe(
+    switchMap((timeSpan) => interval(timeSpan)),
+  );
 }

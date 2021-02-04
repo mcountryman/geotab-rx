@@ -1,7 +1,12 @@
 import { from, interval, Observable } from "rxjs";
 import { filter, map, mergeMap, tap } from "rxjs/operators";
+import { Geotab } from ".";
 import { IFeedResult } from "./models/feed_result";
 import { IRpcClient } from "./rpc";
+
+type DeepPartial<T> = {
+  [P in keyof T]?: DeepPartial<T[P]>;
+};
 
 export class Repo<TEntity, TSearch> {
   constructor(
@@ -56,7 +61,7 @@ export class Repo<TEntity, TSearch> {
    * Get entities by search conditions or by limit supplied by @param searchLimit.
    * @param searchOrLimit The search conditions or the number of records to return.
    */
-  find(searchOrLimit?: number | Partial<TSearch>): Observable<TEntity[]>;
+  find(searchOrLimit?: number | DeepPartial<TSearch>): Observable<TEntity[]>;
   /**
    * Get entities by supplied search condition and limit records by supplied limit.
    * @param searchOrLimit - The search conditions
@@ -64,10 +69,10 @@ export class Repo<TEntity, TSearch> {
    * @throws When both @param searchOrLimit and @param limit are `number`s.
    */
   find(
-    searchOrLimit?: number | Partial<TSearch>,
+    searchOrLimit?: number | DeepPartial<TSearch>,
     limit?: number
   ): Observable<TEntity[]> {
-    const search: Partial<TSearch> | undefined =
+    const search: DeepPartial<TSearch> | undefined =
       typeof searchOrLimit === "number" ? {} : searchOrLimit;
     const resultsLimit =
       typeof searchOrLimit === "number" ? searchOrLimit : limit;
@@ -91,16 +96,12 @@ export class FeedRepo<TEntity, TSearch> extends Repo<TEntity, TSearch> {
     return this._fromVersion;
   }
 
-  constructor(
-    private readonly _poll$: Observable<number>,
-    client: IRpcClient,
-    typeName: string
-  ) {
-    super(client, typeName);
+  constructor(private readonly _geotab: Geotab, typeName: string) {
+    super(_geotab, typeName);
   }
 
-  observe(search?: Partial<TSearch>): Observable<TEntity> {
-    return interval(1000).pipe(
+  observe(search?: DeepPartial<TSearch>): Observable<TEntity> {
+    return this._geotab.poll$.pipe(
       mergeMap(() =>
         this._client.call<IFeedResult<TEntity>>("GetFeed", {
           search,
