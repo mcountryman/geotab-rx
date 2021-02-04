@@ -39,7 +39,7 @@ export class Geotab extends RpcClient {
     "ExceptionEvent"
   );
 
-  constructor(opts: IGeotabOpts) {
+  constructor(opts: IGeotabOpts = {}) {
     super({ ...opts, endPoint: DEFAULT_END_POINT });
 
     // this._interval$ = new BehaviorSubject(opts.pollIntervalMs ?? 1000);

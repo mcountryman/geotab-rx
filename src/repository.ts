@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { from, interval, Observable } from "rxjs";
 import { filter, map, mergeMap, tap } from "rxjs/operators";
 import { IFeedResult } from "./models/feed_result";
 import { IRpcClient } from "./rpc";
@@ -87,26 +87,33 @@ export class Repo<TEntity, TSearch> {
 }
 
 export class FeedRepo<TEntity, TSearch> extends Repo<TEntity, TSearch> {
+  public get version(): number | undefined {
+    return this._fromVersion;
+  }
+
   constructor(
     private readonly _poll$: Observable<number>,
     client: IRpcClient,
-    typeName: string,
+    typeName: string
   ) {
     super(client, typeName);
   }
 
-  observe(search?: Partial<TSearch>): Observable<TEntity[]> {
-    return this._poll$.pipe(
-      mergeMap(() => this._client.call<IFeedResult<TEntity>>("GetFeed", {
-        search,
-        typeName: this._typeName,
-        fromVersion: this._fromVersion,
-        resultsLimit: 0,
-      })),
-      tap(feed => this._fromVersion = feed.toVersion),
-      filter(feed => !!feed.data),
+  observe(search?: Partial<TSearch>): Observable<TEntity> {
+    return interval(1000).pipe(
+      mergeMap(() =>
+        this._client.call<IFeedResult<TEntity>>("GetFeed", {
+          search,
+          typeName: this._typeName,
+          fromVersion: this._fromVersion,
+          resultsLimit: 1000,
+        })
+      ),
+      tap((feed) => (this._fromVersion = feed.toVersion)),
+      filter((feed) => !!feed.data),
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      map(feed => feed.data!)
+      map((feed) => feed.data!),
+      mergeMap((data) => from(data))
     );
   }
 
