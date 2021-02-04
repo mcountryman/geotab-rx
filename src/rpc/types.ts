@@ -1,8 +1,10 @@
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { ICredentials } from "../models/credentials";
 
 /** The rpc call represented as request object */
-export interface IRpcRequest<TParams = unknown> {
+export interface IRpcRequest<
+  TParams extends Record<string, any> = Record<string, any>
+> {
   /**
    * The identifier established by the client that MUST contain a String, Number, or NULL
    * value if included. If it is not included it is assumed to be a notification. The
@@ -103,4 +105,12 @@ export class RpcError extends Error {
     super();
     this.message = error.message;
   }
+}
+
+export function makeSubject<T>(value: T): BehaviorSubject<T> {
+  return new BehaviorSubject(value);
+}
+
+export function makeNullableSubject<T>(): BehaviorSubject<T | undefined> {
+  return new BehaviorSubject<T | undefined>(undefined);
 }

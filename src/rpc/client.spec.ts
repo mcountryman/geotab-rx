@@ -35,9 +35,9 @@ describe("RpcClient", () => {
 
     return from(input.params)
       .pipe(
-        mergeMap((param) => client.call("echo", param)),
+        mergeMap((param) => client.call<{ param: number }>("echo", { param })),
         map((res, i) => {
-          expect(res).toBe(input.params[i]);
+          expect(res.param).toBe(input.params[i]);
           return res;
         }),
         toArray(),
@@ -66,7 +66,11 @@ describe("RpcClient", () => {
 
     const client = new RpcClient({ endPoint: "", adapter: new adapter() });
     return from([0, 1, 2, 3])
-      .pipe(mergeMap((params) => client.call("echo", params)))
+      .pipe(
+        mergeMap((params) =>
+          client.call<{ params: number }>("echo", { params })
+        )
+      )
       .subscribe({
         complete: done,
       });
@@ -78,7 +82,7 @@ describe("RpcClient", () => {
    */
   test("call - rpc error single", (done) => {
     new RpcClient({ endPoint: "", adapter: new RpcErrorHttpAdapter() })
-      .call("", false)
+      .call("", { params: false })
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
@@ -100,7 +104,9 @@ describe("RpcClient", () => {
     });
 
     from([0, 1, 2, 3])
-      .pipe(mergeMap((params) => client.call("", params)))
+      .pipe(
+        mergeMap((params) => client.call<{ params: number }>("", { params }))
+      )
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
@@ -117,7 +123,7 @@ describe("RpcClient", () => {
    */
   test("call - http error single", (done) => {
     new RpcClient({ endPoint: "", adapter: new HttpErrorHttpAdapter() })
-      .call("", false)
+      .call("", { params: false })
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
@@ -138,7 +144,7 @@ describe("RpcClient", () => {
     });
 
     from([0, 1, 2, 3])
-      .pipe(mergeMap((params) => client.call("", params)))
+      .pipe(mergeMap((params) => client.call("", { params })))
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
@@ -165,7 +171,7 @@ describe("RpcClient", () => {
       timeoutMs: 100,
     });
 
-    return client.call("", false).subscribe({
+    return client.call("", { params: false }).subscribe({
       next: (value) => done(`Expected timeout, got value '${value}'`),
       error: (err) => {
         expect(err.message).toBe("Timeout has occurred");
@@ -176,7 +182,9 @@ describe("RpcClient", () => {
 
   test("call - cancel", (done) => {
     const adapter = mockHttpAdapter((req$) =>
-      req$.pipe(map((req) => done("Request was not cancelled after unsubscribe.")))
+      req$.pipe(
+        map((req) => done("Request was not cancelled after unsubscribe."))
+      )
     );
 
     const client = new RpcClient({
@@ -185,12 +193,12 @@ describe("RpcClient", () => {
     });
 
     client
-      .call("", 0)
+      .call<{ params: number }>("", { params: 0 })
       .subscribe({
         next: (value) => {
-          expect(value).not.toBe(0);
-          expect(value).not.toBe(2);
-          expect(value).not.toBe(3);
+          expect(value.params).not.toBe(0);
+          expect(value.params).not.toBe(2);
+          expect(value.params).not.toBe(3);
         },
         error: done,
         complete: done,
@@ -201,9 +209,9 @@ describe("RpcClient", () => {
   });
 });
 
-function mockHttpAdapter(
+export function mockHttpAdapter(
   handle: (req$: Observable<IRpcRequest>) => Observable<IRpcResponse>
-) {
+): { new (): IHttpAdapter } {
   return class implements IHttpAdapter {
     post(_: string, body: string): Observable<IHttpResponse> {
       const req: IRpcRequest = JSON.parse(body);
@@ -215,7 +223,7 @@ function mockHttpAdapter(
   };
 }
 
-const EchoHttpAdapter = mockHttpAdapter((req$) =>
+export const EchoHttpAdapter = mockHttpAdapter((req$) =>
   req$.pipe(
     map((req) => {
       const res: IRpcResponse = {

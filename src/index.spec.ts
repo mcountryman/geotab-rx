@@ -1,32 +1,39 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { from } from "rxjs";
-import { first, mergeMap, tap } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { Geotab } from ".";
-
-const USERNAME = process.env.GEOTAB_USERNAME!;
-const PASSWORD = process.env.GEOTAB_PASSWORD!;
+import { mockHttpAdapter } from "./rpc/client.spec";
 
 describe("Geotab", () => {
-  beforeEach(() => {
-    jest.setTimeout(1000 * 60 * 60 * 24);
-
-    if (!USERNAME) throw new Error("GEOTAB_USERNAME env var not defined");
-    if (!PASSWORD) throw new Error("GEOTAB_PASSWORD env var not defined");
-  });
-
   test("authenticate", async () => {
-    const geotab = new Geotab({});
-    const result = await geotab.authenticate(USERNAME, PASSWORD);
+    const username = "username";
+    const password = "password";
 
-    expect(geotab.isAuthenticated).toBeTruthy();
+    const adapter = mockHttpAdapter((req$) =>
+      req$.pipe(
+        map((req) => {
+          expect(req.params.userName).toBe(username);
+          expect(req.params.password).toBe(password);
 
-    return geotab.users
-      .find({ name: "me@maar.vin" })
-      .pipe(
-        mergeMap((users) => from(users)),
-        first(),
-        tap(console.log)
+          return {
+            ...req,
+            result: {
+              path: "ThisServer",
+              credentials: {
+                username,
+                password,
+              },
+            },
+          };
+        })
       )
-      .toPromise();
+    );
+
+    const geotab = new Geotab({
+      adapter: new adapter(),
+    });
+
+    const result = await geotab.authenticate("username", "password");
+
+    expect(result.path).toBe("ThisServer");
+    expect(geotab.isAuthenticated).toBeTruthy();
   });
 });

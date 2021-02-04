@@ -1,4 +1,13 @@
-import { from, iif, merge, Observable, of, Subject, throwError } from "rxjs";
+import {
+  BehaviorSubject,
+  from,
+  iif,
+  merge,
+  Observable,
+  of,
+  Subject,
+  throwError,
+} from "rxjs";
 import {
   bufferTime,
   catchError,
@@ -24,6 +33,7 @@ import {
   IRpcError,
   IRpcRequest,
   IRpcResponse,
+  makeNullableSubject,
   RpcError,
 } from "./types";
 
@@ -49,27 +59,24 @@ export interface IRpcClientOpts {
 }
 
 export class RpcClient implements IRpcClient {
-  public endPoint: string;
-  public credentials?: Partial<ICredentials>;
-
   constructor(opts: IRpcClientOpts) {
-    this.endPoint = opts.endPoint;
-    this.credentials = opts.credentials;
+    this.endPoint$ = new BehaviorSubject(opts.endPoint);
     this._timeoutMs = opts.timeoutMs ?? 5000;
 
     this._rx$ = this._tx$.asObservable().pipe(
       bufferTime(opts.bufferTimeMs ?? 100),
       publish((multi$) =>
         merge(
-          multi$.pipe(toBatch(this.credentials)),
-          multi$.pipe(toSingle(this.credentials))
+          multi$.pipe(toBatch(this.credentials$.asObservable())),
+          multi$.pipe(toSingle(this.credentials$.asObservable()))
         )
       ),
 
+      withLatestFrom(this.endPoint$),
       withHttpAdapter(opts),
-      mergeMap(([req, adapter]) =>
+      mergeMap(([[req, endPoint], adapter]) =>
         adapter
-          .post(this.endPoint, serialize(req))
+          .post(endPoint, serialize(req))
           .pipe(deserialize(), flattenResponses(req), flattenErrors(req))
       ),
       publish(),
@@ -78,7 +85,7 @@ export class RpcClient implements IRpcClient {
   }
 
   /** @inheritdoc */
-  call<TRet, TParams = unknown>(
+  call<TRet, TParams extends Record<string, any> = Record<string, any>>(
     method: string,
     params: TParams
   ): Observable<TRet> {
@@ -101,6 +108,9 @@ export class RpcClient implements IRpcClient {
       })
     );
   }
+
+  protected readonly endPoint$: BehaviorSubject<string>;
+  protected readonly credentials$ = makeNullableSubject<ICredentials>();
 
   private readonly _timeoutMs: number;
   private readonly _rx$: Observable<IRpcResponse>;
@@ -127,7 +137,7 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
     res$.pipe(
       mergeMap((res) => {
         if (req.method === BATCH_METHOD) {
-          const batchReq = req as IRpcBatchRequest;
+          const batchReq = (req as unknown) as IRpcBatchRequest;
           const batchRes = res as IRpcBatchResponse;
 
           const throwErr = (err: IRpcError) =>
@@ -162,7 +172,7 @@ function flattenErrors<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
     res$.pipe(
       catchError((err) => {
         if (req.method === BATCH_METHOD) {
-          const batchReq = req as IRpcBatchRequest;
+          const batchReq = (req as unknown) as IRpcBatchRequest;
 
           return from(batchReq.params.calls).pipe(
             map((call) => toErrResponse(call, err))
@@ -175,13 +185,14 @@ function flattenErrors<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
 }
 
 function toBatch<TReq extends IRpcRequest>(
-  credentials?: Partial<ICredentials>
+  credentials$: Observable<ICredentials | undefined>
 ) {
   return (req$: Observable<TReq[]>) =>
     req$.pipe(
       filter((req) => req.length > 1),
+      withLatestFrom(credentials$),
       map(
-        (calls): IRpcBatchRequest => ({
+        ([calls, credentials]): IRpcBatchRequest => ({
           method: BATCH_METHOD,
           params: {
             calls,
@@ -194,22 +205,26 @@ function toBatch<TReq extends IRpcRequest>(
 }
 
 function toSingle<TReq extends IRpcRequest>(
-  credentials?: Partial<ICredentials>
+  credentials$: Observable<ICredentials | undefined>
 ) {
   return (req$: Observable<TReq[]>) =>
     req$.pipe(
       filter((req) => req.length === 1),
+      withLatestFrom(credentials$),
       map(
-        (req): IRpcRequest => ({
+        ([req, credentials]): IRpcRequest => ({
           ...req[0],
-          credentials,
+          params: {
+            ...req[0].params,
+            credentials,
+          },
         })
       )
     );
 }
 
-function toOkResponse<TRpcRequest extends IRpcRequest, TRes>(
-  req: TRpcRequest,
+function toOkResponse<TReq extends IRpcRequest, TRes>(
+  req: TReq,
   result: TRes
 ): IRpcResponse {
   return {
@@ -219,8 +234,8 @@ function toOkResponse<TRpcRequest extends IRpcRequest, TRes>(
   };
 }
 
-function toErrResponse<TRpcRequest extends IRpcRequest>(
-  req: TRpcRequest,
+function toErrResponse<TReq extends IRpcRequest>(
+  req: TReq,
   err: IRpcError
 ): IRpcResponse {
   return {
@@ -234,9 +249,9 @@ function withHttpAdapter<T>(opts: IRpcClientOpts) {
   const adapter$ = opts.adapter
     ? of(opts.adapter)
     : from(import("./adapters/fetch_adapter")).pipe(
-      map((imp) => imp.FetchHttpAdapter),
-      map((FetchHttpAdapter) => new FetchHttpAdapter())
-    );
+        map((imp) => imp.FetchHttpAdapter),
+        map((FetchHttpAdapter) => new FetchHttpAdapter())
+      );
 
   return (observer: Observable<T>) => observer.pipe(withLatestFrom(adapter$));
 }

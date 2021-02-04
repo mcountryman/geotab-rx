@@ -22,7 +22,7 @@ export interface IGeotabOpts
   extends Omit<IRpcClientOpts, "endPoint" | "credentials"> {
   pollIntervalMs?: number;
 }
-export class Geotab {
+export class Geotab extends RpcClient {
   public get isAuthenticated(): boolean {
     return this._isAuthenticated$.getValue();
   }
@@ -31,33 +31,19 @@ export class Geotab {
     return this._isAuthenticated$.asObservable();
   }
 
-  readonly users = new Repo<IUser, IUserSearch>(this._client, "User");
-  readonly devices = new Repo<IDevice, IDeviceSearch>(this._client, "Device");
+  readonly users = new Repo<IUser, IUserSearch>(this, "User");
+  readonly devices = new Repo<IDevice, IDeviceSearch>(this, "Device");
   readonly events = new FeedRepo<IExceptionEvent, IExceptionEventSearch>(
     interval(1000),
-    this._client,
+    this,
     "ExceptionEvent"
   );
 
-  constructor(
-    opts: IGeotabOpts,
-    private readonly _client = new RpcClient({
-      ...opts,
-      endPoint: DEFAULT_END_POINT,
-    })
-  ) {
-    this._interval$ = new BehaviorSubject(opts.pollIntervalMs ?? 1000);
+  constructor(opts: IGeotabOpts) {
+    super({ ...opts, endPoint: DEFAULT_END_POINT });
+
+    // this._interval$ = new BehaviorSubject(opts.pollIntervalMs ?? 1000);
     this._isAuthenticated$ = new BehaviorSubject<boolean>(false);
-
-    this._endPoint$ = new BehaviorSubject(DEFAULT_END_POINT);
-    this._endPoint$.subscribe((endPoint) => (this._client.endPoint = endPoint));
-
-    this._credentials$ = new BehaviorSubject<ICredentials | undefined>(
-      undefined
-    );
-    this._credentials$.subscribe(
-      (credentials) => (this._client.credentials = credentials)
-    );
   }
 
   async authenticate(
@@ -69,19 +55,20 @@ export class Geotab {
     password?: string,
     database?: string
   ): Promise<ILoginResult> {
-    return this._client
-      .call<ILoginResult>("Authenticate", {
-        userName,
-        password,
-        database,
-      })
+    return this.call<ILoginResult>("Authenticate", {
+      userName,
+      password,
+      database,
+    })
       .pipe(
         tap((result) => {
-          if (result.path !== "ThisServer")
-            this._endPoint$.next(
+          if (result.path !== "ThisServer") {
+            this.endPoint$.next(
               PATHED_END_POINT.replace("{{path}}", result.path)
             );
-          this._credentials$.next(result.credentials);
+          }
+
+          this.credentials$.next(result.credentials);
           this._isAuthenticated$.next(true);
         }),
         first()
@@ -89,8 +76,5 @@ export class Geotab {
       .toPromise();
   }
 
-  private readonly _endPoint$: BehaviorSubject<string>;
-  private readonly _interval$: BehaviorSubject<number>;
-  private readonly _credentials$: BehaviorSubject<ICredentials | undefined>;
   private readonly _isAuthenticated$: BehaviorSubject<boolean>;
 }
