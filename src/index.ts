@@ -1,5 +1,5 @@
 import { BehaviorSubject, interval, Observable } from "rxjs";
-import { first, share, switchMap, tap } from "rxjs/operators";
+import { first, switchMap, tap } from "rxjs/operators";
 import { IDevice } from "./models/device";
 import { IDeviceSearch } from "./models/device_search";
 import { IExceptionEvent } from "./models/exceptions/exception_event";
@@ -7,12 +7,8 @@ import { IExceptionEventSearch } from "./models/exceptions/exception_event_searc
 import { ILoginResult } from "./models/login_result";
 import { IUser } from "./models/user";
 import { IUserSearch } from "./models/user_search";
-import { FeedRepo, Repo } from "./repository";
+import { Repo } from "./repository/types";
 import { IRpcClientOpts, RpcClient } from "./rpc/client";
-
-export * from "./repository";
-export * from "./rpc";
-export * from "./types";
 
 export const PATHED_END_POINT = "https://{{path}}/apiv1";
 export const DEFAULT_END_POINT = "https://my.geotab.com/apiv1";
@@ -36,7 +32,7 @@ export class Geotab extends RpcClient {
 
   readonly users = new Repo<IUser, IUserSearch>(this, "User");
   readonly devices = new Repo<IDevice, IDeviceSearch>(this, "Device");
-  readonly events = new FeedRepo<IExceptionEvent, IExceptionEventSearch>(
+  readonly events = new Repo<IExceptionEvent, IExceptionEventSearch>(
     this,
     "ExceptionEvent"
   );
@@ -83,6 +79,6 @@ export class Geotab extends RpcClient {
   private readonly _isAuthenticated$ = new BehaviorSubject<boolean>(false);
 
   private readonly _poll$ = this._pollInterval$.pipe(
-    switchMap((timeSpan) => interval(timeSpan)),
+    switchMap((timeSpan) => interval(timeSpan))
   );
 }

@@ -59,6 +59,18 @@ export interface IRpcClientOpts {
 }
 
 export class RpcClient implements IRpcClient {
+  get endPoint(): string {
+    return this.endPoint$.getValue();
+  }
+
+  set endPoint(value: string) {
+    this.endPoint$.next(value);
+  }
+
+  set credentials(value: ICredentials) {
+    this.credentials$.next(value);
+  }
+
   constructor(opts: IRpcClientOpts) {
     this.endPoint$ = new BehaviorSubject(opts.endPoint);
     this._timeoutMs = opts.timeoutMs ?? 5000;
