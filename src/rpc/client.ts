@@ -67,7 +67,7 @@ export class RpcClient implements IRpcClient {
     this.endPoint$.next(value);
   }
 
-  set credentials(value: ICredentials) {
+  set credentials(value: ICredentials | undefined) {
     this.credentials$.next(value);
   }
 

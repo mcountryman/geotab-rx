@@ -1,13 +1,15 @@
-import { from, Observable, of } from "rxjs";
+import { from } from "rxjs";
 import { delay, map, mergeMap, take, toArray } from "rxjs/operators";
-import { RpcClient } from "./client";
+import { RpcClient } from "../rpc/client";
 import {
-  IHttpAdapter,
-  IHttpResponse,
-  IRpcBatchRequest,
-  IRpcRequest,
-  IRpcResponse,
-} from "./types";
+  echoHttpAdapter,
+  httpErrorHttpAdapter,
+  HTTP_ERROR_MESSAGE,
+  mockHttpAdapter,
+  rpcErrorHttpAdapter,
+  RPC_ERROR_CODE,
+  RPC_ERROR_MESSAGE,
+} from "./helpers/http_helpers";
 
 describe("RpcClient", () => {
   /**
@@ -30,7 +32,7 @@ describe("RpcClient", () => {
   ])("call - echo", async (input) => {
     const client = new RpcClient({
       endPoint: "",
-      adapter: new EchoHttpAdapter(),
+      adapter: echoHttpAdapter,
     });
 
     return from(input.params)
@@ -64,7 +66,7 @@ describe("RpcClient", () => {
       )
     );
 
-    const client = new RpcClient({ endPoint: "", adapter: new adapter() });
+    const client = new RpcClient({ endPoint: "", adapter });
     return from([0, 1, 2, 3])
       .pipe(
         mergeMap((params) =>
@@ -81,13 +83,13 @@ describe("RpcClient", () => {
    * returns error response.
    */
   test("call - rpc error single", (done) => {
-    new RpcClient({ endPoint: "", adapter: new RpcErrorHttpAdapter() })
+    new RpcClient({ endPoint: "", adapter: rpcErrorHttpAdapter })
       .call("", { params: false })
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
-          expect(err.code).toBe(69.42);
-          expect(err.message).toBe("RpcError");
+          expect(err.code).toBe(RPC_ERROR_CODE);
+          expect(err.message).toBe(RPC_ERROR_MESSAGE);
           done();
         },
       });
@@ -100,7 +102,7 @@ describe("RpcClient", () => {
   test("call - rpc error batched", (done) => {
     const client = new RpcClient({
       endPoint: "",
-      adapter: new RpcErrorHttpAdapter(),
+      adapter: rpcErrorHttpAdapter,
     });
 
     from([0, 1, 2, 3])
@@ -110,8 +112,8 @@ describe("RpcClient", () => {
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
-          expect(err.code).toBe(69.42);
-          expect(err.message).toBe("RpcError");
+          expect(err.code).toBe(RPC_ERROR_CODE);
+          expect(err.message).toBe(RPC_ERROR_MESSAGE);
           done();
         },
       });
@@ -122,12 +124,12 @@ describe("RpcClient", () => {
    * throws an error.
    */
   test("call - http error single", (done) => {
-    new RpcClient({ endPoint: "", adapter: new HttpErrorHttpAdapter() })
+    new RpcClient({ endPoint: "", adapter: httpErrorHttpAdapter })
       .call("", { params: false })
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
-          expect(err.message).toBe("HttpError");
+          expect(err.message).toBe(HTTP_ERROR_MESSAGE);
           done();
         },
       });
@@ -140,7 +142,7 @@ describe("RpcClient", () => {
   test("call - http error batched", (done) => {
     const client = new RpcClient({
       endPoint: "",
-      adapter: new HttpErrorHttpAdapter(),
+      adapter: httpErrorHttpAdapter,
     });
 
     from([0, 1, 2, 3])
@@ -148,7 +150,7 @@ describe("RpcClient", () => {
       .subscribe({
         next: (value) => done(`Unexpected value '${value}'`),
         error: (err) => {
-          expect(err.message).toBe("HttpError");
+          expect(err.message).toBe(HTTP_ERROR_MESSAGE);
           done();
         },
       });
@@ -166,8 +168,8 @@ describe("RpcClient", () => {
     );
 
     const client = new RpcClient({
+      adapter,
       endPoint: "",
-      adapter: new adapter(),
       timeoutMs: 100,
     });
 
@@ -182,14 +184,12 @@ describe("RpcClient", () => {
 
   test("call - cancel", (done) => {
     const adapter = mockHttpAdapter((req$) =>
-      req$.pipe(
-        map((req) => done("Request was not cancelled after unsubscribe."))
-      )
+      req$.pipe(map(() => done("Request was not cancelled after unsubscribe.")))
     );
 
     const client = new RpcClient({
       endPoint: "",
-      adapter: new adapter(),
+      adapter: adapter,
     });
 
     client
@@ -208,58 +208,3 @@ describe("RpcClient", () => {
     setTimeout(done, 300);
   });
 });
-
-export function mockHttpAdapter(
-  handle: (req$: Observable<IRpcRequest>) => Observable<IRpcResponse>
-): { new (): IHttpAdapter } {
-  return class implements IHttpAdapter {
-    post(_: string, body: string): Observable<IHttpResponse> {
-      const req: IRpcRequest = JSON.parse(body);
-
-      return handle(of(req)).pipe(
-        map((res) => ({ body: JSON.stringify(res) }))
-      );
-    }
-  };
-}
-
-export const EchoHttpAdapter = mockHttpAdapter((req$) =>
-  req$.pipe(
-    map((req) => {
-      const res: IRpcResponse = {
-        id: req.id ?? "",
-        result: req.params,
-        jsonrpc: "2.0",
-      };
-
-      if (req.method === "ExecuteMultiCall") {
-        const batchReq = req as IRpcBatchRequest;
-
-        res.result = batchReq.params.calls.map((call) => call.params);
-      }
-
-      return res;
-    })
-  )
-);
-
-const RpcErrorHttpAdapter = mockHttpAdapter((req$) =>
-  req$.pipe(
-    map((req) => ({
-      id: req.id,
-      error: {
-        code: 69.42,
-        message: "RpcError",
-      },
-      jsonrpc: "2.0",
-    }))
-  )
-);
-
-const HttpErrorHttpAdapter = mockHttpAdapter((req$) =>
-  req$.pipe(
-    map(() => {
-      throw new Error("HttpError");
-    })
-  )
-);

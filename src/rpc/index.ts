@@ -9,7 +9,7 @@ export * from "./client";
  */
 export interface IRpcClient {
   endPoint: string;
-  credentials: ICredentials;
+  credentials?: ICredentials;
 
   /**
    * Invokes JSONRPC request and returns result.

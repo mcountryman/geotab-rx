@@ -1,5 +1,5 @@
 import { BehaviorSubject, interval, Observable } from "rxjs";
-import { first, switchMap, tap } from "rxjs/operators";
+import { first, map, switchMap, tap } from "rxjs/operators";
 import { IDevice } from "./models/device";
 import { IDeviceSearch } from "./models/device_search";
 import { IExceptionEvent } from "./models/exceptions/exception_event";
@@ -19,15 +19,11 @@ export interface IGeotabOpts
 }
 export class Geotab extends RpcClient {
   public get isAuthenticated(): boolean {
-    return this._isAuthenticated$.getValue();
+    return this.credentials$.getValue() !== undefined;
   }
 
   public get isAuthenticated$(): Observable<boolean> {
-    return this._isAuthenticated$.asObservable();
-  }
-
-  public get poll$(): Observable<number> {
-    return this._poll$;
+    return this.credentials$.pipe(map(value => !!value));
   }
 
   readonly users = new Repo<IUser, IUserSearch>(this, "User");
@@ -44,41 +40,4 @@ export class Geotab extends RpcClient {
       // this._pollInterval$.next(opts.pollIntervalMs);
     }
   }
-
-  async authenticate(
-    userName: string,
-    password?: string
-  ): Promise<ILoginResult>;
-  async authenticate(
-    userName: string,
-    password?: string,
-    database?: string
-  ): Promise<ILoginResult> {
-    return this.call<ILoginResult>("Authenticate", {
-      userName,
-      password,
-      database,
-    })
-      .pipe(
-        tap((result) => {
-          if (result.path !== "ThisServer") {
-            this.endPoint$.next(
-              PATHED_END_POINT.replace("{{path}}", result.path)
-            );
-          }
-
-          this.credentials$.next(result.credentials);
-          this._isAuthenticated$.next(true);
-        }),
-        first()
-      )
-      .toPromise();
-  }
-
-  private readonly _pollInterval$ = new BehaviorSubject(1000);
-  private readonly _isAuthenticated$ = new BehaviorSubject<boolean>(false);
-
-  private readonly _poll$ = this._pollInterval$.pipe(
-    switchMap((timeSpan) => interval(timeSpan))
-  );
 }
