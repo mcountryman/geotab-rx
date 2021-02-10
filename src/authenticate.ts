@@ -23,24 +23,33 @@ export function authenticate(
   opts: IAuthenticateOpts
 ): Observable<IAuthenticateResult> {
   const credentials = optsToCredentials(opts);
-  return client
-    .call<ILoginResult, ICredentials>("Authenticate", credentials)
-    .pipe(
-      map((result) => ({
-        endPoint:
-          result.path !== "ThisServer"
-            ? PATHED_END_POINT.replace("{{path}}", result.path)
-            : client.endPoint,
-        credentials: result.credentials,
-      })),
-      tap((result) => { 
-        client.endPoint = result.endPoint;
-        client.credentials = result.credentials;
-      }),
-      first()
-    );
+  return client.call<ILoginResult>("Authenticate", credentials).pipe(
+    map((result) => ({
+      endPoint:
+        result.path !== "ThisServer"
+          ? PATHED_END_POINT.replace("{{path}}", result.path)
+          : client.endPoint,
+      credentials: result.credentials,
+    })),
+    tap((result) => {
+      client.endPoint = result.endPoint;
+      client.credentials = result.credentials;
+    })
+  );
 }
 
-export function optsToCredentials(opts: IAuthenticateOpts): ICredentials {
-  throw new Error();
+export function optsToCredentials({
+  username,
+  password,
+  database,
+  sessionId,
+}: IAuthenticateOpts): Partial<ICredentials> {
+  // TODO: Implement validation?
+
+  return {
+    userName: username,
+    password,
+    database,
+    sessionId,
+  };
 }
