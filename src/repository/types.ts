@@ -30,5 +30,12 @@ export class Repo<TEntity, TSearch = unknown> {
 }
 
 export interface ILimit {
+  /**
+   * The maximum number of records to return. The default and the maximum value varies per
+   * retrieval method and per repository.
+   * 
+   * @see {@link https://geotab.github.io/sdk/software/api/reference/#M:Geotab.Checkmate.Database.DataStore.Get1}
+   * @see {@link https://geotab.github.io/sdk/software/api/reference/#M:Geotab.Checkmate.Database.DataStore.GetFeed1}
+   */
   limit?: number;
 }

@@ -13,5 +13,11 @@ export function feedInterval<
 }
 
 interface IInterval {
-  intervalMs: number;
+  /** 
+   * The interval size in milliseconds (by default) or the time unit determined by the 
+   * scheduler's clock.
+   * 
+   * @defaultValue 0
+   * */
+  intervalMs?: number;
 }
