@@ -1,6 +1,6 @@
 import { from } from "rxjs";
 import { delay, map, mergeMap, take, toArray } from "rxjs/operators";
-import { RpcClient } from "../rpc/client";
+import { RpcClient } from "../../rpc/client";
 import {
   echoHttpAdapter,
   httpErrorHttpAdapter,
@@ -9,9 +9,9 @@ import {
   rpcErrorHttpAdapter,
   RPC_ERROR_CODE,
   RPC_ERROR_MESSAGE,
-} from "./helpers/http_helpers";
+} from "../helpers/http_helpers";
 
-describe("RpcClient", () => {
+describe("rpc/client", () => {
   /**
    * # Edge cases
    * - Call single

@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import fetch from "isomorphic-fetch";
 import { from, Observable } from "rxjs";
 import { IHttpAdapter, IHttpResponse } from "../types";
 
