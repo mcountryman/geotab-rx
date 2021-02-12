@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from "./device";
-import { IGroup } from "./group";
+import { IDevice } from './device';
+import { IGroup } from './group';
 
 /** A {@link IDevice} type that represents no device. */
 export interface INoDevice extends IDevice {

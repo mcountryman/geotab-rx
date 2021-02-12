@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IJsonRpcErrorData } from "../web/json_rpc_error_data";
-import { IJsonErrorInner } from "../web/json_error_inner";
+import { IJsonRpcErrorData } from '../web/json_rpc_error_data';
+import { IJsonErrorInner } from '../web/json_error_inner';
 
 /**
  * Models a JSON-RPC error provided as "error" property of JSON-RPC response object

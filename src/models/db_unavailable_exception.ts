@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { DbUnavailableState } from "./db_unavailable_state";
+import { DbUnavailableState } from './db_unavailable_state';
 
 /**
  * This exception occurs if the system makes a database request that could not succeed

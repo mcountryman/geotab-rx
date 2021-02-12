@@ -3,73 +3,73 @@
 /** A known unit of measure. */
 export enum KnownUnitOfMeasure {
   /** No unit of measure. */
-  None = "None",
+  None = 'None',
   /** The degrees celsius unit of measure. */
-  DegreesCelsius = "DegreesCelsius",
+  DegreesCelsius = 'DegreesCelsius',
   /** The kilometers per hour unit of measure. */
-  KilometersPerHour = "KilometersPerHour",
+  KilometersPerHour = 'KilometersPerHour',
   /** The newtons unit of measure. */
-  Newtons = "Newtons",
+  Newtons = 'Newtons',
   /** The newton meters unit of measure. */
-  NewtonMeters = "NewtonMeters",
+  NewtonMeters = 'NewtonMeters',
   /** The meters per second squared unit of measure. */
-  MetersPerSecondSquared = "MetersPerSecondSquared",
+  MetersPerSecondSquared = 'MetersPerSecondSquared',
   /** The meters unit of measure. */
-  Meters = "Meters",
+  Meters = 'Meters',
   /** The grams unit of measure. */
-  Grams = "Grams",
+  Grams = 'Grams',
   /** The cubic meters unit of measure. */
-  CubicMeters = "CubicMeters",
+  CubicMeters = 'CubicMeters',
   /** The liters unit of measure. */
-  Liters = "Liters",
+  Liters = 'Liters',
   /** The cubic meters per second unit of measure. */
-  CubicMetersPerSecond = "CubicMetersPerSecond",
+  CubicMetersPerSecond = 'CubicMetersPerSecond',
   /** The rotations per minute unit of measure. */
-  RotationsPerMinute = "RotationsPerMinute",
+  RotationsPerMinute = 'RotationsPerMinute',
   /** The hertz unit of measure. */
-  Hertz = "Hertz",
+  Hertz = 'Hertz',
   /** The seconds unit of measure. */
-  Seconds = "Seconds",
+  Seconds = 'Seconds',
   /** The volts unit of measure. */
-  Volts = "Volts",
+  Volts = 'Volts',
   /** The amps unit of measure. */
-  Amps = "Amps",
+  Amps = 'Amps',
   /** The watts unit of measure. */
-  Watts = "Watts",
+  Watts = 'Watts',
   /** The ohms unit of measure. */
-  Ohms = "Ohms",
+  Ohms = 'Ohms',
   /** The pascals unit of measure. */
-  Pascals = "Pascals",
+  Pascals = 'Pascals',
   /** The bytes unit of measure. */
-  Bytes = "Bytes",
+  Bytes = 'Bytes',
   /** The parts per million unit of measure. */
-  PartsPerMillion = "PartsPerMillion",
+  PartsPerMillion = 'PartsPerMillion',
   /** The percentage unit of measure. */
-  Percentage = "Percentage",
+  Percentage = 'Percentage',
   /** The radians unit of measure. */
-  Radians = "Radians",
+  Radians = 'Radians',
   /** The revolutions unit of measure. */
-  Revolutions = "Revolutions",
+  Revolutions = 'Revolutions',
   /** The pulses per meter unit of measure. */
-  PulsesPerMeter = "PulsesPerMeter",
+  PulsesPerMeter = 'PulsesPerMeter',
   /** The ohms per second unit of measure. */
-  OhmsPerSecond = "OhmsPerSecond",
+  OhmsPerSecond = 'OhmsPerSecond',
   /** The grams per second unit of measure. */
-  GramsPerSecond = "GramsPerSecond",
+  GramsPerSecond = 'GramsPerSecond',
   /** The kilometers per kilogram unit of measure. */
-  KilometersPerKilogram = "KilometersPerKilogram",
+  KilometersPerKilogram = 'KilometersPerKilogram',
   /** The kilometers per liter unit of measure. */
-  KilometersPerLiter = "KilometersPerLiter",
+  KilometersPerLiter = 'KilometersPerLiter',
   /** The kilograms per kilometer unit of measure. */
-  KilogramsPerKilometer = "KilogramsPerKilometer",
+  KilogramsPerKilometer = 'KilogramsPerKilometer',
   /** The liters per lane kilometer unit of measure. */
-  LitersPerLaneKilometer = "LitersPerLaneKilometer",
+  LitersPerLaneKilometer = 'LitersPerLaneKilometer',
   /** The liters per ton unit of measure. */
-  LitersPerTon = "LitersPerTon",
+  LitersPerTon = 'LitersPerTon',
   /** The grams per square meter unit of measure. */
-  GramsPerSquareMeter = "GramsPerSquareMeter",
+  GramsPerSquareMeter = 'GramsPerSquareMeter',
   /** The kilowatt-hours unit of measure. */
-  KiloWattHours = "KiloWattHours",
+  KiloWattHours = 'KiloWattHours',
   /** The liters per tonne unit of measure. */
-  LitersPerTonne = "LitersPerTonne",
+  LitersPerTonne = 'LitersPerTonne',
 }

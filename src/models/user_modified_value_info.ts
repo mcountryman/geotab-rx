@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IUserModifiedInfo } from "./user_modified_info";
+import { IUserModifiedInfo } from './user_modified_info';
 
 /**
  * A class which represents data associated with {@link INotificationUserModifiedData}.

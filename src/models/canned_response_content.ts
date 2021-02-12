@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITextContent } from "./text_content";
-import { ICannedResponseOption } from "./canned_response_option";
+import { ITextContent } from './text_content';
+import { ICannedResponseOption } from './canned_response_option';
 
 /**
  * Text message content including a list of predetermined responses. Derived from {@link

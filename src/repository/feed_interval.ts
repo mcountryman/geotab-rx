@@ -1,6 +1,6 @@
-import { interval, Observable } from "rxjs";
-import { feed } from "./operators";
-import { Repo, RepoEntity, RepoSearch, Search } from "./types";
+import { interval, Observable } from 'rxjs';
+import { feed } from './operators';
+import { Repo, RepoEntity, RepoSearch, Search } from './types';
 
 export type FeedOpts<TSearch> = Search<TSearch> & IInterval;
 
@@ -13,10 +13,10 @@ export function feedInterval<
 }
 
 interface IInterval {
-  /** 
-   * The interval size in milliseconds (by default) or the time unit determined by the 
+  /**
+   * The interval size in milliseconds (by default) or the time unit determined by the
    * scheduler's clock.
-   * 
+   *
    * @defaultValue 0
    * */
   intervalMs?: number;

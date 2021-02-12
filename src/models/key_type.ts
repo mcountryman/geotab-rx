@@ -7,57 +7,57 @@
  */
 export enum KeyType {
   /** The unknown key type */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** The driver identifier key type */
-  DriverId = "DriverId",
+  DriverId = 'DriverId',
   /** The driver identifier and data key type */
-  DriverIdAndData = "DriverIdAndData",
+  DriverIdAndData = 'DriverIdAndData',
   /** The accident data key type */
-  AccidentData = "AccidentData",
+  AccidentData = 'AccidentData',
   /** The logging parameters key type */
-  LoggingParameters = "LoggingParameters",
+  LoggingParameters = 'LoggingParameters',
   /** The go firmware key type */
-  GoFirmware = "GoFirmware",
+  GoFirmware = 'GoFirmware',
   /** The toggle debug key type */
-  ToggleDebug = "ToggleDebug",
+  ToggleDebug = 'ToggleDebug',
   /** The reset pointers key type */
-  ResetPointers = "ResetPointers",
+  ResetPointers = 'ResetPointers',
   /** The reset product identifier key type */
-  ResetProductId = "ResetProductId",
+  ResetProductId = 'ResetProductId',
   /** The latest trip data key type */
-  LatestTripData = "LatestTripData",
+  LatestTripData = 'LatestTripData',
   /** The toggle rf ping key type */
-  ToggleRFPing = "ToggleRFPing",
+  ToggleRFPing = 'ToggleRFPing',
   /** The GSM parameters key type */
-  GSMParameters = "GSMParameters",
+  GSMParameters = 'GSMParameters',
   /** The toggle J1708 ignition key type */
-  ToggleJ1708Ignition = "ToggleJ1708Ignition",
+  ToggleJ1708Ignition = 'ToggleJ1708Ignition',
   /** The go3 firmware key type */
-  Go3Firmware = "Go3Firmware",
+  Go3Firmware = 'Go3Firmware',
   /** The wifi parameters key type */
-  WifiParameters = "WifiParameters",
+  WifiParameters = 'WifiParameters',
   /** The wi fi security key type */
-  WiFiSecurity = "WiFiSecurity",
+  WiFiSecurity = 'WiFiSecurity',
   /** The go5 firmware key type */
-  Go5Firmware = "Go5Firmware",
+  Go5Firmware = 'Go5Firmware',
   /** The wifi live key type */
-  WifiLive = "WifiLive",
+  WifiLive = 'WifiLive',
   /** The NFC driver identifier key type */
-  NFCDriverId = "NFCDriverId",
+  NFCDriverId = 'NFCDriverId',
   /** The NFC cdma reset key type */
-  NFCCdmaReset = "NFCCdmaReset",
+  NFCCdmaReset = 'NFCCdmaReset',
   /** The NFC debug mode key type */
-  NFCDebugMode = "NFCDebugMode",
+  NFCDebugMode = 'NFCDebugMode',
   /** The NFC passenger identifier key type */
-  NFCPassengerId = "NFCPassengerId",
+  NFCPassengerId = 'NFCPassengerId',
   /** The generic NFC driver identifier key type */
-  GenericNFCDriverId = "GenericNFCDriverId",
+  GenericNFCDriverId = 'GenericNFCDriverId',
   /** The custom NFC driver identifier key type */
-  CustomNFCDriverId = "CustomNFCDriverId",
+  CustomNFCDriverId = 'CustomNFCDriverId',
   /** The tachograph driver identifier key type */
-  TachographDriverId = "TachographDriverId",
+  TachographDriverId = 'TachographDriverId',
   /** The tachograph driver identifier key type */
-  TachographPassengerId = "TachographPassengerId",
+  TachographPassengerId = 'TachographPassengerId',
   /** The custom driver identifier key type */
-  CustomDriverId = "CustomDriverId",
+  CustomDriverId = 'CustomDriverId',
 }

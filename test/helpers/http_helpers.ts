@@ -1,16 +1,16 @@
-import { Observable, of } from "rxjs";
-import { map } from "rxjs/operators";
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import {
   IHttpAdapter,
   IHttpResponse,
   IRpcBatchRequest,
   IRpcRequest,
   IRpcResponse,
-} from "../../rpc";
+} from '../../src/rpc';
 
 export const RPC_ERROR_CODE = 420.69;
-export const RPC_ERROR_MESSAGE = "THIS_IS_A_BAD_RPC_RESPONSE";
-export const HTTP_ERROR_MESSAGE = "THIS_IS_A_BAD_HTTP_RESPONSE";
+export const RPC_ERROR_MESSAGE = 'THIS_IS_A_BAD_RPC_RESPONSE';
+export const HTTP_ERROR_MESSAGE = 'THIS_IS_A_BAD_HTTP_RESPONSE';
 
 /**
  * Creates instance of {@link IHttpAdapter}
@@ -23,7 +23,7 @@ export function mockHttpAdapter(
     post(_: string, body: string): Observable<IHttpResponse> {
       const req: IRpcRequest = JSON.parse(body);
       const res$ = op(of(req));
-      return res$.pipe(map((res) => ({ body: JSON.stringify(res) })));
+      return res$.pipe(map(res => ({ body: JSON.stringify(res) })));
     },
   };
 }
@@ -31,7 +31,7 @@ export function mockHttpAdapter(
 /**
  * Responds to requests with successful responses built from {@link IRpcRequest.params}
  */
-export const echoHttpAdapter = mockHttpAdapter((req$) =>
+export const echoHttpAdapter = mockHttpAdapter(req$ =>
   req$.pipe(map(echoRequest))
 );
 
@@ -41,15 +41,15 @@ export const echoHttpAdapter = mockHttpAdapter((req$) =>
  * - Code will always be {@link RPC_ERROR_CODE}
  * - Message will always be {@link RPC_ERROR_MESSAGE}
  */
-export const rpcErrorHttpAdapter = mockHttpAdapter((req$) =>
+export const rpcErrorHttpAdapter = mockHttpAdapter(req$ =>
   req$.pipe(
-    map((req) => ({
+    map(req => ({
       id: req.id,
       error: {
         code: RPC_ERROR_CODE,
         message: RPC_ERROR_MESSAGE,
       },
-      jsonrpc: "2.0",
+      jsonrpc: '2.0',
     }))
   )
 );
@@ -59,7 +59,7 @@ export const rpcErrorHttpAdapter = mockHttpAdapter((req$) =>
  *
  * - Message is hardcoded to be {@link HTTP_ERROR_MESSAGE}
  */
-export const httpErrorHttpAdapter = mockHttpAdapter((req$) =>
+export const httpErrorHttpAdapter = mockHttpAdapter(req$ =>
   req$.pipe(
     map(() => {
       throw new Error(HTTP_ERROR_MESSAGE);
@@ -69,15 +69,15 @@ export const httpErrorHttpAdapter = mockHttpAdapter((req$) =>
 
 export function echoRequest(req: IRpcRequest): IRpcResponse {
   const res: IRpcResponse = {
-    id: req.id ?? "",
+    id: req.id ?? '',
     result: req.params,
-    jsonrpc: "2.0",
+    jsonrpc: '2.0',
   };
 
-  if (req.method === "ExecuteMultiCall") {
+  if (req.method === 'ExecuteMultiCall') {
     const batchReq = req as IRpcBatchRequest;
 
-    res.result = batchReq.params.calls.map((call) => call.params);
+    res.result = batchReq.params.calls.map(call => call.params);
   }
 
   return res;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { DriverKeyType } from "./driver_key_type";
-import { IDriver } from "./driver";
+import { IEntity } from './entity';
+import { DriverKeyType } from './driver_key_type';
+import { IDriver } from './driver';
 
 /** Represent the key used to identify a . */
 export interface IKey extends IEntity {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGoDevice } from "./go_device";
+import { IGoDevice } from './go_device';
 
 /** A GoCurve device. Additional properties can be seen in {@link IGoDevice}. */
 export interface IGoCurve extends IGoDevice {

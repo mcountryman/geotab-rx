@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDiagnostic } from "../engine/diagnostic";
-import { IDiagnosticSignal } from "../engine/diagnostic_signal";
+import { IDiagnostic } from '../engine/diagnostic';
+import { IDiagnosticSignal } from '../engine/diagnostic_signal';
 
 /**
  * A {@link IDiagnostic} that represents measurement data from the vehicle (as opposed

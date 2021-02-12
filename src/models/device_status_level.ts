@@ -6,13 +6,13 @@
  */
 export enum DeviceStatusLevel {
   /** The device has a critical problem. */
-  Critical = "Critical",
+  Critical = 'Critical',
   /** The device has a problem. */
-  Warning = "Warning",
+  Warning = 'Warning',
   /** The device status is OK. */
-  Good = "Good",
+  Good = 'Good',
   /** The device is disabled. */
-  Disabled = "Disabled",
+  Disabled = 'Disabled',
   /** The device status is currently unknown. */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
 }

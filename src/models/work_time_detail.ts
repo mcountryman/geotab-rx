@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
+import { IEntity } from './entity';
 
 /**  The times during the week that are working times. */
 export interface IWorkTimeDetail extends IEntity {

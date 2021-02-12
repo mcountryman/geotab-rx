@@ -3,11 +3,11 @@
 /** The type of the media file. */
 export enum MediaFileType {
   /** .wav file (sound file) */
-  Wav = "Wav",
+  Wav = 'Wav',
   /** User template for format of exception notification emails */
-  NotificationEmailTemplate = "NotificationEmailTemplate",
+  NotificationEmailTemplate = 'NotificationEmailTemplate',
   /** User template for format of notification web requests */
-  WebRequestTemplate = "WebRequestTemplate",
+  WebRequestTemplate = 'WebRequestTemplate',
   /** User template for format of notification web requests */
-  TextTemplate = "TextTemplate",
+  TextTemplate = 'TextTemplate',
 }

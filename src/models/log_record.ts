@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDevice } from "./device";
+import { IEntity } from './entity';
+import { IDevice } from './device';
 
 /**
  * Record of log entries containing data for a device's position and speed at a specific

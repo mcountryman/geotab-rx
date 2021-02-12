@@ -1,13 +1,12 @@
 import {
   BehaviorSubject,
   from,
-  iif,
   merge,
   Observable,
   of,
   Subject,
   throwError,
-} from "rxjs";
+} from 'rxjs';
 import {
   bufferTime,
   catchError,
@@ -18,13 +17,12 @@ import {
   publish,
   refCount,
   switchMap,
-  tap,
   timeout,
   withLatestFrom,
-} from "rxjs/operators";
-import uuid from "uuid-random";
-import { IRpcClient } from ".";
-import { ICredentials } from "../models/credentials";
+} from 'rxjs/operators';
+import uuid from 'uuid-random';
+import { IRpcClient } from '.';
+import { ICredentials } from '../models/credentials';
 import {
   IHttpAdapter,
   IHttpResponse,
@@ -35,9 +33,9 @@ import {
   IRpcResponse,
   makeNullableSubject,
   RpcError,
-} from "./types";
+} from './types';
 
-const BATCH_METHOD = "ExecuteMultiCall";
+const BATCH_METHOD = 'ExecuteMultiCall';
 
 export interface IRpcClientOpts {
   /** The default HTTP endPoint. */
@@ -59,18 +57,6 @@ export interface IRpcClientOpts {
 }
 
 export class RpcClient implements IRpcClient {
-  get endPoint(): string {
-    return this.endPoint$.getValue();
-  }
-
-  set endPoint(value: string) {
-    this.endPoint$.next(value);
-  }
-
-  set credentials(value: ICredentials | undefined) {
-    this.credentials$.next(value);
-  }
-
   constructor(opts: IRpcClientOpts) {
     this.endPoint$ = new BehaviorSubject(opts.endPoint);
     this._timeoutMs = opts.timeoutMs ?? 5000;
@@ -97,6 +83,21 @@ export class RpcClient implements IRpcClient {
   }
 
   /** @inheritdoc */
+  getEndPoint(): string {
+    return this.endPoint$.getValue();
+  }
+
+  /** @inheritdoc */
+  setEndPoint(value: string) {
+    this.endPoint$.next(value);
+  }
+
+  /** @inheritdoc */
+  setCredentials(value: ICredentials | undefined) {
+    this.credentials$.next(value);
+  }
+
+  /** @inheritdoc */
   call<TRet, TParams extends Record<string, any> = Record<string, any>>(
     method: string,
     params: TParams
@@ -109,7 +110,7 @@ export class RpcClient implements IRpcClient {
         id,
         method,
         params,
-        jsonrpc: "2.0",
+        jsonrpc: '2.0',
       });
     }).pipe(
       first((res) => res.id === id),
@@ -160,7 +161,7 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
           // Pipe results as direct `IRpcResponse`s
           if (batchRes.result) {
             if (!(batchRes.result instanceof Array))
-              return throwErr({ code: 69, message: "" });
+              return throwErr({ code: 69, message: '' });
 
             return from(batchRes.result).pipe(
               map((res, i) => toOkResponse(batchReq.params.calls[i], res))
@@ -171,7 +172,7 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
           if (res.error) return throwErr(res.error);
 
           // Malformed response
-          return throwErr({ code: 69, message: "" });
+          return throwErr({ code: 69, message: '' });
         }
 
         return of(res);
@@ -210,7 +211,7 @@ function toBatch<TReq extends IRpcRequest>(
             calls,
             credentials,
           },
-          jsonrpc: "2.0",
+          jsonrpc: '2.0',
         })
       )
     );
@@ -242,7 +243,7 @@ function toOkResponse<TReq extends IRpcRequest, TRes>(
   return {
     id: req.id,
     result,
-    jsonrpc: "2.0",
+    jsonrpc: '2.0',
   };
 }
 
@@ -253,17 +254,17 @@ function toErrResponse<TReq extends IRpcRequest>(
   return {
     id: req.id,
     error: err,
-    jsonrpc: "2.0",
+    jsonrpc: '2.0',
   };
 }
 
 function withHttpAdapter<T>(opts: IRpcClientOpts) {
   const adapter$ = opts.adapter
     ? of(opts.adapter)
-    : from(import("./adapters/fetch_adapter")).pipe(
-      map((imp) => imp.FetchHttpAdapter),
-      map((FetchHttpAdapter) => new FetchHttpAdapter())
-    );
+    : from(import('./adapters/fetch_adapter')).pipe(
+        map((imp) => imp.FetchHttpAdapter),
+        map((FetchHttpAdapter) => new FetchHttpAdapter())
+      );
 
   return (observer: Observable<T>) => observer.pipe(withLatestFrom(adapter$));
 }

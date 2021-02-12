@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ReplacementType } from "../device_replacement/replacement_type";
+import { ReplacementType } from '../device_replacement/replacement_type';
 
 /** Recall/Replacement Information to be sent to UI. */
 export interface IReplacement {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from "./device";
-import { IEventRule } from "./event_rule";
+import { IDevice } from './device';
+import { IEventRule } from './event_rule';
 
 /** EventRule and Device. */
 export interface IEventRuleDevice {

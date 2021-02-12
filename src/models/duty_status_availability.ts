@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDutyStatusAvailabilityDuration } from "./duty_status_availability_duration";
-import { IUser } from "./user";
-import { IDutyStatusRecap } from "./duty_status_recap";
-import { IDutyStatusCycleAvailability } from "./duty_status_cycle_availability";
+import { IDutyStatusAvailabilityDuration } from './duty_status_availability_duration';
+import { IUser } from './user';
+import { IDutyStatusRecap } from './duty_status_recap';
+import { IDutyStatusCycleAvailability } from './duty_status_cycle_availability';
 
 /**  Driver Availability for Hours of Service regulations. */
 export interface IDutyStatusAvailability {

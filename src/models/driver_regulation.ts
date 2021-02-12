@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDutyStatusAvailability } from "./duty_status_availability";
-import { IUser } from "./user";
-import { IDutyStatusViolation } from "./duty_status_violation";
-import { IDaySummary } from "./day_summary";
-import { IWorkdaySummary } from "./workday_summary";
-import { ICycleSummary } from "./cycle_summary";
-import { IUserHosRuleSet } from "./user_hos_rule_set";
+import { IEntity } from './entity';
+import { IDutyStatusAvailability } from './duty_status_availability';
+import { IUser } from './user';
+import { IDutyStatusViolation } from './duty_status_violation';
+import { IDaySummary } from './day_summary';
+import { IWorkdaySummary } from './workday_summary';
+import { ICycleSummary } from './cycle_summary';
+import { IUserHosRuleSet } from './user_hos_rule_set';
 
 /** Detailed information for Hours of Service regulation for a driver. */
 export interface IDriverRegulation extends IEntity {

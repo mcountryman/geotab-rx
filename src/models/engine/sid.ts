@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDiagnostic } from "../engine/diagnostic";
+import { IDiagnostic } from '../engine/diagnostic';
 
 /**
  *  A J1708-specific Subsystem Identifier.

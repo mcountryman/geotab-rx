@@ -3,76 +3,76 @@
 /**  The type of . */
 export enum DutyStatusLogType {
   /** On-duty status. */
-  ON = "ON",
+  ON = 'ON',
   /** Off-duty status. */
-  OFF = "OFF",
+  OFF = 'OFF',
   /** Drive status. */
-  D = "D",
+  D = 'D',
   /** Sleeper berth status. */
-  SB = "SB",
+  SB = 'SB',
   /** Exemption 16 hour. */
-  Exemption16H = "Exemption16H",
+  Exemption16H = 'Exemption16H',
   /** Adverse weather and driving conditions exemption. */
-  AdverseWeather = "AdverseWeather",
+  AdverseWeather = 'AdverseWeather',
   /** System log for device power connection. */
-  Connected = "Connected",
+  Connected = 'Connected',
   /** System log for device power disconnection. */
-  Disconnected = "Disconnected",
+  Disconnected = 'Disconnected',
   /** Personal conveyance driver status. */
-  PC = "PC",
+  PC = 'PC',
   /** Yard move driver status. */
-  YM = "YM",
+  YM = 'YM',
   /** Wait time oil well driver status. */
-  WT = "WT",
+  WT = 'WT',
   /** Authority status. */
-  Authority = "Authority",
+  Authority = 'Authority',
   /** User login record. */
-  Login = "Login",
+  Login = 'Login',
   /** User logout record. */
-  Logoff = "Logoff",
+  Logoff = 'Logoff',
   /** Daily certify record. */
-  Certify = "Certify",
+  Certify = 'Certify',
   /** Engine power up record. */
-  EnginePowerup = "EnginePowerup",
+  EnginePowerup = 'EnginePowerup',
   /** Engine shutdown record. */
-  EngineShutdown = "EngineShutdown",
+  EngineShutdown = 'EngineShutdown',
   /** Engine power up in PC record. */
-  EnginePowerupPC = "EnginePowerupPC",
+  EnginePowerupPC = 'EnginePowerupPC',
   /** Engine shutdown in PC record. */
-  EngineShutdownPC = "EngineShutdownPC",
+  EngineShutdownPC = 'EngineShutdownPC',
   /** Engine power status engages ELD within 1 minute. Applies to or . */
-  PowerCompliance = "PowerCompliance",
+  PowerCompliance = 'PowerCompliance',
   /**
    * Occurs when engine information (power, motion, miles, and hours) cannot be obtained
    * by ELD. Applies to or .
    */
-  EngineSyncCompliance = "EngineSyncCompliance",
+  EngineSyncCompliance = 'EngineSyncCompliance',
   /** When ELD date and time exceeds 10 minute offset from UTC. Applies to . */
-  TimingCompliance = "TimingCompliance",
+  TimingCompliance = 'TimingCompliance',
   /** ELD continually fails to acquire valid position measurement. Applies to . */
-  PositioningCompliance = "PositioningCompliance",
+  PositioningCompliance = 'PositioningCompliance',
   /** Storage capacity is reached, or missing data elements exist. Applies to or . */
-  DataRecordingCompliance = "DataRecordingCompliance",
+  DataRecordingCompliance = 'DataRecordingCompliance',
   /** Transfer of data fails to complete. Applies to or . */
-  DataTransferCompliance = "DataTransferCompliance",
+  DataTransferCompliance = 'DataTransferCompliance',
   /** Other instances of or . */
-  OtherCompliance = "OtherCompliance",
+  OtherCompliance = 'OtherCompliance',
   /** Missing data elements. Applies to or . */
-  MissingElementCompliance = "MissingElementCompliance",
+  MissingElementCompliance = 'MissingElementCompliance',
   /** More than 30 minutes of driving with unidentified driving. Applies to . */
-  UnidentifiedDrivingCompliance = "UnidentifiedDrivingCompliance",
+  UnidentifiedDrivingCompliance = 'UnidentifiedDrivingCompliance',
   /** Intermediate Personal Conveyance Event. */
-  INT_PC = "INT_PC",
+  INT_PC = 'INT_PC',
   /** Intermediate Drive Event. */
-  INT_D = "INT_D",
+  INT_D = 'INT_D',
   /** YM, PC, or WT clearing event. */
-  SituationalDrivingClear = "SituationalDrivingClear",
+  SituationalDrivingClear = 'SituationalDrivingClear',
   /** Exemption off duty deferral. */
-  ExemptionOffDutyDeferral = "ExemptionOffDutyDeferral",
+  ExemptionOffDutyDeferral = 'ExemptionOffDutyDeferral',
   /** Hos Enabled. */
-  HosEnabled = "HosEnabled",
+  HosEnabled = 'HosEnabled',
   /** Hos Disabled. */
-  HosDisabled = "HosDisabled",
+  HosDisabled = 'HosDisabled',
   /** Special type of PC, will not be interrupted by automatic logs */
-  PC_Exempted = "PC_Exempted",
+  PC_Exempted = 'PC_Exempted',
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { DeviceConnectionStatus } from "./device_connection_status";
-import { IDevice } from "./device";
+import { DeviceConnectionStatus } from './device_connection_status';
+import { IDevice } from './device';
 
 /** Represents a connection from a GO device. */
 export interface IDeviceConnection {

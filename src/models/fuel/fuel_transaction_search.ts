@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "../search";
-import { FuelTransactionProvider } from "../fuel/fuel_transaction_provider";
-import { IDeviceSearch } from "../device_search";
+import { ISearch } from '../search';
+import { FuelTransactionProvider } from '../fuel/fuel_transaction_provider';
+import { IDeviceSearch } from '../device_search';
 
 /** The object used to specify the arguments when searching for a {@link IFuelTransaction}. */
 export interface IFuelTransactionSearch extends ISearch {

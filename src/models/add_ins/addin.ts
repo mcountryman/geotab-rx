@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ICustomSecurityIdDefinition } from "../add_ins/custom_security_id_definition";
+import { ICustomSecurityIdDefinition } from '../add_ins/custom_security_id_definition';
 
 /** Represents populated MyGeotab addin. */
 export interface IAddin {

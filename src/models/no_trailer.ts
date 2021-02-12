@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITrailer } from "./trailer";
+import { ITrailer } from './trailer';
 
 /**
  *  A for (s) with no trailer.

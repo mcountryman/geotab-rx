@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IExceptionsActivity } from "../exceptions/exceptions_activity";
-import { IExceptionEvent } from "../exceptions/exception_event";
-import { IAddressLookupData } from "../address_lookup_data";
+import { IExceptionsActivity } from '../exceptions/exceptions_activity';
+import { IExceptionEvent } from '../exceptions/exception_event';
+import { IAddressLookupData } from '../address_lookup_data';
 
 /** The exception details for reports. */
 export interface IExceptionsDetail extends IExceptionsActivity {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
+import { ISearch } from './search';
 
 /** The object used to specify the arguments when searching entries. */
 export interface IAuditSearch extends ISearch {

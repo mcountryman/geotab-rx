@@ -1,28 +1,28 @@
-import { map, tap } from "rxjs/operators";
-import { find } from "../../repository";
-import { mockRepo } from "../helpers/repo_helper";
+import { map, tap } from 'rxjs/operators';
+import { find } from '../../src/repository';
+import { mockRepo } from '../helpers/repo_helper';
 
-describe("repository/find", () => {
+describe('repository/find', () => {
   /**
    * Ensures {@link find} creates a valid `Get` request and processes response
    * correctly.
    */
-  test("Validate request/response", (done) => {
-    const entityId = "TEST_ENTITY_ID";
-    const entityType = "TEST_ENTITY_TYPE";
-    const entityName = "TEST_ENTITY_NAME";
+  test('Validate request/response', done => {
+    const entityId = 'TEST_ENTITY_ID';
+    const entityType = 'TEST_ENTITY_TYPE';
+    const entityName = 'TEST_ENTITY_NAME';
 
-    const repo = mockRepo(entityType, (req$) =>
+    const repo = mockRepo(entityType, req$ =>
       req$.pipe(
-        tap((req) => {
+        tap(req => {
           // Check method name
-          expect(req.method).toBe("Get");
+          expect(req.method).toBe('Get');
           // Check typeName (pulled from repository)
           expect(req.params.typeName).toBe(entityType);
           // Check search.id (pulled from args)
           expect(req.params.search.id).toBe(entityId);
         }),
-        map((req) => ({
+        map(req => ({
           ...req,
           result: [
             {

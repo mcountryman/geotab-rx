@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { RequireTraining } from "../registration/require_training";
+import { RequireTraining } from '../registration/require_training';
 
 /** Company details for registration. */
 export interface ICompanyDetails {

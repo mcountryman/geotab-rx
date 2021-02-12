@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "../../search";
-import { IDisplayMeasurementProfileSearch } from "../../engine/display_diagnostic/display_measurement_profile_search";
-import { IDiagnosticSearch } from "../../engine/diagnostic_search";
+import { ISearch } from '../../search';
+import { IDisplayMeasurementProfileSearch } from '../../engine/display_diagnostic/display_measurement_profile_search';
+import { IDiagnosticSearch } from '../../engine/diagnostic_search';
 
 /**
  * The object used to specify the arguments when searching for a . When searching for

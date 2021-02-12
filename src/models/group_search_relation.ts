@@ -3,7 +3,7 @@
 /** Search the groups */
 export enum GroupSearchRelation {
   /** Must belong to all the groups */
-  And = "And",
+  And = 'And',
   /** Belongs to any of the groups */
-  Or = "Or",
+  Or = 'Or',
 }

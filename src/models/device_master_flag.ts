@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDevice } from "./device";
-import { DevicePlanMasterFlag } from "./device_plan_master_flag";
+import { IEntity } from './entity';
+import { IDevice } from './device';
+import { DevicePlanMasterFlag } from './device_plan_master_flag';
 
 /** The master flag of a device. */
 export interface IDeviceMasterFlag extends IEntity {

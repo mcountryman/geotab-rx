@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ICoordinate } from "../coordinate";
+import { ICoordinate } from '../coordinate';
 
 /** A set of coordinates that reference a location. */
 export interface IWaypoint {

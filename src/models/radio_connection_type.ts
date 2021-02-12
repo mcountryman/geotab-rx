@@ -3,17 +3,17 @@
 /** The type of radio connection data. */
 export enum RadioConnectionType {
   /** Unknown type. */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** gps data. */
-  GpsData = "GpsData",
+  GpsData = 'GpsData',
   /** firmware update data. */
-  Firmware = "Firmware",
+  Firmware = 'Firmware',
   /** parameter data. */
-  Parameters = "Parameters",
+  Parameters = 'Parameters',
   /** aiding data. */
-  AidingData = "AidingData",
+  AidingData = 'AidingData',
   /** Third-party firmware update */
-  ThirdPartyFirmware = "ThirdPartyFirmware",
+  ThirdPartyFirmware = 'ThirdPartyFirmware',
   /** 802.11 security parameter update */
-  WifiConfiguration = "WifiConfiguration",
+  WifiConfiguration = 'WifiConfiguration',
 }

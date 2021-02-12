@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IReverseGeocodeAddress } from "./reverse_geocode_address";
-import { IZone } from "./zone";
-import { IZoneType } from "./zone_type";
+import { IReverseGeocodeAddress } from './reverse_geocode_address';
+import { IZone } from './zone';
+import { IZoneType } from './zone_type';
 
 /** The address data looked up on the server. */
 export interface IAddressLookupData {

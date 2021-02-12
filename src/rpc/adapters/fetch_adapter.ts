@@ -1,6 +1,6 @@
-import fetch from "isomorphic-fetch";
-import { from, Observable } from "rxjs";
-import { IHttpAdapter, IHttpResponse } from "../types";
+import fetch from 'isomorphic-fetch';
+import { from, Observable } from 'rxjs';
+import { IHttpAdapter, IHttpResponse } from '../types';
 
 /**
  * Default {@link IHttpAdapter} using `isomorphic-fetch`.
@@ -10,10 +10,10 @@ export class FetchHttpAdapter implements IHttpAdapter {
     return from(
       fetch(url, {
         body,
-        method: "POST",
+        method: 'POST',
       })
-        .then((res) => res.text())
-        .then((body) => ({
+        .then(res => res.text())
+        .then(body => ({
           body,
         }))
     );

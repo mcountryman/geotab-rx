@@ -3,87 +3,87 @@
 /** The master flags for Devices. */
 export enum DevicePlanMasterFlag {
   /** Unknown Plan */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** Enable accelerometer */
-  EnableAccelerometer = "EnableAccelerometer",
+  EnableAccelerometer = 'EnableAccelerometer',
   /** Enable almanac data */
-  EnableAlmanacData = "EnableAlmanacData",
+  EnableAlmanacData = 'EnableAlmanacData',
   /** Enable analog */
-  EnableAnalog = "EnableAnalog",
+  EnableAnalog = 'EnableAnalog',
   /** Enable auxiliaries */
-  EnableAuxiliaries = "EnableAuxiliaries",
+  EnableAuxiliaries = 'EnableAuxiliaries',
   /** Enable bluetooth */
-  EnableBluetooth = "EnableBluetooth",
+  EnableBluetooth = 'EnableBluetooth',
   /** Enable coolant */
-  EnableCoolant = "EnableCoolant",
+  EnableCoolant = 'EnableCoolant',
   /** Enable device */
-  EnableDevice = "EnableDevice",
+  EnableDevice = 'EnableDevice',
   /** Enable driver key */
-  EnableDriverKey = "EnableDriverKey",
+  EnableDriverKey = 'EnableDriverKey',
   /** Enable engine communication */
-  EnableEngineCommunications = "EnableEngineCommunications",
+  EnableEngineCommunications = 'EnableEngineCommunications',
   /** Enable engine hours */
-  EnableEngineHours = "EnableEngineHours",
+  EnableEngineHours = 'EnableEngineHours',
   /** Enable engine management */
-  EnableEngineManagement = "EnableEngineManagement",
+  EnableEngineManagement = 'EnableEngineManagement',
   /** Enable engine road speed */
-  EnableEngineRoadSpeed = "EnableEngineRoadSpeed",
+  EnableEngineRoadSpeed = 'EnableEngineRoadSpeed',
   /** Enable engine snapshot */
-  EnableEngineSnapshot = "EnableEngineSnapshot",
+  EnableEngineSnapshot = 'EnableEngineSnapshot',
   /** Enable fuel */
-  EnableFuel = "EnableFuel",
+  EnableFuel = 'EnableFuel',
   /** Enable gps logging */
-  EnableGpsLogging = "EnableGpsLogging",
+  EnableGpsLogging = 'EnableGpsLogging',
   /** Enable high res logging */
-  EnableHighResLogging = "EnableHighResLogging",
+  EnableHighResLogging = 'EnableHighResLogging',
   /** Enable hos data */
-  EnableHosData = "EnableHosData",
+  EnableHosData = 'EnableHosData',
   /** Enable live */
-  EnableLive = "EnableLive",
+  EnableLive = 'EnableLive',
   /** Enable mobileye */
-  EnableMobileye = "EnableMobileye",
+  EnableMobileye = 'EnableMobileye',
   /** Enable odometer */
-  EnableOdometer = "EnableOdometer",
+  EnableOdometer = 'EnableOdometer',
   /** Enable oil */
-  EnableOil = "EnableOil",
+  EnableOil = 'EnableOil',
   /** Enable output */
-  EnableOutput = "EnableOutput",
+  EnableOutput = 'EnableOutput',
   /** Enable passthrough */
-  EnablePassthrough = "EnablePassthrough",
+  EnablePassthrough = 'EnablePassthrough',
   /** Enable rpm logging */
-  EnableRpmLogging = "EnableRpmLogging",
+  EnableRpmLogging = 'EnableRpmLogging',
   /** Enable salt spreader */
-  EnableSaltSpreader = "EnableSaltSpreader",
+  EnableSaltSpreader = 'EnableSaltSpreader',
   /** Enable satellite */
-  EnableSatellite = "EnableSatellite",
+  EnableSatellite = 'EnableSatellite',
   /** Enable scan tool */
-  EnableScanTool = "EnableScanTool",
+  EnableScanTool = 'EnableScanTool',
   /** Enable seatbelt */
-  EnableSeatbelt = "EnableSeatbelt",
+  EnableSeatbelt = 'EnableSeatbelt',
   /** Enable tachograph log */
-  EnableTachographLog = "EnableTachographLog",
+  EnableTachographLog = 'EnableTachographLog',
   /** Enable text to speech */
-  EnableTextToSpeech = "EnableTextToSpeech",
+  EnableTextToSpeech = 'EnableTextToSpeech',
   /** Enable third party */
-  EnableThirdParty = "EnableThirdParty",
+  EnableThirdParty = 'EnableThirdParty',
   /** Enable valor data */
-  EnableValorData = "EnableValorData",
+  EnableValorData = 'EnableValorData',
   /** Enable vehicle faults */
-  EnableVehicleFaults = "EnableVehicleFaults",
+  EnableVehicleFaults = 'EnableVehicleFaults',
   /** Enable voltage reading */
-  EnableVoltageReading = "EnableVoltageReading",
+  EnableVoltageReading = 'EnableVoltageReading',
   /** Enable wifi */
-  EnableWiFi = "EnableWiFi",
+  EnableWiFi = 'EnableWiFi',
   /** Engine retarder selection */
-  EngineRetarderSelection = "EngineRetarderSelection",
+  EngineRetarderSelection = 'EngineRetarderSelection',
   /** Reduce engine data logging */
-  ReduceEngineDataLogging = "ReduceEngineDataLogging",
+  ReduceEngineDataLogging = 'ReduceEngineDataLogging',
   /** Reduce fuel level logging */
-  ReduceFuelLevelLogging = "ReduceFuelLevelLogging",
+  ReduceFuelLevelLogging = 'ReduceFuelLevelLogging',
   /** Reduce gps logging */
-  ReduceGpsLogging = "ReduceGpsLogging",
+  ReduceGpsLogging = 'ReduceGpsLogging',
   /** Save clutch pedal state */
-  SaveClutchPedalState = "SaveClutchPedalState",
+  SaveClutchPedalState = 'SaveClutchPedalState',
   /** Save engine load */
-  SaveEngineLoad = "SaveEngineLoad",
+  SaveEngineLoad = 'SaveEngineLoad',
 }

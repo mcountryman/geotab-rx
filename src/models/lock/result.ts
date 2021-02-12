@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { Error } from "../lock/error";
+import { Error } from '../lock/error';
 
 /**
  *  Defines the result of process locking for .

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { BinaryPayloadType } from "./binary_payload_type";
+import { IEntity } from './entity';
+import { BinaryPayloadType } from './binary_payload_type';
 
 /**  A message containing a binary payload which is usually forwarded to a target device. */
 export interface IBinaryPayload extends IEntity {

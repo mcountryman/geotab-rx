@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
+import { ISearch } from './search';
 
 /** An object used to search for {@link ICertificate}s. */
 export interface ICertificateSearch extends ISearch {

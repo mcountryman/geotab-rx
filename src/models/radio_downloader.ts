@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from "./name_entity";
-import { IFirmware } from "./firmware";
-import { IRadioData } from "./radio_data";
-import { RadioDownloaderStatus } from "./radio_downloader_status";
+import { INameEntity } from './name_entity';
+import { IFirmware } from './firmware';
+import { IRadioData } from './radio_data';
+import { RadioDownloaderStatus } from './radio_downloader_status';
 
 /** A base class for the family of 900/868MHz Radio Downloaders. */
 export interface IRadioDownloader extends INameEntity {

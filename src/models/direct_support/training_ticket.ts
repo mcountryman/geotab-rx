@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGenericTicket } from "../direct_support/generic_ticket";
+import { IGenericTicket } from '../direct_support/generic_ticket';
 
 /** A training ticket. */
 export interface ITrainingTicket extends IGenericTicket {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ICredentials } from "./credentials";
+import { ICredentials } from './credentials';
 
 /**  The results of an authentication attempt. */
 export interface ILoginResult {

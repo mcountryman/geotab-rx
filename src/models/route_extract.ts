@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDevice } from "./device";
+import { IEntity } from './entity';
+import { IDevice } from './device';
 
 /**
  *  A {@link IDevice} and date pair that represents the last time a particular {@link

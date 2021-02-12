@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationData } from "./notification_data";
-import { IUserModifiedInfo } from "./user_modified_info";
-import { UserModification } from "./user_modification";
+import { INotificationData } from './notification_data';
+import { IUserModifiedInfo } from './user_modified_info';
+import { UserModification } from './user_modification';
 
 /**
  * A class for notifying of changes to a {@link IUser}. Provides information about

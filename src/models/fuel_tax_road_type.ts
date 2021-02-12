@@ -3,15 +3,15 @@
 /** Fuel tax road type. */
 export enum FuelTaxRoadType {
   /** Unknown road type. */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** Offroad road type. */
-  OffRoad = "OffRoad",
+  OffRoad = 'OffRoad',
   /** Public road type. */
-  Public = "Public",
+  Public = 'Public',
   /** Private road type. */
-  Private = "Private",
+  Private = 'Private',
   /** Toll road type. */
-  Toll = "Toll",
+  Toll = 'Toll',
   /** Rail road type. */
-  Rail = "Rail",
+  Rail = 'Rail',
 }

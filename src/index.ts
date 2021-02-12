@@ -1,36 +1,35 @@
-import { BehaviorSubject, interval, Observable } from "rxjs";
-import { first, map, switchMap, tap } from "rxjs/operators";
-import { IDevice } from "./models/device";
-import { IDeviceSearch } from "./models/device_search";
-import { IExceptionEvent } from "./models/exceptions/exception_event";
-import { IExceptionEventSearch } from "./models/exceptions/exception_event_search";
-import { ILoginResult } from "./models/login_result";
-import { IUser } from "./models/user";
-import { IUserSearch } from "./models/user_search";
-import { Repo } from "./repository/types";
-import { IRpcClientOpts, RpcClient } from "./rpc/client";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { IDevice } from './models/device';
+import { IDeviceSearch } from './models/device_search';
+import { IExceptionEvent } from './models/exceptions/exception_event';
+import { IExceptionEventSearch } from './models/exceptions/exception_event_search';
+import { IUser } from './models/user';
+import { IUserSearch } from './models/user_search';
+import { Repo } from './repository/types';
+import { IRpcClientOpts, RpcClient } from './rpc/client';
 
-export const PATHED_END_POINT = "https://{{path}}/apiv1";
-export const DEFAULT_END_POINT = "https://my.geotab.com/apiv1";
+export const PATHED_END_POINT = 'https://{{path}}/apiv1';
+export const DEFAULT_END_POINT = 'https://my.geotab.com/apiv1';
 
 export interface IGeotabOpts
-  extends Omit<IRpcClientOpts, "endPoint" | "credentials"> {
+  extends Omit<IRpcClientOpts, 'endPoint' | 'credentials'> {
   pollIntervalMs?: number;
 }
 export class Geotab extends RpcClient {
-  public get isAuthenticated(): boolean {
+  public getIsAuthenticated(): boolean {
     return this.credentials$.getValue() !== undefined;
   }
 
-  public get isAuthenticated$(): Observable<boolean> {
-    return this.credentials$.pipe(map(value => !!value));
+  public getIsAuthenticated$(): Observable<boolean> {
+    return this.credentials$.pipe(map((value) => !!value));
   }
 
-  readonly users = new Repo<IUser, IUserSearch>(this, "User");
-  readonly devices = new Repo<IDevice, IDeviceSearch>(this, "Device");
+  readonly users = new Repo<IUser, IUserSearch>(this, 'User');
+  readonly devices = new Repo<IDevice, IDeviceSearch>(this, 'Device');
   readonly events = new Repo<IExceptionEvent, IExceptionEventSearch>(
     this,
-    "ExceptionEvent"
+    'ExceptionEvent'
   );
 
   constructor(opts: IGeotabOpts = {}) {

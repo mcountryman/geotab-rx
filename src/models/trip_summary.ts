@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from "./device";
-import { IDriver } from "./driver";
+import { IDevice } from './device';
+import { IDriver } from './driver';
 
 /** The trip summary data for TripSummary report. */
 export interface ITripSummary {

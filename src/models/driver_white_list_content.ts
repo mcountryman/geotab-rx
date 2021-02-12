@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDataToComponentContent } from "./data_to_component_content";
-import { IKey } from "./key";
+import { IDataToComponentContent } from './data_to_component_content';
+import { IKey } from './key';
 
 /** Message content to control a {@link IDriver} white list. */
 export interface IDriverWhiteListContent extends IDataToComponentContent {

@@ -1,4 +1,1 @@
-
-export class PollScheduler {
-  
-}
+export class PollScheduler {}

@@ -1,6 +1,6 @@
-import { Observable } from "rxjs";
-import { IDeviceSearch } from "../models/device_search";
-import { IRpcClient } from "../rpc";
+import { Observable } from 'rxjs';
+import { IDeviceSearch } from '../models/device_search';
+import { IRpcClient } from '../rpc';
 
 interface IGetSpeedLimitsOpts {
   toDate?: Date;
@@ -17,5 +17,5 @@ export function getSpeedLimits(
   client: IRpcClient,
   opts?: IGetSpeedLimitsOpts
 ): Observable<number> {
-  return client.call("GetRoadMaxSpeeds", opts);
+  return client.call('GetRoadMaxSpeeds', opts);
 }

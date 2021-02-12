@@ -3,15 +3,15 @@
 /** An enum that indicates the uploader status. */
 export enum ProcessingStatus {
   /** Regular processing during daylight hours. */
-  DaylightHoursProcessing = "DaylightHoursProcessing",
+  DaylightHoursProcessing = 'DaylightHoursProcessing',
   /** Regular processing after hours. */
-  AfterHoursProcessing = "AfterHoursProcessing",
+  AfterHoursProcessing = 'AfterHoursProcessing',
   /** Reprocessing during daylight hours. */
-  DaylightHoursReprocessing = "DaylightHoursReprocessing",
+  DaylightHoursReprocessing = 'DaylightHoursReprocessing',
   /** Reprocessing after hours. */
-  AfterHoursReprocessing = "AfterHoursReprocessing",
+  AfterHoursReprocessing = 'AfterHoursReprocessing',
   /** Waiting for files to process. */
-  Idle = "Idle",
+  Idle = 'Idle',
   /** Processing is unavailable. */
-  Unavailable = "Unavailable",
+  Unavailable = 'Unavailable',
 }

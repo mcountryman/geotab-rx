@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IUserSearch } from "./user_search";
+import { ISearch } from './search';
+import { IUserSearch } from './user_search';
 
 /**
  *  The object used to specify the arguments when searching for {@link IDutyStatusViolation}(s).

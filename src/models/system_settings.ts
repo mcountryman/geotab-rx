@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { UserAuthenticationType } from "./user_authentication_type";
-import { CustomerClassifier } from "./customer_classifier";
-import { NotificationTokenType } from "./notification_token_type";
-import { ICustomWebMapProvider } from "./custom_web_map_provider";
-import { IResellerInfo } from "./reseller_info";
-import { IResultLimits } from "./limits/result_limits";
-import { IFileSizeLimits } from "./limits/file_size_limits";
+import { IEntity } from './entity';
+import { UserAuthenticationType } from './user_authentication_type';
+import { CustomerClassifier } from './customer_classifier';
+import { NotificationTokenType } from './notification_token_type';
+import { ICustomWebMapProvider } from './custom_web_map_provider';
+import { IResellerInfo } from './reseller_info';
+import { IResultLimits } from './limits/result_limits';
+import { IFileSizeLimits } from './limits/file_size_limits';
 
 /** The settings related to the entire system. */
 export interface ISystemSettings extends IEntity {

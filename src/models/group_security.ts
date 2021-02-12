@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from "./entity_with_version";
-import { IGroup } from "./group";
-import { ISecurityFilter } from "./security_filter";
+import { IEntityWithVersion } from './entity_with_version';
+import { IGroup } from './group';
+import { ISecurityFilter } from './security_filter';
 
 /**
  * Represents a GroupSecurity entity. This defines the many to many relationship between

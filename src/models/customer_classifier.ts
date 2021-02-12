@@ -3,7 +3,7 @@
 /** The classifier for customers */
 export enum CustomerClassifier {
   /** None or unknown. */
-  None = "None",
+  None = 'None',
   /** Government customer type */
-  Government = "Government",
+  Government = 'Government',
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IFaultData } from "../engine/fault_data";
+import { IFaultData } from '../engine/fault_data';
 
 /**
  * A record that represents a fault code record from the engine system of the specific

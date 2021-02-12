@@ -7,13 +7,13 @@
  */
 export enum PingMessageType {
   /** Unknown ping message type */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** The hello ping message type */
-  Hello = "Hello",
+  Hello = 'Hello',
   /** The keep alive ping message type */
-  KeepAlive = "KeepAlive",
+  KeepAlive = 'KeepAlive',
   /** The finish ping message type */
-  Finish = "Finish",
+  Finish = 'Finish',
   /** The error message type */
-  Error = "Error",
+  Error = 'Error',
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGoCurve } from "./go_curve";
+import { IGoCurve } from './go_curve';
 
 /**
  * Device that supports curve logging and auxiliaries. Additional properties can be

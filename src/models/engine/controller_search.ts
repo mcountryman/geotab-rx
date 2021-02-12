@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "../search";
-import { ISourceSearch } from "../engine/source_search";
+import { ISearch } from '../search';
+import { ISourceSearch } from '../engine/source_search';
 
 /** The object used to specify the arguments when searching for {@link IController}(s). */
 export interface IControllerSearch extends ISearch {

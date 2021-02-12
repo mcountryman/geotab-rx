@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from "./entity_with_version";
-import { IUser } from "./user";
-import { IGroup } from "./group";
-import { IDVIRDefect } from "./d_v_i_r_defect";
-import { IDevice } from "./device";
-import { ITrailer } from "./trailer";
-import { DVIRLogType } from "./d_v_i_r_log_type";
-import { IAddressLookupData } from "./address_lookup_data";
+import { IEntityWithVersion } from './entity_with_version';
+import { IUser } from './user';
+import { IGroup } from './group';
+import { IDVIRDefect } from './d_v_i_r_defect';
+import { IDevice } from './device';
+import { ITrailer } from './trailer';
+import { DVIRLogType } from './d_v_i_r_log_type';
+import { IAddressLookupData } from './address_lookup_data';
 
 /**
  *  A DVIRLog is a Driver Vehicle Inspection Report which is prepared by a driver regarding

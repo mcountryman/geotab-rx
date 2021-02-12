@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationBinaryFile } from "./notification_binary_file";
-import { WebRequestTemplateHttpVerb } from "./web_request_template_http_verb";
-import { NotificationBinaryFileType } from "./notification_binary_file_type";
+import { INotificationBinaryFile } from './notification_binary_file';
+import { WebRequestTemplateHttpVerb } from './web_request_template_http_verb';
+import { NotificationBinaryFileType } from './notification_binary_file_type';
 
 /** URL template. */
 export interface IWebRequestTemplate extends INotificationBinaryFile {

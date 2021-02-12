@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IStatusData } from "../engine/status_data";
+import { IStatusData } from '../engine/status_data';
 
 /**
  * The class that represents {@link IStatusData} received from a sensor like bluetooth

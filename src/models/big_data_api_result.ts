@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IBigDataError } from "./big_data_error";
+import { IBigDataError } from './big_data_error';
 
 /** The big data API result. */
 export interface IBigDataApiResult<T> {

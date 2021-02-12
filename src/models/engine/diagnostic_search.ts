@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "../search";
-import { IEngineTypeSearch } from "../engine/engine_type_search";
-import { ISourceSearch } from "../engine/source_search";
-import { DiagnosticType } from "../engine/diagnostic_type";
-import { FaultResetMode } from "../engine/fault_reset_mode";
+import { ISearch } from '../search';
+import { IEngineTypeSearch } from '../engine/engine_type_search';
+import { ISourceSearch } from '../engine/source_search';
+import { DiagnosticType } from '../engine/diagnostic_type';
+import { FaultResetMode } from '../engine/fault_reset_mode';
 
 /**  The object used to specify the arguments when searching for {@link IDiagnostic}(s). */
 export interface IDiagnosticSearch extends ISearch {

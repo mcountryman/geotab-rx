@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IRouteSearch } from "./route_search";
+import { ISearch } from './search';
+import { IRouteSearch } from './route_search';
 
 /**
  *  The object used to specify the arguments when searching for {@link IEmployeeRoutePlan}(s).

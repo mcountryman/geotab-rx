@@ -3,9 +3,9 @@
 /** Indicates the type of operation delivered by {@link IPubSubDataUpdateData`1}. */
 export enum PubSubDataUpdateVerb {
   /** Data was added. */
-  Add = "Add",
+  Add = 'Add',
   /** Data was updated. */
-  Set = "Set",
+  Set = 'Set',
   /** Data was removed. */
-  Remove = "Remove",
+  Remove = 'Remove',
 }

@@ -7,9 +7,9 @@
  */
 export enum EldTransferMode {
   /** Email ELD agency to transfer HOS data securely for drivers */
-  Email = "Email",
+  Email = 'Email',
   /** ELD agency web services to transfer HOS data securely */
-  WebServices = "WebServices",
+  WebServices = 'WebServices',
   /** Ping the ELD agency web services to test connectivity */
-  Ping = "Ping",
+  Ping = 'Ping',
 }

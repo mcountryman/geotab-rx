@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGoCurveAuxiliary } from "./go_curve_auxiliary";
+import { IGoCurveAuxiliary } from './go_curve_auxiliary';
 
 /** A Geotab GO4V3 device. Additional properties can be seen in {@link IGoCurveAuxiliary}. */
 export interface IGo4v3 extends IGoCurveAuxiliary {

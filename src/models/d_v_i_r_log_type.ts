@@ -3,11 +3,11 @@
 /**  The type of . */
 export enum DVIRLogType {
   /** Unknown log type */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** Pre-trip log type */
-  PreTrip = "PreTrip",
+  PreTrip = 'PreTrip',
   /** Post-trip log type */
-  PostTrip = "PostTrip",
+  PostTrip = 'PostTrip',
   /** In-trip log type */
-  InTrip = "InTrip",
+  InTrip = 'InTrip',
 }

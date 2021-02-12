@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IServerInfoBase } from "../web/server_info_base";
-import { IDatabaseInfo } from "../web/database_info";
-import { IDiskUsage } from "../web/disk_usage";
+import { IServerInfoBase } from '../web/server_info_base';
+import { IDatabaseInfo } from '../web/database_info';
+import { IDiskUsage } from '../web/disk_usage';
 
 /** The performance information about a particular hosting server. */
 export interface IServerInfo extends IServerInfoBase {

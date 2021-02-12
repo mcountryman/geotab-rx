@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from "../entity_with_version";
-import { ChargeType } from "../charging/charge_type";
-import { IDevice } from "../device";
+import { IEntityWithVersion } from '../entity_with_version';
+import { ChargeType } from '../charging/charge_type';
+import { IDevice } from '../device';
 
 /** Record of a charge event */
 export interface IChargeEvent extends IEntityWithVersion {

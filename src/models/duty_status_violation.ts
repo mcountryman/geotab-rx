@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IUser } from "./user";
-import { DutyStatusViolationType } from "./duty_status_violation_type";
+import { IUser } from './user';
+import { DutyStatusViolationType } from './duty_status_violation_type';
 
 /**  A {@link IUser}. */
 export interface IDutyStatusViolation {

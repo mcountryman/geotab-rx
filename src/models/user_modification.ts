@@ -6,17 +6,17 @@
  */
 export enum UserModification {
   /** A {@link IUser} was created. */
-  Created = "Created",
+  Created = 'Created',
   /** A {@link IUser} was removed. */
-  Removed = "Removed",
+  Removed = 'Removed',
   /** A {@link IUser} was enabled (moved from archived mode back to regular/active mode). */
-  Enabled = "Enabled",
+  Enabled = 'Enabled',
   /** A {@link IUser} was disabled (moved from regular/active mode to archived mode). */
-  Disabled = "Disabled",
+  Disabled = 'Disabled',
   /** A {@link IGroup} properties changed. */
-  GroupsChanged = "GroupsChanged",
+  GroupsChanged = 'GroupsChanged',
   /** A {@link ISecurityClearance} properties changed. */
-  ClearancesChanged = "ClearancesChanged",
+  ClearancesChanged = 'ClearancesChanged',
   /** A {@link IUser} was modified. */
-  ModifiedGeneral = "ModifiedGeneral",
+  ModifiedGeneral = 'ModifiedGeneral',
 }

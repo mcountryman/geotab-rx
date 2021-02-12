@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDevice } from "./device";
-import { IDriver } from "./driver";
-import { IFuelTaxAttributes } from "./fuel_tax_attributes";
+import { IEntity } from './entity';
+import { IDevice } from './device';
+import { IDriver } from './driver';
+import { IFuelTaxAttributes } from './fuel_tax_attributes';
 
 /**
  * Fuel tax reporting element. The available driving history for a is stored as a sequence

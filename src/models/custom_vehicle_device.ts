@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ICustomDevice } from "./custom_device";
-import { HosOption } from "./hos_option";
+import { ICustomDevice } from './custom_device';
+import { HosOption } from './hos_option';
 
 /**
  * A custom third-party automotive vehicle device that is used in MyGeotab. This is

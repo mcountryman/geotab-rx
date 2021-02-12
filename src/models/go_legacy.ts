@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGoDevice } from "./go_device";
+import { IGoDevice } from './go_device';
 
 /**
  * A legacy Geotab device is any GO device prior to GO4v3. Additional properties can

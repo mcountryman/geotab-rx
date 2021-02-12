@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ICoordinate } from "./coordinate";
+import { ICoordinate } from './coordinate';
 
 /** A coordinate that is related to a DateTime. */
 export interface ITemporalCoordinate extends ICoordinate {

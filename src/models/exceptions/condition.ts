@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "../entity";
-import { ConditionType } from "../exceptions/condition_type";
-import { IRule } from "../exceptions/rule";
-import { IDevice } from "../device";
-import { IDiagnostic } from "../engine/diagnostic";
-import { IDriver } from "../driver";
-import { IWorkTime } from "../work_time";
-import { IZone } from "../zone";
-import { IZoneType } from "../zone_type";
+import { IEntity } from '../entity';
+import { ConditionType } from '../exceptions/condition_type';
+import { IRule } from '../exceptions/rule';
+import { IDevice } from '../device';
+import { IDiagnostic } from '../engine/diagnostic';
+import { IDriver } from '../driver';
+import { IWorkTime } from '../work_time';
+import { IZone } from '../zone';
+import { IZoneType } from '../zone_type';
 
 /**
  *  Conditions model the logic that govern a {@link IConditionType}) defines the meaning

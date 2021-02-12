@@ -7,9 +7,9 @@
  */
 export enum ValidLoggingPeriod {
   /** No period in which it is valid to interpolate. */
-  None = "None",
+  None = 'None',
   /** May be logged within the active state of the device. */
-  Active = "Active",
+  Active = 'Active',
   /** May be logged within the power state of the device. */
-  Power = "Power",
+  Power = 'Power',
 }

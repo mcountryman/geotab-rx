@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationExceptionForUsersData } from "./notification_exception_for_users_data";
+import { INotificationExceptionForUsersData } from './notification_exception_for_users_data';
 
 /** The notification data associated with application notifications meant for admins. */
 export interface INotificationForAdminUsersData

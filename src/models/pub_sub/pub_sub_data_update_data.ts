@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { PubSubDataUpdateVerb } from "../pub_sub/pub_sub_data_update_verb";
+import { PubSubDataUpdateVerb } from '../pub_sub/pub_sub_data_update_verb';
 
 /**
  * An object used to signal that data has changed using pub sub. This is meant to be

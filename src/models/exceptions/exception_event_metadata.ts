@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "../entity";
-import { MonitorPredicate } from "../exceptions/monitor_predicate";
-import { IExceptionEvent } from "../exceptions/exception_event";
-import { IDiagnostic } from "../engine/diagnostic";
+import { IEntity } from '../entity';
+import { MonitorPredicate } from '../exceptions/monitor_predicate';
+import { IExceptionEvent } from '../exceptions/exception_event';
+import { IDiagnostic } from '../engine/diagnostic';
 
 /**
  *  The metadata monitored by or generated from the {@link IExceptionEventMetadata}

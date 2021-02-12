@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDVIRLogSearch } from "./d_v_i_r_log_search";
-import { IUserSearch } from "./user_search";
-import { IGroupSearch } from "./group_search";
+import { ISearch } from './search';
+import { IDVIRLogSearch } from './d_v_i_r_log_search';
+import { IUserSearch } from './user_search';
+import { IGroupSearch } from './group_search';
 
 /** The object used to specify the arguments when searching for (s). */
 export interface IDVIRDefectSearch extends ISearch {

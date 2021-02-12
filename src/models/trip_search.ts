@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IBoundingBox } from "./geographical/bounding_box";
-import { IDeviceSearch } from "./device_search";
-import { IUserSearch } from "./user_search";
+import { ISearch } from './search';
+import { IBoundingBox } from './geographical/bounding_box';
+import { IDeviceSearch } from './device_search';
+import { IUserSearch } from './user_search';
 
 /**
  *  The object used to specify the arguments when searching for<br> {@link ITrip}(s).<br>

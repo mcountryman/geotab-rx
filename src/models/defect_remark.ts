@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDVIRDefect } from "./d_v_i_r_defect";
-import { IUser } from "./user";
-import { IMediaFile } from "./files/media_file";
+import { IEntity } from './entity';
+import { IDVIRDefect } from './d_v_i_r_defect';
+import { IUser } from './user';
+import { IMediaFile } from './files/media_file';
 
 /**  An DefectRemark is a remark that can be associated with a . */
 export interface IDefectRemark extends IEntity {

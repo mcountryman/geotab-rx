@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IGroup } from "./group";
+import { IEntity } from './entity';
+import { IGroup } from './group';
 
 /** A class that holds data stored by an add-in. */
 export interface IAddInData extends IEntity {

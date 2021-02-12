@@ -3,25 +3,25 @@
 /**  The different types of {@link IDutyStatusViolation}. */
 export enum DutyStatusViolationType {
   /** Driving limits. */
-  Driving = "Driving",
+  Driving = 'Driving',
   /** Rest requirements. */
-  Rest = "Rest",
+  Rest = 'Rest',
   /** On-duty limits. */
-  Duty = "Duty",
+  Duty = 'Duty',
   /** Work day limits */
-  Workday = "Workday",
+  Workday = 'Workday',
   /** Cycle limits. */
-  Cycle = "Cycle",
+  Cycle = 'Cycle',
   /** Daily driving limits. */
-  DailyDriving = "DailyDriving",
+  DailyDriving = 'DailyDriving',
   /** Daily rest requirements. */
-  DailyRest = "DailyRest",
+  DailyRest = 'DailyRest',
   /** Daily duty limits. */
-  DailyDuty = "DailyDuty",
+  DailyDuty = 'DailyDuty',
   /** Daily off-duty requirements. */
-  DailyOff = "DailyOff",
+  DailyOff = 'DailyOff',
   /** Cycle rest requirements. */
-  CycleRest = "CycleRest",
+  CycleRest = 'CycleRest',
   /** On-duty since cycle rest limit. */
-  DutySinceCycleRest = "DutySinceCycleRest",
+  DutySinceCycleRest = 'DutySinceCycleRest',
 }

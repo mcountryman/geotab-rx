@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from "../name_entity_with_version";
-import { MediaType } from "../files/media_type";
-import { ITag } from "../files/tag";
-import { IDriver } from "../driver";
-import { IDevice } from "../device";
-import { Status } from "../files/status";
+import { INameEntityWithVersion } from '../name_entity_with_version';
+import { MediaType } from '../files/media_type';
+import { ITag } from '../files/tag';
+import { IDriver } from '../driver';
+import { IDevice } from '../device';
+import { Status } from '../files/status';
 
 /** The entity which describes the binary media. */
 export interface IMediaFile extends INameEntityWithVersion {

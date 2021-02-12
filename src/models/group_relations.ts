@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGroup } from "./group";
-import { IDevice } from "./device";
-import { IUser } from "./user";
-import { IRule } from "./exceptions/rule";
-import { IZone } from "./zone";
-import { ICustomReportSchedule } from "./custom_report_schedule";
-import { IDVIRLog } from "./d_v_i_r_log";
-import { ITrailer } from "./trailer";
-import { IDefect } from "./defect";
-import { IAddInData } from "./add_in_data";
+import { IGroup } from './group';
+import { IDevice } from './device';
+import { IUser } from './user';
+import { IRule } from './exceptions/rule';
+import { IZone } from './zone';
+import { ICustomReportSchedule } from './custom_report_schedule';
+import { IDVIRLog } from './d_v_i_r_log';
+import { ITrailer } from './trailer';
+import { IDefect } from './defect';
+import { IAddInData } from './add_in_data';
 
 /** The entities which hold a relation to a group. */
 export interface IGroupRelations {

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { RadioConnectionStatus } from "./radio_connection_status";
-import { RadioConnectionType } from "./radio_connection_type";
-import { IRadioDownloader } from "./radio_downloader";
-import { IDevice } from "./device";
+import { IEntity } from './entity';
+import { RadioConnectionStatus } from './radio_connection_status';
+import { RadioConnectionType } from './radio_connection_type';
+import { IRadioDownloader } from './radio_downloader';
+import { IDevice } from './device';
 
 /** The statistical information about a radio data connection. */
 export interface IRadioData extends IEntity {

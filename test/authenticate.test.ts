@@ -1,33 +1,33 @@
-import { map } from "rxjs/operators";
-import { authenticate } from "../authenticate";
-import { mockRpcClient } from "./helpers/client_helpers";
+import { map } from 'rxjs/operators';
+import { authenticate } from '../src/authenticate';
+import { mockRpcClient } from './helpers/client_helpers';
 
-describe("authenticate(...)", () => {
+describe('authenticate(...)', () => {
   /**
    * Ensure client endPoint is not updated when response contains path 'ThisServer' per
    * https://geotab.github.io/sdk/software/api/reference/#T:Geotab.Checkmate.ObjectModel.LoginResult
    */
   test("Returns same endpoint when path is 'ThisServer'", (done) => {
-    const endPoint = "TEST_END_POINT";
+    const endPoint = 'TEST_END_POINT';
     const client = mockRpcClient((req$) =>
       req$.pipe(
         map((req) => ({
           ...req,
           result: {
-            path: "ThisServer",
+            path: 'ThisServer',
           },
         }))
       )
     );
 
     // Assign client endPoint for use in `authenticate` call
-    client.endPoint = endPoint;
+    client.setEndPoint(endPoint);
 
-    authenticate(client, { username: "" }).subscribe({
+    authenticate(client, { username: '' }).subscribe({
       next: (result) => {
         // Ensure result and client endpoints match test endpoint
         expect(result.endPoint).toBe(endPoint);
-        expect(client.endPoint).toBe(endPoint);
+        expect(client.getEndPoint()).toBe(endPoint);
       },
       error: done,
       complete: done,
@@ -39,7 +39,7 @@ describe("authenticate(...)", () => {
    * 'ThisServer' per https://geotab.github.io/sdk/software/api/reference/#T:Geotab.Checkmate.ObjectModel.LoginResult
    */
   test("Returns pathed endpoint when path is not 'ThisServer'", (done) => {
-    const path = "TEST_PATH";
+    const path = 'TEST_PATH';
     const client = mockRpcClient((req$) =>
       req$.pipe(
         map((req) => ({
@@ -51,11 +51,11 @@ describe("authenticate(...)", () => {
       )
     );
 
-    authenticate(client, { username: "" }).subscribe({
+    authenticate(client, { username: '' }).subscribe({
       next: (result) => {
         // Ensure result and client endpoints match pathed endpoint
         expect(result.endPoint).toBe(`https://${path}/apiv1`);
-        expect(client.endPoint).toBe(`https://${path}/apiv1`);
+        expect(client.getEndPoint()).toBe(`https://${path}/apiv1`);
       },
       error: done,
       complete: done,
@@ -65,8 +65,8 @@ describe("authenticate(...)", () => {
   /**
    * Ensure credentials are passed through to result and to client
    */
-  test("Returns response credentials", (done) => {
-    const credentials = { username: "TEST_USERNAME" };
+  test('Returns response credentials', (done) => {
+    const credentials = { username: 'TEST_USERNAME' };
     const client = mockRpcClient((req$) =>
       req$.pipe(
         map((req) => ({
@@ -78,11 +78,10 @@ describe("authenticate(...)", () => {
       )
     );
 
-    authenticate(client, { username: "" }).subscribe({
+    authenticate(client, { username: '' }).subscribe({
       next: (result) => {
         // Ensure response credentials are passed through to result and client
         expect(result.credentials).toBe(credentials);
-        expect(client.credentials).toBe(credentials);
       },
       error: done,
       complete: done,

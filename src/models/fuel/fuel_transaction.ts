@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IFuelEvent } from "../fuel/fuel_event";
-import { IDevice } from "../device";
-import { IDriver } from "../driver";
-import { FuelTransactionProvider } from "../fuel/fuel_transaction_provider";
+import { IFuelEvent } from '../fuel/fuel_event';
+import { IDevice } from '../device';
+import { IDriver } from '../driver';
+import { FuelTransactionProvider } from '../fuel/fuel_transaction_provider';
 
 /**
  * Information from a fuel card provider representing a fuel transaction. Fuel card

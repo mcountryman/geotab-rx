@@ -1,15 +1,17 @@
-import { Observable } from "rxjs";
-import { ICredentials } from "../models/credentials";
+import { Observable } from 'rxjs';
+import { ICredentials } from '../models/credentials';
 
-export * from "./types";
-export * from "./client";
+export * from './types';
+export * from './client';
 
 /**
  * Handles invocation of JSONRPC requests and parses responses into observable streams.
  */
 export interface IRpcClient {
-  endPoint: string;
-  credentials?: ICredentials;
+  getEndPoint(): string;
+  setEndPoint(value: string): void;
+
+  setCredentials(credentials?: ICredentials): void;
 
   /**
    * Invokes JSONRPC request and returns result.
@@ -18,5 +20,8 @@ export interface IRpcClient {
    * @returns JSONRPC call result.
    * @throws If JSONRPC responds with error.
    */
-  call<TRet, TParams = unknown>(method: string, params: TParams): Observable<TRet>;
+  call<TRet, TParams = unknown>(
+    method: string,
+    params: TParams
+  ): Observable<TRet>;
 }

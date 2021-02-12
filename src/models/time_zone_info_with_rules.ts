@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITimeZoneInfoAdjustmentRule } from "./time_zone_info_adjustment_rule";
-import { ITimeZoneInfo } from "./time_zone_info";
+import { ITimeZoneInfoAdjustmentRule } from './time_zone_info_adjustment_rule';
+import { ITimeZoneInfo } from './time_zone_info';
 
 /**  TimeZone info with its day light saving rules. */
 export interface ITimeZoneInfoWithRules {

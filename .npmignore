@@ -1,7 +1,0 @@
-# everything
-*
-
-# exception manifest, type defs, sources
-!package.json
-!dist/**/*.d.ts
-!dist/**/*.js

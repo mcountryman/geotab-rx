@@ -3,159 +3,159 @@
 /** GPSData and DebugData Log Reason codes. */
 export enum LogReason {
   /** Log reason undefined or custom data message */
-  CustomDataOrUnknown = "CustomDataOrUnknown",
+  CustomDataOrUnknown = 'CustomDataOrUnknown',
   /** Accident data */
-  Accident = "Accident",
+  Accident = 'Accident',
   /** Change in heading */
-  Heading = "Heading",
+  Heading = 'Heading',
   /** Change in speed */
-  Speed = "Speed",
+  Speed = 'Speed',
   /** Maximum time between logs have elapsed */
-  Time = "Time",
+  Time = 'Time',
   /** Auxiliary triggered */
-  Aux = "Aux",
+  Aux = 'Aux',
   /** Ignition state changed */
-  Ignition = "Ignition",
+  Ignition = 'Ignition',
   /** Power on reset occurred */
-  Reset = "Reset",
+  Reset = 'Reset',
   /** First valid GPS record received after the GPS turned on */
-  Next = "Next",
+  Next = 'Next',
   /** All valid GPS records logged (debug purposes) */
-  All = "All",
+  All = 'All',
   /** Change in antenna state */
-  Antenna = "Antenna",
+  Antenna = 'Antenna',
   /** Speeding threshold reached */
-  SpeedingStart = "SpeedingStart",
+  SpeedingStart = 'SpeedingStart',
   /** Speeding reset speed reached */
-  SpeedingStop = "SpeedingStop",
+  SpeedingStop = 'SpeedingStop',
   /** GPS Engined shutting down */
-  GpsShutdown = "GpsShutdown",
+  GpsShutdown = 'GpsShutdown',
   /** Hot start wake up */
-  HotStartStart = "HotStartStart",
+  HotStartStart = 'HotStartStart',
   /** Hot start valid signal acquired */
-  HotStartValidSignal = "HotStartValidSignal",
+  HotStartValidSignal = 'HotStartValidSignal',
   /** No valid signal acquired during hot start */
-  HotStartNoValidSignal = "HotStartNoValidSignal",
+  HotStartNoValidSignal = 'HotStartNoValidSignal',
   /** Too many invalid GPS messages received */
-  InvalidGpsSignals = "InvalidGpsSignals",
+  InvalidGpsSignals = 'InvalidGpsSignals',
   /** GPSQuiet */
-  GpsQuiet = "GpsQuiet",
+  GpsQuiet = 'GpsQuiet',
   /** Brown out reset occurred */
-  BrownOut = "BrownOut",
+  BrownOut = 'BrownOut',
   /** Harsh braking occurred */
-  HarshBraking = "HarshBraking",
+  HarshBraking = 'HarshBraking',
   /** Beginning of stop (speed reached 0) */
-  BeginOfStop = "BeginOfStop",
+  BeginOfStop = 'BeginOfStop',
   /** End of stop (speed changed from 0) */
-  EndOfStop = "EndOfStop",
+  EndOfStop = 'EndOfStop',
   /** A system reset occurred */
-  SystemReset = "SystemReset",
+  SystemReset = 'SystemReset',
   /** Connected to server (formerly HeartbeatSuccess) */
-  ConnectedToServer = "ConnectedToServer",
+  ConnectedToServer = 'ConnectedToServer',
   /** Failed to connect (formerly HeartbeatFailure) */
-  ConnectionFailure = "ConnectionFailure",
+  ConnectionFailure = 'ConnectionFailure',
   /** Device unplugged timestamp */
-  DeviceUnplugged = "DeviceUnplugged",
+  DeviceUnplugged = 'DeviceUnplugged',
   /** Point is logged based on Ramer–Douglas–Peucker algorithm */
-  CurveBased = "CurveBased",
+  CurveBased = 'CurveBased',
   /** Point is logged based on Ramer-Douglas-Peucker algorithm used on speed */
-  CurveSpeed = "CurveSpeed",
+  CurveSpeed = 'CurveSpeed',
   /** DEBUG: Multiplex Request GPS */
-  MultiplexRequestGPS = "MultiplexRequestGPS",
+  MultiplexRequestGPS = 'MultiplexRequestGPS',
   /** DEBUG: Multiplex Connected GPS */
-  MultiplexConnectedGPS = "MultiplexConnectedGPS",
+  MultiplexConnectedGPS = 'MultiplexConnectedGPS',
   /** DEBUG: Multiplex Request RF */
-  MultiplexRequestRF = "MultiplexRequestRF",
+  MultiplexRequestRF = 'MultiplexRequestRF',
   /** DEBUG: Multiplex Connected RF */
-  MultiplexConnectedRF = "MultiplexConnectedRF",
+  MultiplexConnectedRF = 'MultiplexConnectedRF',
   /** DEBUG: Restart GPS */
-  RestartGPS = "RestartGPS",
+  RestartGPS = 'RestartGPS',
   /** DEBUG: Restart RF */
-  RestartRF = "RestartRF",
+  RestartRF = 'RestartRF',
   /**
    * A position error estimate greater than the threshold caused curve based logging
    * to be initiated up to this point
    */
-  CurvePositionEstimateError = "CurvePositionEstimateError",
+  CurvePositionEstimateError = 'CurvePositionEstimateError',
   /** A timeout (200s) caused curve based logging to be initiated up to this point */
-  CurveTimeOut = "CurveTimeOut",
+  CurveTimeOut = 'CurveTimeOut',
   /**
    * A non gps log based event caused curve based logging to be initiated up to this
    * point
    */
-  CurveOtherEvent = "CurveOtherEvent",
+  CurveOtherEvent = 'CurveOtherEvent',
   /**
    * Point is logged based on additional zero speed logic used with the Ramer-Douglas-Peucker
    * algorithm
    */
-  CurveZeroSpeed = "CurveZeroSpeed",
+  CurveZeroSpeed = 'CurveZeroSpeed',
   /**
    * A change in the time required the curve to be run since all records in the curve
    * buffer need to be 1 second apart
    */
-  CurveTimeChange = "CurveTimeChange",
+  CurveTimeChange = 'CurveTimeChange',
   /** The rf upload complete */
-  RfUploadComplete = "RfUploadComplete",
+  RfUploadComplete = 'RfUploadComplete',
   /** The device poll */
-  DevicePoll = "DevicePoll",
+  DevicePoll = 'DevicePoll',
   /** The curve speed estimate error */
-  CurveSpeedEstimateError = "CurveSpeedEstimateError",
+  CurveSpeedEstimateError = 'CurveSpeedEstimateError',
   /** DEBUG: Wifi In Range */
-  WifiInRange = "WifiInRange",
+  WifiInRange = 'WifiInRange',
   /** DEBUG: Wifi Connected */
-  WifiConnected = "WifiConnected",
+  WifiConnected = 'WifiConnected',
   /** DEBUG: Wifi Upload Success */
-  WifiUploadSuccess = "WifiUploadSuccess",
+  WifiUploadSuccess = 'WifiUploadSuccess',
   /** Iridium: Ignition */
-  IridiumIgnition = "IridiumIgnition",
+  IridiumIgnition = 'IridiumIgnition',
   /** Iridium: Aux */
-  IridiumAux = "IridiumAux",
+  IridiumAux = 'IridiumAux',
   /** Iridium: Time */
-  IridiumTime = "IridiumTime",
+  IridiumTime = 'IridiumTime',
   /** Iridium: Poll */
-  IridiumPoll = "IridiumPoll",
+  IridiumPoll = 'IridiumPoll',
   /** Iridium: Emergency */
-  IridiumEmergency = "IridiumEmergency",
+  IridiumEmergency = 'IridiumEmergency',
   /** Iridium: Low Voltage */
-  IridiumLowVoltage = "IridiumLowVoltage",
+  IridiumLowVoltage = 'IridiumLowVoltage',
   /** Iridium: Accelerometer data sent over Iridium */
-  IridiumAccelEvent = "IridiumAccelEvent",
+  IridiumAccelEvent = 'IridiumAccelEvent',
   /** The iridium movement detected */
-  IridiumMovementDetected = "IridiumMovementDetected",
+  IridiumMovementDetected = 'IridiumMovementDetected',
   /** The iridium out of coverage */
-  IridiumOutOfCoverage = "IridiumOutOfCoverage",
+  IridiumOutOfCoverage = 'IridiumOutOfCoverage',
   /** The iridium power up */
-  IridiumPowerUp = "IridiumPowerUp",
+  IridiumPowerUp = 'IridiumPowerUp',
   /** The iridium driver change */
-  IridiumDriverChange = "IridiumDriverChange",
+  IridiumDriverChange = 'IridiumDriverChange',
   /** DEBUG: J1708: ICP Error ?Specific to Cummins Vehicles and UPS */
-  J1708ICPError = "J1708ICPError",
+  J1708ICPError = 'J1708ICPError',
   /** DEBUG: Restart GPS State Machine */
-  ErrorRestartGPSStateMachine = "ErrorRestartGPSStateMachine",
+  ErrorRestartGPSStateMachine = 'ErrorRestartGPSStateMachine',
   /** DEBUG: Reboot Slave */
-  ErrorRebootSlave = "ErrorRebootSlave",
+  ErrorRebootSlave = 'ErrorRebootSlave',
   /** DEBUG: Restart Rf State Machine */
-  ErrorRestartRfStateMachine = "ErrorRestartRfStateMachine",
+  ErrorRestartRfStateMachine = 'ErrorRestartRfStateMachine',
   /** DEBUG: Restart Rf Manager State Machine */
-  ErrorRestartRfManagerStateMachine = "ErrorRestartRfManagerStateMachine",
+  ErrorRestartRfManagerStateMachine = 'ErrorRestartRfManagerStateMachine',
   /** DEBUG: Restart Wifi State Machine */
-  ErrorRestartWifiStateMachine = "ErrorRestartWifiStateMachine",
+  ErrorRestartWifiStateMachine = 'ErrorRestartWifiStateMachine',
   /** DEBUG: Restart Wifi Manager State Machine */
-  ErrorRestartWifiManagerStateMachine = "ErrorRestartWifiManagerStateMachine",
+  ErrorRestartWifiManagerStateMachine = 'ErrorRestartWifiManagerStateMachine',
   /** DEBUG: Restart Modem State Machine */
-  ErrorRestartModemStateMachine = "ErrorRestartModemStateMachine",
+  ErrorRestartModemStateMachine = 'ErrorRestartModemStateMachine',
   /** DEBUG: Restart Modem Manager State Machine */
-  ErrorRestartModemManagerStateMachine = "ErrorRestartModemManagerStateMachine",
+  ErrorRestartModemManagerStateMachine = 'ErrorRestartModemManagerStateMachine',
   /** The software inserts these logs, not the firmware */
-  SoftwareInsertedLog = "SoftwareInsertedLog",
+  SoftwareInsertedLog = 'SoftwareInsertedLog',
   /** DEBUG: ClockStopped */
-  ErrorClockStopped = "ErrorClockStopped",
+  ErrorClockStopped = 'ErrorClockStopped',
   /** DEBUG: Error Reading from the FLASH memory */
-  ErrorReadingFlash = "ErrorReadingFlash",
+  ErrorReadingFlash = 'ErrorReadingFlash',
   /** DEBUG: Invalid Stack Pointer Error */
-  InvalidStackPointer = "InvalidStackPointer",
+  InvalidStackPointer = 'InvalidStackPointer',
   /** DEBUG: Interrupt Error */
-  ErrorInterruptError = "ErrorInterruptError",
+  ErrorInterruptError = 'ErrorInterruptError',
   /** Dummy log placed at an estimated event location. */
-  EventPlaceholder = "EventPlaceholder",
+  EventPlaceholder = 'EventPlaceholder',
 }

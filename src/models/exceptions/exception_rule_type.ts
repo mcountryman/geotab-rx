@@ -6,13 +6,13 @@
  */
 export enum ExceptionRuleType {
   /** Normal Exception Rule. */
-  Normal = "Normal",
+  Normal = 'Normal',
   /** Exception rule. */
-  System = "System",
+  System = 'System',
   /** Customer Zone Stop ExceptionRule. */
-  Zone = "Zone",
+  Zone = 'Zone',
   /** Application Exception. */
-  ApplicationException = "ApplicationException",
+  ApplicationException = 'ApplicationException',
   /** No Type (for generic use). */
-  None = "None",
+  None = 'None',
 }

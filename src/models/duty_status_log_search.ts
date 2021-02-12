@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDeviceSearch } from "./device_search";
-import { DutyStatusLogType } from "./duty_status_log_type";
-import { IUserSearch } from "./user_search";
-import { DutyStatusMalfunctionTypes } from "./duty_status_malfunction_types";
-import { DutyStatusOrigin } from "./duty_status_origin";
+import { ISearch } from './search';
+import { IDeviceSearch } from './device_search';
+import { DutyStatusLogType } from './duty_status_log_type';
+import { IUserSearch } from './user_search';
+import { DutyStatusMalfunctionTypes } from './duty_status_malfunction_types';
+import { DutyStatusOrigin } from './duty_status_origin';
 
 /**  The object used to specify the arguments when searching for {@link IDutyStatusLog}(s). */
 export interface IDutyStatusLogSearch extends ISearch {

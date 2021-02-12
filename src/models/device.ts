@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from "./name_entity_with_version";
-import { IGroup } from "./group";
-import { IDeviceFlags } from "./device_flags";
-import { DeviceType } from "./device_type";
-import { IWorkTime } from "./work_time";
-import { DevicePlan } from "./device_plan";
-import { DeviceCustomFeature } from "./device_custom_feature";
+import { INameEntityWithVersion } from './name_entity_with_version';
+import { IGroup } from './group';
+import { IDeviceFlags } from './device_flags';
+import { DeviceType } from './device_type';
+import { IWorkTime } from './work_time';
+import { DevicePlan } from './device_plan';
+import { DeviceCustomFeature } from './device_custom_feature';
 
 /**
  *  A Device represents the physical tracking device installed in the vehicle. A device

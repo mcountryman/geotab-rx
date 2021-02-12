@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from "../name_entity_with_version";
-import { ExceptionRuleBaseType } from "../exceptions/exception_rule_base_type";
-import { ICondition } from "../exceptions/condition";
-import { IGroup } from "../group";
+import { INameEntityWithVersion } from '../name_entity_with_version';
+import { ExceptionRuleBaseType } from '../exceptions/exception_rule_base_type';
+import { ICondition } from '../exceptions/condition';
+import { IGroup } from '../group';
 
 /**
  *  A rule is the definition of conditions that, when "violated", will generate an

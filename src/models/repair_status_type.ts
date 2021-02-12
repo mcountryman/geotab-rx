@@ -3,9 +3,9 @@
 /**  The Repair Status for . */
 export enum RepairStatusType {
   /** Defect has not been repaired yet */
-  NotRepaired = "NotRepaired",
+  NotRepaired = 'NotRepaired',
   /** Defect has been Repaired */
-  Repaired = "Repaired",
+  Repaired = 'Repaired',
   /** Defect has identified as Not Necessary to repair */
-  NotNecessary = "NotNecessary",
+  NotNecessary = 'NotNecessary',
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from "../name_entity";
+import { INameEntity } from '../name_entity';
 
 /**
  * The type of engine the device has, or which engine type an Engine Management Code

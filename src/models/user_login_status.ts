@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IUser } from "./user";
+import { IEntity } from './entity';
+import { IUser } from './user';
 
 /** User's Login status. */
 export interface IUserLoginStatus extends IEntity {

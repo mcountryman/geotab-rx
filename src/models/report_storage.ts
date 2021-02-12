@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from "./entity_with_version";
-import { IDateRange } from "./date_range";
+import { IEntityWithVersion } from './entity_with_version';
+import { IDateRange } from './date_range';
 
 /** Stores the binary data for a generate excel report. */
 export interface IReportStorage extends IEntityWithVersion {

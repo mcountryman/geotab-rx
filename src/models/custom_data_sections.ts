@@ -7,15 +7,15 @@
  */
 export enum CustomDataSections {
   /** No value provided */
-  None = "None",
+  None = 'None',
   /** Section A */
-  A = "A",
+  A = 'A',
   /** Section B */
-  B = "B",
+  B = 'B',
   /** Section C */
-  C = "C",
+  C = 'C',
   /** The header */
-  Header = "Header",
+  Header = 'Header',
   /** All the sections */
-  All = "All",
+  All = 'All',
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGroup } from "./group";
+import { IGroup } from './group';
 
 /** The base class for all groups that are a system group. */
 export interface ISystemGroupBase extends IGroup {

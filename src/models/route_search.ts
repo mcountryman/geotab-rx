@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDeviceSearch } from "./device_search";
-import { RouteType } from "./route_type";
-import { IZoneSearch } from "./zone_search";
+import { ISearch } from './search';
+import { IDeviceSearch } from './device_search';
+import { RouteType } from './route_type';
+import { IZoneSearch } from './zone_search';
 
 /**  The object used to specify the arguments when searching for {@link IRoute}(s). */
 export interface IRouteSearch extends ISearch {

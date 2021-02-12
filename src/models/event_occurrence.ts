@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IEventRule } from "./event_rule";
-import { IDevice } from "./device";
+import { IEntity } from './entity';
+import { IEventRule } from './event_rule';
+import { IDevice } from './device';
 
 /**
  *  A particular occurrence of an {@link IEventRule}.

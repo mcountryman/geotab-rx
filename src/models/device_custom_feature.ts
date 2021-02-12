@@ -6,5 +6,5 @@
  */
 export enum DeviceCustomFeature {
   /** Represents automatic generation of {@link IDevice}. */
-  AutoHos = "AutoHos",
+  AutoHos = 'AutoHos',
 }

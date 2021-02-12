@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from "./name_entity_with_version";
-import { IRoutePlanItem } from "./route_plan_item";
-import { RouteType } from "./route_type";
-import { IDevice } from "./device";
+import { INameEntityWithVersion } from './name_entity_with_version';
+import { IRoutePlanItem } from './route_plan_item';
+import { RouteType } from './route_type';
+import { IDevice } from './device';
 
 /**  A connected sequence of zones which create a path for the vehicle to follow. */
 export interface IRoute extends INameEntityWithVersion {

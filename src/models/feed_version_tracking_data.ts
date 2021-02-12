@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
+import { IEntity } from './entity';
 
 /**
  * Represents the most recent records inserted into each table. This is used to ensure

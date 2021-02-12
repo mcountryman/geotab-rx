@@ -3,41 +3,41 @@
 /** Malfunction or Diagnostic type of the . */
 export enum DutyStatusMalfunctionTypes {
   /** No malfunction or diagnostic present or cleared. */
-  None = "None",
+  None = 'None',
   /** In a diagnostic state. */
-  Diagnostic = "Diagnostic",
+  Diagnostic = 'Diagnostic',
   /** In a malfunction state. */
-  Malfunction = "Malfunction",
+  Malfunction = 'Malfunction',
   /** User has cleared the malfunction or diagnostic. */
-  UserClear = "UserClear",
+  UserClear = 'UserClear',
   /** User has cleared the diagnostic. */
-  UserDiagnosticClear = "UserDiagnosticClear",
+  UserDiagnosticClear = 'UserDiagnosticClear',
   /** User has cleared the malfunction. */
-  UserMalfunctionClear = "UserMalfunctionClear",
+  UserMalfunctionClear = 'UserMalfunctionClear',
   /**
    * System has determined that the malfunction or diagnostic is cleared. Not exported
    * to FMCSA.
    */
-  SystemClear = "SystemClear",
+  SystemClear = 'SystemClear',
   /** System has determined that the diagnostic is cleared. Not exported to FMCSA. */
-  SystemDiagnosticClear = "SystemDiagnosticClear",
+  SystemDiagnosticClear = 'SystemDiagnosticClear',
   /**
    * System has determined that the malfunction or diagnostic is cleared and the vehicle
    * was in motion. Used for .
    */
-  SystemClearDriving = "SystemClearDriving",
+  SystemClearDriving = 'SystemClearDriving',
   /**
    * System has determined that the diagnostic is cleared and the vehicle was in motion.
    * Used for .
    */
-  SystemDiagnosticClearDriving = "SystemDiagnosticClearDriving",
+  SystemDiagnosticClearDriving = 'SystemDiagnosticClearDriving',
   /**
    * User has inputted a manual address for the log during a position compliance diagnostic
    * event
    */
-  ManualPosition = "ManualPosition",
+  ManualPosition = 'ManualPosition',
   /** Combination of ManualPosition and Diagnostic */
-  DiagnosticManualPosition = "DiagnosticManualPosition",
+  DiagnosticManualPosition = 'DiagnosticManualPosition',
   /** Combination of ManualPosition and Malfunction */
-  MalfunctionManualPosition = "MalfunctionManualPosition",
+  MalfunctionManualPosition = 'MalfunctionManualPosition',
 }

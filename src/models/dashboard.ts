@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from "./name_entity";
-import { ReportPeriod } from "./report_period";
-import { IUser } from "./user";
+import { INameEntity } from './name_entity';
+import { ReportPeriod } from './report_period';
+import { IUser } from './user';
 
 /**
  * Dashboard class represents a single dashboard that has widgets and reports that

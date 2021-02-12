@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IExceptionEvent } from "../exceptions/exception_event";
-import { ICoordinate } from "../coordinate";
+import { IExceptionEvent } from '../exceptions/exception_event';
+import { ICoordinate } from '../coordinate';
 
 /**
  * This class contains the {@link IExceptionEvent} and estimated driver and coordinates

@@ -3,47 +3,47 @@
 /** An enum with a list of commands that can be sent to a vehicle via a {@link IVehicleCommandContent}. */
 export enum VehicleCommand {
   /** Lock everything. */
-  LockAll = "LockAll",
+  LockAll = 'LockAll',
   /** Unlock the driver door. */
-  UnlockDriver = "UnlockDriver",
+  UnlockDriver = 'UnlockDriver',
   /** Unlock everything. */
-  UnlockAll = "UnlockAll",
+  UnlockAll = 'UnlockAll',
   /** Open the trunk. */
-  OpenTrunk = "OpenTrunk",
+  OpenTrunk = 'OpenTrunk',
   /** Close the trunk. */
-  CloseTrunk = "CloseTrunk",
+  CloseTrunk = 'CloseTrunk',
   /** Not sure. */
-  Locate = "Locate",
+  Locate = 'Locate',
   /** Immobilize the vehicle. */
-  Immobilize = "Immobilize",
+  Immobilize = 'Immobilize',
   /** Remove vehicle immobilization. */
-  Mobilize = "Mobilize",
+  Mobilize = 'Mobilize',
   /** Set off the alarm. */
-  PanicAlarmOn = "PanicAlarmOn",
+  PanicAlarmOn = 'PanicAlarmOn',
   /** Stop the alarm once started. */
-  PanicAlarmOff = "PanicAlarmOff",
+  PanicAlarmOff = 'PanicAlarmOff',
   /** Check in to the vehicle. */
-  CheckIn = "CheckIn",
+  CheckIn = 'CheckIn',
   /** Check out of the vehicle. */
-  CheckOut = "CheckOut",
+  CheckOut = 'CheckOut',
   /** Connect. */
-  Connect = "Connect",
+  Connect = 'Connect',
   /** Stop the alarm once started. */
-  Disconnect = "Disconnect",
+  Disconnect = 'Disconnect',
   /** Stop the alarm once started. */
-  Observe = "Observe",
+  Observe = 'Observe',
   /** Stop the alarm once started. */
-  CreateReservation = "CreateReservation",
+  CreateReservation = 'CreateReservation',
   /** Stop the alarm once started. */
-  ReadReservation = "ReadReservation",
+  ReadReservation = 'ReadReservation',
   /** Stop the alarm once started. */
-  ModifyReservation = "ModifyReservation",
+  ModifyReservation = 'ModifyReservation',
   /** Stop the alarm once started. */
-  DeleteReservation = "DeleteReservation",
+  DeleteReservation = 'DeleteReservation',
   /** Stop the alarm once started. */
-  ServiceModeRequest = "ServiceModeRequest",
+  ServiceModeRequest = 'ServiceModeRequest',
   /** Stop the alarm once started. */
-  BlacklistUser = "BlacklistUser",
+  BlacklistUser = 'BlacklistUser',
   /** Stop the alarm once started. */
-  RemoteStart = "RemoteStart",
+  RemoteStart = 'RemoteStart',
 }

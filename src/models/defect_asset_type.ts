@@ -3,9 +3,9 @@
 /** The type of asset for which the list applies.. */
 export enum DefectAssetType {
   /** Defect list that applies to any asset. */
-  All = "All",
+  All = 'All',
   /** Defect list for a {@link IDevice}. */
-  Device = "Device",
+  Device = 'Device',
   /** Defect list for a {@link ITrailer}. */
-  Trailer = "Trailer",
+  Trailer = 'Trailer',
 }

@@ -3,13 +3,13 @@
 /** The types of identification keys that can be assigned to a. {@link IKey} */
 export enum DriverKeyType {
   /** USB blue driver ID Key */
-  Usb = "Usb",
+  Usb = 'Usb',
   /** NFC driver ID Key */
-  Nfc = "Nfc",
+  Nfc = 'Nfc',
   /** CustomNfc driver ID Key */
-  CustomNfc = "CustomNfc",
+  CustomNfc = 'CustomNfc',
   /** Tachograph driver ID Key */
-  Tachograph = "Tachograph",
+  Tachograph = 'Tachograph',
   /** Custom driver ID Key */
-  Custom = "Custom",
+  Custom = 'Custom',
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IWaypoint } from "../geographical/waypoint";
-import { IStep } from "../geographical/step";
+import { IWaypoint } from '../geographical/waypoint';
+import { IStep } from '../geographical/step';
 
 /** A single leg of {@link IWaypoint}s. */
 export interface ILeg {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { IDevice } from "./device";
+import { IEntity } from './entity';
+import { IDevice } from './device';
 
 /**
  * Represents an Iox Add-On (like modem or navigation device) that is attached to a

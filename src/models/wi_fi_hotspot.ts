@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IVehicleConfiguration } from "./vehicle_configuration";
+import { IVehicleConfiguration } from './vehicle_configuration';
 
 /** WiFi parameters entity. */
 export interface IWiFiHotspot extends IVehicleConfiguration {

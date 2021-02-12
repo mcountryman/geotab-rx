@@ -3,31 +3,31 @@
 /** Diagnostic source type of the diagnostic. */
 export enum DiagnosticType {
   /** No diagnostic. */
-  None = "None",
+  None = 'None',
   /** SID (Subsystem Identifier). */
-  Sid = "Sid",
+  Sid = 'Sid',
   /** PID (Parameter Identifier). */
-  Pid = "Pid",
+  Pid = 'Pid',
   /** Go Diagnostic. */
-  GoDiagnostic = "GoDiagnostic",
+  GoDiagnostic = 'GoDiagnostic',
   /** Data Diagnostic. */
-  DataDiagnostic = "DataDiagnostic",
+  DataDiagnostic = 'DataDiagnostic',
   /** SPN (Suspect Parameter Number). */
-  SuspectParameter = "SuspectParameter",
+  SuspectParameter = 'SuspectParameter',
   /** OBD-II (On-board Diagnostic) Fault. */
-  ObdFault = "ObdFault",
+  ObdFault = 'ObdFault',
   /** Go Device Fault. */
-  GoFault = "GoFault",
+  GoFault = 'GoFault',
   /** OBD-II (On-board Diagnostic) WWH Fault. */
-  ObdWwhFault = "ObdWwhFault",
+  ObdWwhFault = 'ObdWwhFault',
   /** Proprietary Fault. */
-  ProprietaryFault = "ProprietaryFault",
+  ProprietaryFault = 'ProprietaryFault',
   /** Legacy Proprietary Fault. */
-  LegacyFault = "LegacyFault",
+  LegacyFault = 'LegacyFault',
   /** GMCCC Fault. */
-  GmcccFault = "GmcccFault",
+  GmcccFault = 'GmcccFault',
   /** BRP Fault. */
-  BrpFault = "BrpFault",
+  BrpFault = 'BrpFault',
   /** AI Model. */
-  AiModel = "AiModel",
+  AiModel = 'AiModel',
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
+import { IEntity } from './entity';
 
 /** An that has a name field. */
 export interface INameEntity extends IEntity {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDeviceSearch } from "./device_search";
-import { BinaryDataType } from "./binary_data_type";
+import { ISearch } from './search';
+import { IDeviceSearch } from './device_search';
+import { BinaryDataType } from './binary_data_type';
 
 /**  The object used to specify the arguments when searching for {@link IBinaryData}. */
 export interface IBinaryDataSearch extends ISearch {

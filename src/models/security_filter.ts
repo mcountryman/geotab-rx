@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { SecurityIdentifier } from "./security_identifier";
-import { ISecurityId } from "./security_id";
+import { SecurityIdentifier } from './security_identifier';
+import { ISecurityId } from './security_id';
 
 /**
  *  Represents an item that either Adds or Removes a particular to a user's set of

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from "./name_entity";
-import { IWorkTimeDetail } from "./work_time_detail";
-import { IWorkTimeHolidayGroupId } from "./work_time_holiday_group_id";
+import { INameEntity } from './name_entity';
+import { IWorkTimeDetail } from './work_time_detail';
+import { IWorkTimeHolidayGroupId } from './work_time_holiday_group_id';
 
 /**
  * The set of (s) defining periods during the week that are considered as part of regular

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITextTemplate } from "./text_template";
+import { ITextTemplate } from './text_template';
 
 /** Default exception rule text. */
 export interface IDefaultExceptionRuleTextTemplate extends ITextTemplate {

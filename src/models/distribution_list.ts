@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from "./name_entity";
-import { IRecipient } from "./recipient";
-import { IRule } from "./exceptions/rule";
+import { INameEntity } from './name_entity';
+import { IRecipient } from './recipient';
+import { IRule } from './exceptions/rule';
 
 /**  A distribution list links a set of {@link IRecipientType}. */
 export interface IDistributionList extends INameEntity {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from "./entity_with_version";
-import { ITrailer } from "./trailer";
-import { IDevice } from "./device";
+import { IEntityWithVersion } from './entity_with_version';
+import { ITrailer } from './trailer';
+import { IDevice } from './device';
 
 /**
  * A TrailerAttachment is a record of the attachment of a {@link IDevice} over a period

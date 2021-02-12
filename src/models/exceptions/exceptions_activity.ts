@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRule } from "../exceptions/rule";
-import { IZone } from "../zone";
-import { IDevice } from "../device";
-import { IDriver } from "../driver";
+import { IRule } from '../exceptions/rule';
+import { IZone } from '../zone';
+import { IDevice } from '../device';
+import { IDriver } from '../driver';
 
 /**
  *  Exception Activity.

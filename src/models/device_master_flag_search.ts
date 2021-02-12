@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDeviceSearch } from "./device_search";
-import { DevicePlanMasterFlag } from "./device_plan_master_flag";
+import { ISearch } from './search';
+import { IDeviceSearch } from './device_search';
+import { DevicePlanMasterFlag } from './device_plan_master_flag';
 
 /**
  *  The object used to specify the arguments when searching for {@link IDeviceMasterFlag}(s).<br>

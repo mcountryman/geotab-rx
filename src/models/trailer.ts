@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from "./name_entity_with_version";
-import { IGroup } from "./group";
+import { INameEntityWithVersion } from './name_entity_with_version';
+import { IGroup } from './group';
 
 /**
  *  A trailer which can be attached and detached from a vehicle with a {@link ITrailerAttachment}

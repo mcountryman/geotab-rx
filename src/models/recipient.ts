@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from "./entity";
-import { RecipientType } from "./recipient_type";
-import { IUser } from "./user";
-import { TripType } from "./trip_type";
-import { IGroup } from "./group";
-import { INotificationBinaryFile } from "./notification_binary_file";
+import { IEntity } from './entity';
+import { RecipientType } from './recipient_type';
+import { IUser } from './user';
+import { TripType } from './trip_type';
+import { IGroup } from './group';
+import { INotificationBinaryFile } from './notification_binary_file';
 
 /**
  *  The recipient for a specific notification. A recipient is linked to {@link IRule}(s)

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRadioDownloader } from "./radio_downloader";
+import { IRadioDownloader } from './radio_downloader';
 
 /** Represents a 900MHz downloader that has an Ethernet port (as opposed to a USB) port. */
 export interface IEthernetRadioDownloader extends IRadioDownloader {

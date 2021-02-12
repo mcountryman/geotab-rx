@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRouteDevice } from "./route_device";
-import { IEmployee } from "./employee";
-import { IZone } from "./zone";
-import { IDateTimeWithTimeZone } from "./date_time_with_time_zone";
+import { IRouteDevice } from './route_device';
+import { IEmployee } from './employee';
+import { IZone } from './zone';
+import { IDateTimeWithTimeZone } from './date_time_with_time_zone';
 
 /** A summary of vehicle activity for a given route and day. */
 export interface IVehicleDayRoute extends IRouteDevice {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDateRange } from "./date_range";
+import { IDateRange } from './date_range';
 
 /**
  * Provides the instance of {@link IIEntity} - derived class, "From" Date and "To"

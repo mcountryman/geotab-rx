@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IReplacementDetails } from "../device_replacement/replacement_details";
-import { IReplacementDeviceDetails } from "../device_replacement/replacement_device_details";
+import { IReplacementDetails } from '../device_replacement/replacement_details';
+import { IReplacementDeviceDetails } from '../device_replacement/replacement_device_details';
 
 /** MyAdmin Device Recall/Replacement Info. */
 export interface IDeviceReplacementInfo {

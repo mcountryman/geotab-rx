@@ -6,447 +6,447 @@
  */
 export enum SecurityRole {
   /** The unknown role */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** The user view role */
-  UserView = "UserView",
+  UserView = 'UserView',
   /** The user removal role */
-  UserRemove = "UserRemove",
+  UserRemove = 'UserRemove',
   /** The user set role */
-  UserSet = "UserSet",
+  UserSet = 'UserSet',
   /** The user insertion role */
-  UserInsert = "UserInsert",
+  UserInsert = 'UserInsert',
   /** The device view role */
-  DeviceView = "DeviceView",
+  DeviceView = 'DeviceView',
   /** The device removal role */
-  DeviceRemove = "DeviceRemove",
+  DeviceRemove = 'DeviceRemove',
   /** The device insertion role */
-  DeviceInsert = "DeviceInsert",
+  DeviceInsert = 'DeviceInsert',
   /** The device set role */
-  DeviceSet = "DeviceSet",
+  DeviceSet = 'DeviceSet',
   /** The zone view role */
-  ZoneView = "ZoneView",
+  ZoneView = 'ZoneView',
   /** The zone removal role */
-  ZoneRemove = "ZoneRemove",
+  ZoneRemove = 'ZoneRemove',
   /** The zone insertion role */
-  ZoneInsert = "ZoneInsert",
+  ZoneInsert = 'ZoneInsert',
   /** The zone set role */
-  ZoneSet = "ZoneSet",
+  ZoneSet = 'ZoneSet',
   /** The zone type view role */
-  ZoneTypeView = "ZoneTypeView",
+  ZoneTypeView = 'ZoneTypeView',
   /** The zone type removal role */
-  ZoneTypeRemove = "ZoneTypeRemove",
+  ZoneTypeRemove = 'ZoneTypeRemove',
   /** The zone type insertion role */
-  ZoneTypeInsert = "ZoneTypeInsert",
+  ZoneTypeInsert = 'ZoneTypeInsert',
   /** The zone type set role */
-  ZoneTypeSet = "ZoneTypeSet",
+  ZoneTypeSet = 'ZoneTypeSet',
   /** The route view role */
-  RouteView = "RouteView",
+  RouteView = 'RouteView',
   /** The route removal role */
-  RouteRemove = "RouteRemove",
+  RouteRemove = 'RouteRemove',
   /** The route insertion role */
-  RouteInsert = "RouteInsert",
+  RouteInsert = 'RouteInsert',
   /** The route set role */
-  RouteSet = "RouteSet",
+  RouteSet = 'RouteSet',
   /** The database upgrade */
-  DatabaseUpgrade = "DatabaseUpgrade",
+  DatabaseUpgrade = 'DatabaseUpgrade',
   /** The database migrate */
-  DatabaseMigrate = "DatabaseMigrate",
+  DatabaseMigrate = 'DatabaseMigrate',
   /** The export database role */
-  ExportDatabase = "ExportDatabase",
+  ExportDatabase = 'ExportDatabase',
   /** The import database role */
-  ImportDatabase = "ImportDatabase",
+  ImportDatabase = 'ImportDatabase',
   /** The server upgrade role */
-  ServerUpgrade = "ServerUpgrade",
+  ServerUpgrade = 'ServerUpgrade',
   /** The set company Guid role */
-  SysSetCompanyGUID = "SysSetCompanyGUID",
+  SysSetCompanyGUID = 'SysSetCompanyGUID',
   /** The system settings set role */
-  SysSettingsSetAll = "SysSettingsSetAll",
+  SysSettingsSetAll = 'SysSettingsSetAll',
   /** The event removal role */
-  EventRemove = "EventRemove",
+  EventRemove = 'EventRemove',
   /** The event insertion role */
-  EventInsert = "EventInsert",
+  EventInsert = 'EventInsert',
   /** The event set role */
-  EventSet = "EventSet",
+  EventSet = 'EventSet',
   /** The event rule removal role */
-  EventRuleRemove = "EventRuleRemove",
+  EventRuleRemove = 'EventRuleRemove',
   /** The event rule insertion role */
-  EventRuleInsert = "EventRuleInsert",
+  EventRuleInsert = 'EventRuleInsert',
   /** The event ruleset role */
-  EventRuleSet = "EventRuleSet",
+  EventRuleSet = 'EventRuleSet',
   /** The event rule view role */
-  EventRuleView = "EventRuleView",
+  EventRuleView = 'EventRuleView',
   /** The event type removal role */
-  EventTypeRemove = "EventTypeRemove",
+  EventTypeRemove = 'EventTypeRemove',
   /** The event type insertion role */
-  EventTypeInsert = "EventTypeInsert",
+  EventTypeInsert = 'EventTypeInsert',
   /** The event type set role */
-  EventTypeSet = "EventTypeSet",
+  EventTypeSet = 'EventTypeSet',
   /** The exception rule view role */
-  ExceptionRuleView = "ExceptionRuleView",
+  ExceptionRuleView = 'ExceptionRuleView',
   /** The exception rule removal role */
-  ExceptionRuleRemove = "ExceptionRuleRemove",
+  ExceptionRuleRemove = 'ExceptionRuleRemove',
   /** The exception rule insertion role */
-  ExceptionRuleInsert = "ExceptionRuleInsert",
+  ExceptionRuleInsert = 'ExceptionRuleInsert',
   /** The exception ruleset role */
-  ExceptionRuleSet = "ExceptionRuleSet",
+  ExceptionRuleSet = 'ExceptionRuleSet',
   /** The distribution ListView */
-  DistributionListView = "DistributionListView",
+  DistributionListView = 'DistributionListView',
   /** The distribution list removal role */
-  DistributionListRemove = "DistributionListRemove",
+  DistributionListRemove = 'DistributionListRemove',
   /** The distribution list insertion role */
-  DistributionListInsert = "DistributionListInsert",
+  DistributionListInsert = 'DistributionListInsert',
   /** The distribution list set role */
-  DistributionListSet = "DistributionListSet",
+  DistributionListSet = 'DistributionListSet',
   /** The uom removal role */
-  UomRemove = "UomRemove",
+  UomRemove = 'UomRemove',
   /** The uom insertion role */
-  UomInsert = "UomInsert",
+  UomInsert = 'UomInsert',
   /** The uom set role */
-  UomSet = "UomSet",
+  UomSet = 'UomSet',
   /** The diagnostic view role */
-  DiagnosticView = "DiagnosticView",
+  DiagnosticView = 'DiagnosticView',
   /** The diagnostic removal role */
-  DiagnosticRemove = "DiagnosticRemove",
+  DiagnosticRemove = 'DiagnosticRemove',
   /** The diagnostic insertion role */
-  DiagnosticInsert = "DiagnosticInsert",
+  DiagnosticInsert = 'DiagnosticInsert',
   /** The diagnostic set role */
-  DiagnosticSet = "DiagnosticSet",
+  DiagnosticSet = 'DiagnosticSet',
   /** The failure mode view role */
-  FailureModeView = "FailureModeView",
+  FailureModeView = 'FailureModeView',
   /** The failure mode removal role */
-  FailureModeRemove = "FailureModeRemove",
+  FailureModeRemove = 'FailureModeRemove',
   /** The failure mode insertion role */
-  FailureModeInsert = "FailureModeInsert",
+  FailureModeInsert = 'FailureModeInsert',
   /** The failure mode set role */
-  FailureModeSet = "FailureModeSet",
+  FailureModeSet = 'FailureModeSet',
   /** The work times view role */
-  WorkTimesView = "WorkTimesView",
+  WorkTimesView = 'WorkTimesView',
   /** The work times removal role */
-  WorkTimesRemove = "WorkTimesRemove",
+  WorkTimesRemove = 'WorkTimesRemove',
   /** The work times insertion role */
-  WorkTimesInsert = "WorkTimesInsert",
+  WorkTimesInsert = 'WorkTimesInsert',
   /** The work times set role */
-  WorkTimesSet = "WorkTimesSet",
+  WorkTimesSet = 'WorkTimesSet',
   /** The work holidays view role */
-  WorkHolidaysView = "WorkHolidaysView",
+  WorkHolidaysView = 'WorkHolidaysView',
   /** The work holidays removal role */
-  WorkHolidaysRemove = "WorkHolidaysRemove",
+  WorkHolidaysRemove = 'WorkHolidaysRemove',
   /** The work holidays insertion role */
-  WorkHolidaysInsert = "WorkHolidaysInsert",
+  WorkHolidaysInsert = 'WorkHolidaysInsert',
   /** The work holidays set role */
-  WorkHolidaysSet = "WorkHolidaysSet",
+  WorkHolidaysSet = 'WorkHolidaysSet',
   /** The engine type view role */
-  EngineTypeView = "EngineTypeView",
+  EngineTypeView = 'EngineTypeView',
   /** The engine type removal role */
-  EngineTypeRemove = "EngineTypeRemove",
+  EngineTypeRemove = 'EngineTypeRemove',
   /** The engine type insertion role */
-  EngineTypeInsert = "EngineTypeInsert",
+  EngineTypeInsert = 'EngineTypeInsert',
   /** The engine type set role */
-  EngineTypeSet = "EngineTypeSet",
+  EngineTypeSet = 'EngineTypeSet',
   /** The flash code removal role */
-  FlashCodeRemove = "FlashCodeRemove",
+  FlashCodeRemove = 'FlashCodeRemove',
   /** The flash code insertion role */
-  FlashCodeInsert = "FlashCodeInsert",
+  FlashCodeInsert = 'FlashCodeInsert',
   /** The flash code set role */
-  FlashCodeSet = "FlashCodeSet",
+  FlashCodeSet = 'FlashCodeSet',
   /** The archived device removal role */
-  HistoricDeviceRemove = "HistoricDeviceRemove",
+  HistoricDeviceRemove = 'HistoricDeviceRemove',
   /** The archived device insertion role */
-  HistoricDeviceInsert = "HistoricDeviceInsert",
+  HistoricDeviceInsert = 'HistoricDeviceInsert',
   /** The archived device set role */
-  HistoricDeviceSet = "HistoricDeviceSet",
+  HistoricDeviceSet = 'HistoricDeviceSet',
   /** The archived device make archived */
-  HistoricDeviceMakeHistoric = "HistoricDeviceMakeHistoric",
+  HistoricDeviceMakeHistoric = 'HistoricDeviceMakeHistoric',
   /** The archived device un make archived */
-  HistoricDeviceUnMakeHistoric = "HistoricDeviceUnMakeHistoric",
+  HistoricDeviceUnMakeHistoric = 'HistoricDeviceUnMakeHistoric',
   /** The edl set role */
-  EdlSet = "EdlSet",
+  EdlSet = 'EdlSet',
   /** The edl insertion role */
-  EdlInsert = "EdlInsert",
+  EdlInsert = 'EdlInsert',
   /** The edl removal role */
-  EdlRemove = "EdlRemove",
+  EdlRemove = 'EdlRemove',
   /** The hos log removal role */
-  HosLogRemove = "HosLogRemove",
+  HosLogRemove = 'HosLogRemove',
   /** The hos log add */
-  HosLogAdd = "HosLogAdd",
+  HosLogAdd = 'HosLogAdd',
   /** The hos log edit */
-  HosLogEdit = "HosLogEdit",
+  HosLogEdit = 'HosLogEdit',
   /** The dvir log add */
-  DvirLogAdd = "DvirLogAdd",
+  DvirLogAdd = 'DvirLogAdd',
   /** The dvir log set role */
-  DvirLogSet = "DvirLogSet",
+  DvirLogSet = 'DvirLogSet',
   /** The dvir log removal role */
-  DvirLogRemove = "DvirLogRemove",
+  DvirLogRemove = 'DvirLogRemove',
   /** The process manual update */
-  ProcessManualUpdate = "ProcessManualUpdate",
+  ProcessManualUpdate = 'ProcessManualUpdate',
   /** The radio set role */
-  RadioSet = "RadioSet",
+  RadioSet = 'RadioSet',
   /** The Report Audit Log role */
-  ReportAuditLog = "ReportAuditLog",
+  ReportAuditLog = 'ReportAuditLog',
   /** The Report Speed Profile role */
-  ReportSpeedProfile = "ReportSpeedProfile",
+  ReportSpeedProfile = 'ReportSpeedProfile',
   /** The Report Congregation role */
-  ReportCongregation = "ReportCongregation",
+  ReportCongregation = 'ReportCongregation',
   /** The Report Customer Visits Detail role */
-  ReportCustomerVisitsDetail = "ReportCustomerVisitsDetail",
+  ReportCustomerVisitsDetail = 'ReportCustomerVisitsDetail',
   /** The Report Customer Visits Summary role */
-  ReportCustomerVisitsSummary = "ReportCustomerVisitsSummary",
+  ReportCustomerVisitsSummary = 'ReportCustomerVisitsSummary',
   /** The Report DVIR Log role */
-  ReportDVIRLog = "ReportDVIRLog",
+  ReportDVIRLog = 'ReportDVIRLog',
   /** The Report Debug role */
-  ReportDebug = "ReportDebug",
+  ReportDebug = 'ReportDebug',
   /** The Report Device Install History role */
-  ReportDeviceInstallHistory = "ReportDeviceInstallHistory",
+  ReportDeviceInstallHistory = 'ReportDeviceInstallHistory',
   /** The Report Device role */
-  ReportDevice = "ReportDevice",
+  ReportDevice = 'ReportDevice',
   /** The Report Diagnostic List role */
-  ReportDiagnosticList = "ReportDiagnosticList",
+  ReportDiagnosticList = 'ReportDiagnosticList',
   /** The Report Engine Fault role */
-  ReportEngineFault = "ReportEngineFault",
+  ReportEngineFault = 'ReportEngineFault',
   /** The Report Engine Status role */
-  ReportEngineStatus = "ReportEngineStatus",
+  ReportEngineStatus = 'ReportEngineStatus',
   /** The Report Engine Summary role */
-  ReportEngineSummary = "ReportEngineSummary",
+  ReportEngineSummary = 'ReportEngineSummary',
   /** The Report Engine History role */
-  ReportEventHistory = "ReportEventHistory",
+  ReportEventHistory = 'ReportEventHistory',
   /** The Report Event Rule Device role */
-  ReportEventRuleDevice = "ReportEventRuleDevice",
+  ReportEventRuleDevice = 'ReportEventRuleDevice',
   /** The Report Exceptions Detail role */
-  ReportExceptionsDetail = "ReportExceptionsDetail",
+  ReportExceptionsDetail = 'ReportExceptionsDetail',
   /** The Report Exceptions Summary role */
-  ReportExceptionsSummary = "ReportExceptionsSummary",
+  ReportExceptionsSummary = 'ReportExceptionsSummary',
   /** The Report Fill Ups role */
-  ReportFillUps = "ReportFillUps",
+  ReportFillUps = 'ReportFillUps',
   /** The Report Fuel Tax role */
-  ReportFuelTax = "ReportFuelTax",
+  ReportFuelTax = 'ReportFuelTax',
   /** The Report Engine Status Statistics role */
-  ReportEngineStatusStatistics = "ReportEngineStatusStatistics",
+  ReportEngineStatusStatistics = 'ReportEngineStatusStatistics',
   /** The Report Groups List role */
-  ReportGroupsList = "ReportGroupsList",
+  ReportGroupsList = 'ReportGroupsList',
   /** The Report HOS Logs role */
-  ReportHosLogs = "ReportHosLogs",
+  ReportHosLogs = 'ReportHosLogs',
   /** The Report HOS Violation role */
-  ReportHosViolation = "ReportHosViolation",
+  ReportHosViolation = 'ReportHosViolation',
   /** The Report Notification role */
-  ReportNotification = "ReportNotification",
+  ReportNotification = 'ReportNotification',
   /** The Report Reminders role */
-  ReportReminders = "ReportReminders",
+  ReportReminders = 'ReportReminders',
   /** The Report Risk Management role */
-  ReportRiskManagement = "ReportRiskManagement",
+  ReportRiskManagement = 'ReportRiskManagement',
   /** The Report Route Comparison Detail role */
-  ReportRouteComparisonDetail = "ReportRouteComparisonDetail",
+  ReportRouteComparisonDetail = 'ReportRouteComparisonDetail',
   /** The Report Route Direction role */
-  ReportRouteDirection = "ReportRouteDirection",
+  ReportRouteDirection = 'ReportRouteDirection',
   /** The Report Route Summary role */
-  ReportRouteSummary = "ReportRouteSummary",
+  ReportRouteSummary = 'ReportRouteSummary',
   /** The Report Text Message role */
-  ReportTextMessage = "ReportTextMessage",
+  ReportTextMessage = 'ReportTextMessage',
   /** The Report Time Card role */
-  ReportTimeCard = "ReportTimeCard",
+  ReportTimeCard = 'ReportTimeCard',
   /** The Report Trips Detail role */
-  ReportTripsDetail = "ReportTripsDetail",
+  ReportTripsDetail = 'ReportTripsDetail',
   /** The Report Trips Summary role */
-  ReportTripsSummary = "ReportTripsSummary",
+  ReportTripsSummary = 'ReportTripsSummary',
   /** The Report Unassigned Route role */
-  ReportUnassignedRoute = "ReportUnassignedRoute",
+  ReportUnassignedRoute = 'ReportUnassignedRoute',
   /** The Report User List role */
-  ReportUserList = "ReportUserList",
+  ReportUserList = 'ReportUserList',
   /** The Report Zone List role */
-  ReportZoneList = "ReportZoneList",
+  ReportZoneList = 'ReportZoneList',
   /** The Report Exceptions Summary Graph role */
-  ReportExceptionsSummaryGraph = "ReportExceptionsSummaryGraph",
+  ReportExceptionsSummaryGraph = 'ReportExceptionsSummaryGraph',
   /** The Report TripsIdling Summary Graph role */
-  ReportTripsIdlingSummaryGraph = "ReportTripsIdlingSummaryGraph",
+  ReportTripsIdlingSummaryGraph = 'ReportTripsIdlingSummaryGraph',
   /** The Report Fleet Summary Graph role */
-  ReportFleetSummaryGraph = "ReportFleetSummaryGraph",
+  ReportFleetSummaryGraph = 'ReportFleetSummaryGraph',
   /** The Report Customer Stop Graph role */
-  ReportCustomerStopGraph = "ReportCustomerStopGraph",
+  ReportCustomerStopGraph = 'ReportCustomerStopGraph',
   /** The ReportTrips Density Summary Graph role */
-  ReportTripsDensitySummaryGraph = "ReportTripsDensitySummaryGraph",
+  ReportTripsDensitySummaryGraph = 'ReportTripsDensitySummaryGraph',
   /** The map view role */
-  ShowMap = "ShowMap",
+  ShowMap = 'ShowMap',
   /** The purge role */
-  Purge = "Purge",
+  Purge = 'Purge',
   /** The usb radio downloader removal role */
-  UsbRadioDownloaderRemove = "UsbRadioDownloaderRemove",
+  UsbRadioDownloaderRemove = 'UsbRadioDownloaderRemove',
   /** The excel report view role */
-  ExcelReportView = "ExcelReportView",
+  ExcelReportView = 'ExcelReportView',
   /** The excel report removal role */
-  ExcelReportRemove = "ExcelReportRemove",
+  ExcelReportRemove = 'ExcelReportRemove',
   /** The excel report edit role */
-  ExcelReportEdit = "ExcelReportEdit",
+  ExcelReportEdit = 'ExcelReportEdit',
   /** The excel report insertion role */
-  ExcelReportInsert = "ExcelReportInsert",
+  ExcelReportInsert = 'ExcelReportInsert',
   /** The key creation role */
-  KeyCreate = "KeyCreate",
+  KeyCreate = 'KeyCreate',
   /** The key backup role */
-  KeyBackup = "KeyBackup",
+  KeyBackup = 'KeyBackup',
   /** The key restore role */
-  KeyRestore = "KeyRestore",
+  KeyRestore = 'KeyRestore',
   /** The key data download role */
-  KeyDataDownload = "KeyDataDownload",
+  KeyDataDownload = 'KeyDataDownload',
   /** The user login role */
-  UserLogin = "UserLogin",
+  UserLogin = 'UserLogin',
   /** The user logout role */
-  UserLogoff = "UserLogoff",
+  UserLogoff = 'UserLogoff',
   /** The user login failure role */
-  UserLoginFailure = "UserLoginFailure",
+  UserLoginFailure = 'UserLoginFailure',
   /** The user lock out role */
-  UserLockout = "UserLockout",
+  UserLockout = 'UserLockout',
   /** The user unlocked role */
-  UserUnlocked = "UserUnlocked",
+  UserUnlocked = 'UserUnlocked',
   /** The request location */
-  RequestLocation = "RequestLocation",
+  RequestLocation = 'RequestLocation',
   /** The GPS text message send role */
-  GpsTextMessageSend = "GpsTextMessageSend",
+  GpsTextMessageSend = 'GpsTextMessageSend',
   /** The GPS text message deletion role */
-  GpsTextMessageDelete = "GpsTextMessageDelete",
+  GpsTextMessageDelete = 'GpsTextMessageDelete',
   /** The GPS text message view role */
-  GpsTextMessageView = "GpsTextMessageView",
+  GpsTextMessageView = 'GpsTextMessageView',
   /** The notification view role */
-  NotificationView = "NotificationView",
+  NotificationView = 'NotificationView',
   /** The notifications dismiss */
-  NotificationsDismiss = "NotificationsDismiss",
+  NotificationsDismiss = 'NotificationsDismiss',
   /** The notification template view role */
-  NotificationTemplateView = "NotificationTemplateView",
+  NotificationTemplateView = 'NotificationTemplateView',
   /** The notification template removal role */
-  NotificationTemplateRemove = "NotificationTemplateRemove",
+  NotificationTemplateRemove = 'NotificationTemplateRemove',
   /** The notification template set role */
-  NotificationTemplateSet = "NotificationTemplateSet",
+  NotificationTemplateSet = 'NotificationTemplateSet',
   /** The notification template insertion role */
-  NotificationTemplateInsert = "NotificationTemplateInsert",
+  NotificationTemplateInsert = 'NotificationTemplateInsert',
   /** The node view role */
-  NodeView = "NodeView",
+  NodeView = 'NodeView',
   /** The node removal role */
-  NodeRemove = "NodeRemove",
+  NodeRemove = 'NodeRemove',
   /** The node set role */
-  NodeSet = "NodeSet",
+  NodeSet = 'NodeSet',
   /** The node insertion role */
-  NodeInsert = "NodeInsert",
+  NodeInsert = 'NodeInsert',
   /** The security group view role */
-  SecurityGroupView = "SecurityGroupView",
+  SecurityGroupView = 'SecurityGroupView',
   /** The key insertion role */
-  KeyInsert = "KeyInsert",
+  KeyInsert = 'KeyInsert',
   /** The trailer view role */
-  TrailerView = "TrailerView",
+  TrailerView = 'TrailerView',
   /** The trailer removal role */
-  TrailerRemove = "TrailerRemove",
+  TrailerRemove = 'TrailerRemove',
   /** The trailer set role */
-  TrailerSet = "TrailerSet",
+  TrailerSet = 'TrailerSet',
   /** The trailer insertion role */
-  TrailerInsert = "TrailerInsert",
+  TrailerInsert = 'TrailerInsert',
   /** The driver change removal role */
-  DriverChangeRemove = "DriverChangeRemove",
+  DriverChangeRemove = 'DriverChangeRemove',
   /** The driver change insertion role */
-  DriverChangeInsert = "DriverChangeInsert",
+  DriverChangeInsert = 'DriverChangeInsert',
   /** The custom report schedule insertion role */
-  CustomReportScheduleInsert = "CustomReportScheduleInsert",
+  CustomReportScheduleInsert = 'CustomReportScheduleInsert',
   /** The custom report schedule set role */
-  CustomReportScheduleSet = "CustomReportScheduleSet",
+  CustomReportScheduleSet = 'CustomReportScheduleSet',
   /** The custom report schedule removal role */
-  CustomReportScheduleRemove = "CustomReportScheduleRemove",
+  CustomReportScheduleRemove = 'CustomReportScheduleRemove',
   /** The custom report send error */
-  CustomReportSendError = "CustomReportSendError",
+  CustomReportSendError = 'CustomReportSendError',
   /** The fuel transaction view role */
-  FuelTransactionView = "FuelTransactionView",
+  FuelTransactionView = 'FuelTransactionView',
   /** The fuel transaction removal role */
-  FuelTransactionRemove = "FuelTransactionRemove",
+  FuelTransactionRemove = 'FuelTransactionRemove',
   /** The fuel transaction insertion role */
-  FuelTransactionInsert = "FuelTransactionInsert",
+  FuelTransactionInsert = 'FuelTransactionInsert',
   /** The fuel transaction set role */
-  FuelTransactionSet = "FuelTransactionSet",
+  FuelTransactionSet = 'FuelTransactionSet',
   /** The posted road speed set role */
-  PostedRoadSpeedSet = "PostedRoadSpeedSet",
+  PostedRoadSpeedSet = 'PostedRoadSpeedSet',
   /** The fill ups graph */
-  FillUpsGraph = "FillUpsGraph",
+  FillUpsGraph = 'FillUpsGraph',
   /** The misc page view role */
-  MiscPageView = "MiscPageView",
+  MiscPageView = 'MiscPageView',
   /** The about view role */
-  AboutView = "AboutView",
+  AboutView = 'AboutView',
   /** The dashboard view role */
-  DashboardView = "DashboardView",
+  DashboardView = 'DashboardView',
   /** The radio downloader view role */
-  RadioDownloaderView = "RadioDownloaderView",
+  RadioDownloaderView = 'RadioDownloaderView',
   /** The fuel transaction import */
-  FuelTransactionImport = "FuelTransactionImport",
+  FuelTransactionImport = 'FuelTransactionImport',
   /** The drive lock user cleared */
-  DriveLockUserCleared = "DriveLockUserCleared",
+  DriveLockUserCleared = 'DriveLockUserCleared',
   /** Password reset request */
-  PasswordResetRequest = "PasswordResetRequest",
+  PasswordResetRequest = 'PasswordResetRequest',
   /** The defect group view role */
-  DefectGroupView = "DefectGroupView",
+  DefectGroupView = 'DefectGroupView',
   /** The {@link ICertificate} insertion role */
-  CertificateInsert = "CertificateInsert",
+  CertificateInsert = 'CertificateInsert',
   /** The {@link ICertificate} removal role */
-  CertificateRemove = "CertificateRemove",
+  CertificateRemove = 'CertificateRemove',
   /** The {@link ICertificate} set role */
-  CertificateSet = "CertificateSet",
+  CertificateSet = 'CertificateSet',
   /** The {@link IDutyStatusAvailability} reporting role */
-  ReportHosAvailability = "ReportHosAvailability",
+  ReportHosAvailability = 'ReportHosAvailability',
   /** The {@link ITripTypeChange} insertion role */
-  TripTypeChangeInsert = "TripTypeChangeInsert",
+  TripTypeChangeInsert = 'TripTypeChangeInsert',
   /** The {@link ITripTypeChange} removal role */
-  TripTypeChangeRemove = "TripTypeChangeRemove",
+  TripTypeChangeRemove = 'TripTypeChangeRemove',
   /** The reassign data view role */
-  ReassignData = "ReassignData",
+  ReassignData = 'ReassignData',
   /** The {@link IShipmentLog} insertion role */
-  ShipmentLogInsert = "ShipmentLogInsert",
+  ShipmentLogInsert = 'ShipmentLogInsert',
   /** The {@link IShipmentLog} set role */
-  ShipmentLogSet = "ShipmentLogSet",
+  ShipmentLogSet = 'ShipmentLogSet',
   /** The {@link IShipmentLog} removal role */
-  ShipmentLogRemove = "ShipmentLogRemove",
+  ShipmentLogRemove = 'ShipmentLogRemove',
   /** The {@link ITrailerAttachment} attachment role */
-  TrailerAttachmentInsert = "TrailerAttachmentInsert",
+  TrailerAttachmentInsert = 'TrailerAttachmentInsert',
   /** The {@link ITrailerAttachment} set role */
-  TrailerAttachmentSet = "TrailerAttachmentSet",
+  TrailerAttachmentSet = 'TrailerAttachmentSet',
   /** The {@link ITrailerAttachment} removal role */
-  TrailerAttachmentRemove = "TrailerAttachmentRemove",
+  TrailerAttachmentRemove = 'TrailerAttachmentRemove',
   /** The SupportTicket insert role */
-  SupportTicketInsert = "SupportTicketInsert",
+  SupportTicketInsert = 'SupportTicketInsert',
   /** The TrainingTicket insert role */
-  TrainingTicketInsert = "TrainingTicketInsert",
+  TrainingTicketInsert = 'TrainingTicketInsert',
   /** The SupportTicket update role */
-  SupportTicketSet = "SupportTicketSet",
+  SupportTicketSet = 'SupportTicketSet',
   /** The TrainingTicket update role */
-  TrainingTicketSet = "TrainingTicketSet",
+  TrainingTicketSet = 'TrainingTicketSet',
   /** The EmailSent role */
-  EmailSent = "EmailSent",
+  EmailSent = 'EmailSent',
   /** The skip verify {@link IDutyStatusLog} role */
-  SkipHosVerify = "SkipHosVerify",
+  SkipHosVerify = 'SkipHosVerify',
   /** The skip claim unassigned {@link IDutyStatusLog} role */
-  SkipHosClaimUnassigned = "SkipHosClaimUnassigned",
+  SkipHosClaimUnassigned = 'SkipHosClaimUnassigned',
   /** The skip {@link IDVIRLog} inspection role */
-  SkipDvirInspect = "SkipDvirInspect",
+  SkipDvirInspect = 'SkipDvirInspect',
   /** The ELD Data Transfer role */
-  ELDDataTransfer = "ELDDataTransfer",
+  ELDDataTransfer = 'ELDDataTransfer',
   /** The credits view role */
-  CreditsView = "CreditsView",
+  CreditsView = 'CreditsView',
   /** The charging events report role */
-  ReportchargeEvent = "ReportchargeEvent",
+  ReportchargeEvent = 'ReportchargeEvent',
   /** Hardware purchase role. */
-  HardwarePurchase = "HardwarePurchase",
+  HardwarePurchase = 'HardwarePurchase',
   /** The Media File view role */
-  MediaFileView = "MediaFileView",
+  MediaFileView = 'MediaFileView',
   /** The Media File removal role */
-  MediaFileRemove = "MediaFileRemove",
+  MediaFileRemove = 'MediaFileRemove',
   /** The Media File insertion role */
-  MediaFileInsert = "MediaFileInsert",
+  MediaFileInsert = 'MediaFileInsert',
   /** The Media File set role */
-  MediaFileSet = "MediaFileSet",
+  MediaFileSet = 'MediaFileSet',
   /** The Media File upload role */
-  MediaFileUpload = "MediaFileUpload",
+  MediaFileUpload = 'MediaFileUpload',
   /** The wifi view role */
-  WiFiView = "WiFiView",
+  WiFiView = 'WiFiView',
   /** The wifi removal role */
-  WiFiRemove = "WiFiRemove",
+  WiFiRemove = 'WiFiRemove',
   /** The wifi set role */
-  WiFiSet = "WiFiSet",
+  WiFiSet = 'WiFiSet',
   /** The wifi insertion role */
-  WiFiInsert = "WiFiInsert",
+  WiFiInsert = 'WiFiInsert',
   /** The UserSupport insertion role */
-  UserSupportInsert = "UserSupportInsert",
+  UserSupportInsert = 'UserSupportInsert',
   /** The UserSupport removal role */
-  UserSupportRemove = "UserSupportRemove",
+  UserSupportRemove = 'UserSupportRemove',
   /** The Material Management report role */
-  MaterialManagement = "MaterialManagement",
+  MaterialManagement = 'MaterialManagement',
 }

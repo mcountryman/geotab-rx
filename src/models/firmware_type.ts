@@ -3,7 +3,7 @@
 /** The type of firmware. */
 export enum FirmwareType {
   /** The firmware is used for Ethernet Radio Downloaders */
-  EthernetRadioDownloader = "EthernetRadioDownloader",
+  EthernetRadioDownloader = 'EthernetRadioDownloader',
   /** The firmware is used for USB Radio Downloaders */
-  UsbRadioDownloader = "UsbRadioDownloader",
+  UsbRadioDownloader = 'UsbRadioDownloader',
 }

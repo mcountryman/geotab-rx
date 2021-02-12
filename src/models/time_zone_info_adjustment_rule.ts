@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITransitionTime } from "./transition_time";
+import { ITransitionTime } from './transition_time';
 
 /** Adjustment rule for timezones. */
 export interface ITimeZoneInfoAdjustmentRule {

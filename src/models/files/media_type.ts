@@ -3,9 +3,9 @@
 /** The type of a {@link IMediaFile}. */
 export enum MediaType {
   /** Unknown file type. */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** Video file type. */
-  Video = "Video",
+  Video = 'Video',
   /** Image file type. */
-  Image = "Image",
+  Image = 'Image',
 }

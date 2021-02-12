@@ -3,89 +3,89 @@
 /** Used to specify the type of the report template. */
 export enum ReportDataSource {
   /** Trips detail report */
-  TripsDetail = "TripsDetail",
+  TripsDetail = 'TripsDetail',
   /** Risk management report */
-  RiskManagement = "RiskManagement",
+  RiskManagement = 'RiskManagement',
   /** Exceptions Details report */
-  ExceptionsDetail = "ExceptionsDetail",
+  ExceptionsDetail = 'ExceptionsDetail',
   /** Debug report */
-  Debug = "Debug",
+  Debug = 'Debug',
   /** Exceptions Summary report */
-  ExceptionsSummary = "ExceptionsSummary",
+  ExceptionsSummary = 'ExceptionsSummary',
   /** Trips Summary report */
-  TripsSummary = "TripsSummary",
+  TripsSummary = 'TripsSummary',
   /** Time card report */
-  TimeCard = "TimeCard",
+  TimeCard = 'TimeCard',
   /** Audit Log list */
-  AuditLog = "AuditLog",
+  AuditLog = 'AuditLog',
   /** Users List */
-  UserList = "UserList",
+  UserList = 'UserList',
   /** Diagnostic list */
-  DiagnosticList = "DiagnosticList",
+  DiagnosticList = 'DiagnosticList',
   /** Customer visit detail report */
-  CustomerVisitsDetail = "CustomerVisitsDetail",
+  CustomerVisitsDetail = 'CustomerVisitsDetail',
   /** Customer visit summary report */
-  CustomerVisitsSummary = "CustomerVisitsSummary",
+  CustomerVisitsSummary = 'CustomerVisitsSummary',
   /** Route summary report */
-  RouteSummary = "RouteSummary",
+  RouteSummary = 'RouteSummary',
   /** Unassigned route report */
-  UnassignedRoute = "UnassignedRoute",
+  UnassignedRoute = 'UnassignedRoute',
   /** Notification list */
-  Notification = "Notification",
+  Notification = 'Notification',
   /** Fuel tax report */
-  FuelTax = "FuelTax",
+  FuelTax = 'FuelTax',
   /** Zones List */
-  ZoneList = "ZoneList",
+  ZoneList = 'ZoneList',
   /** Congregation report */
-  Congregation = "Congregation",
+  Congregation = 'Congregation',
   /** Engine summary report */
-  EngineSummary = "EngineSummary",
+  EngineSummary = 'EngineSummary',
   /** Engine fault summary report */
-  EngineFault = "EngineFault",
+  EngineFault = 'EngineFault',
   /** Engine status summary report */
-  EngineStatus = "EngineStatus",
+  EngineStatus = 'EngineStatus',
   /** Device report */
-  Device = "Device",
+  Device = 'Device',
   /** Route direction report */
-  RouteDirections = "RouteDirections",
+  RouteDirections = 'RouteDirections',
   /** Reminder report */
-  Reminder = "Reminder",
+  Reminder = 'Reminder',
   /** EventRule device report */
-  EventRuleDevice = "EventRuleDevice",
+  EventRuleDevice = 'EventRuleDevice',
   /** Event history report */
-  EventHistory = "EventHistory",
+  EventHistory = 'EventHistory',
   /** Groups list */
-  GroupsList = "GroupsList",
+  GroupsList = 'GroupsList',
   /** Key usage report (DEPRECATED) */
-  DeviceInstallHistory = "DeviceInstallHistory",
+  DeviceInstallHistory = 'DeviceInstallHistory',
   /** Time performance report (DEPRECATED) */
-  EngineStatusStatistics = "EngineStatusStatistics",
+  EngineStatusStatistics = 'EngineStatusStatistics',
   /** Text Message. */
-  TextMessage = "TextMessage",
+  TextMessage = 'TextMessage',
   /** Route Comparison report. */
-  RouteComparisonDetail = "RouteComparisonDetail",
+  RouteComparisonDetail = 'RouteComparisonDetail',
   /** HOS drivers log report. */
-  HosLog = "HosLog",
+  HosLog = 'HosLog',
   /** Driver Vehicle Inspection Report. */
-  DVIRLog = "DVIRLog",
+  DVIRLog = 'DVIRLog',
   /** HOS violation */
-  HosViolation = "HosViolation",
+  HosViolation = 'HosViolation',
   /** Exceptions Summary Graph */
-  ExceptionsSummaryGraph = "ExceptionsSummaryGraph",
+  ExceptionsSummaryGraph = 'ExceptionsSummaryGraph',
   /** Trips Idling Summary Graph */
-  TripsIdlingSummaryGraph = "TripsIdlingSummaryGraph",
+  TripsIdlingSummaryGraph = 'TripsIdlingSummaryGraph',
   /** Fleet Summary Graph */
-  FleetSummaryGraph = "FleetSummaryGraph",
+  FleetSummaryGraph = 'FleetSummaryGraph',
   /** Customer Stop Graph */
-  CustomerStopGraph = "CustomerStopGraph",
+  CustomerStopGraph = 'CustomerStopGraph',
   /** Trips Density Summary Graph. */
-  TripsDensitySummaryGraph = "TripsDensitySummaryGraph",
+  TripsDensitySummaryGraph = 'TripsDensitySummaryGraph',
   /** Fill-ups report */
-  FillUps = "FillUps",
+  FillUps = 'FillUps',
   /** HOS availability */
-  HosAvailability = "HosAvailability",
+  HosAvailability = 'HosAvailability',
   /** Charging events */
-  ChargeEvent = "ChargeEvent",
+  ChargeEvent = 'ChargeEvent',
   /** Material management report */
-  MaterialManagement = "MaterialManagement",
+  MaterialManagement = 'MaterialManagement',
 }

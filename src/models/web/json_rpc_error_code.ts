@@ -3,34 +3,34 @@
 /** Indicates the JSON-RPC error type that occurred. Derived from JSON-RPC 2.0 specification. */
 export enum JsonRpcErrorCode {
   /** The default value. */
-  None = "None",
+  None = 'None',
   /**
    * Invalid JSON was received by the server. An error occurred on the server while parsing
    * the JSON text.
    */
-  ParseError = "ParseError",
+  ParseError = 'ParseError',
   /** Internal JSON-RPC error. */
-  InternalError = "InternalError",
+  InternalError = 'InternalError',
   /** Invalid method parameter(s). */
-  InvalidParams = "InvalidParams",
+  InvalidParams = 'InvalidParams',
   /** The method does not exist / is not available. */
-  MethodNotFound = "MethodNotFound",
+  MethodNotFound = 'MethodNotFound',
   /** The JSON sent is not a valid Request object. */
-  InvalidRequest = "InvalidRequest",
+  InvalidRequest = 'InvalidRequest',
   /** The server responded with {@link IGroupRelationViolatedException}. */
-  GroupRelationViolatedError = "GroupRelationViolatedError",
+  GroupRelationViolatedError = 'GroupRelationViolatedError',
   /** The server responded with {@link INone}. */
-  DbUnavailableGeneralError = "DbUnavailableGeneralError",
+  DbUnavailableGeneralError = 'DbUnavailableGeneralError',
   /** The server responded with {@link IConnectionFailure}. */
-  DbUnavailableConnectionFailure = "DbUnavailableConnectionFailure",
+  DbUnavailableConnectionFailure = 'DbUnavailableConnectionFailure',
   /** The server responded with {@link IUnknownDatabase}. */
-  DbUnavailableUnknownDatabase = "DbUnavailableUnknownDatabase",
+  DbUnavailableUnknownDatabase = 'DbUnavailableUnknownDatabase',
   /** The server responded with {@link IInitializing}. */
-  DbUnavailableInitializing = "DbUnavailableInitializing",
+  DbUnavailableInitializing = 'DbUnavailableInitializing',
   /** The server responded with {@link IOperationAborted}. */
-  DbUnavailableOperationAborted = "DbUnavailableOperationAborted",
+  DbUnavailableOperationAborted = 'DbUnavailableOperationAborted',
   /** Invalid certificate error. */
-  InvalidCertificateException = "InvalidCertificateException",
+  InvalidCertificateException = 'InvalidCertificateException',
   /** Internal server error. */
-  InternalServerError = "InternalServerError",
+  InternalServerError = 'InternalServerError',
 }

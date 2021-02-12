@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { FuelTankCapacitySource } from "../fuel/fuel_tank_capacity_source";
+import { FuelTankCapacitySource } from '../fuel/fuel_tank_capacity_source';
 
 /**
  * An event representing adding fuel to a vehicle. An extremum representing either

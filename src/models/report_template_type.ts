@@ -3,13 +3,13 @@
 /** Report template type for {@link IReportTemplate}. */
 export enum ReportTemplateType {
   /** Uploaded user reports */
-  Custom = "Custom",
+  Custom = 'Custom',
   /** Exportable report view with simplified columns */
-  Report = "Report",
+  Report = 'Report',
   /** Exportable report views with all columns */
-  Advanced = "Advanced",
+  Advanced = 'Advanced',
   /** Default dashboard */
-  Dashboard = "Dashboard",
+  Dashboard = 'Dashboard',
   /** Used for other preloaded templates */
-  Preloaded = "Preloaded",
+  Preloaded = 'Preloaded',
 }

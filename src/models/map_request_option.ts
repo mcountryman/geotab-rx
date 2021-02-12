@@ -3,15 +3,15 @@
 /** Defines options for a map server request. */
 export enum MapRequestOption {
   /** No special options, use all available road data. */
-  None = "None",
+  None = 'None',
   /** Do not use any road data that is defined as an "estimate". */
-  NoEstimates = "NoEstimates",
+  NoEstimates = 'NoEstimates',
   /** Use community data only. */
-  Community = "Community",
+  Community = 'Community',
   /** Use community that are not "estimates" */
-  CommunityNoEstimates = "CommunityNoEstimates",
+  CommunityNoEstimates = 'CommunityNoEstimates',
   /** Use commercial data only. */
-  Commercial = "Commercial",
+  Commercial = 'Commercial',
   /** Use commercial that are not "estimates" */
-  CommercialNoEstimates = "CommercialNoEstimates",
+  CommercialNoEstimates = 'CommercialNoEstimates',
 }

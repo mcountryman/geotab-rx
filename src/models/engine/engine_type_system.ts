@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEngineType } from "../engine/engine_type";
+import { IEngineType } from '../engine/engine_type';
 
 /** Base class for all system engine types. */
 export interface IEngineTypeSystem extends IEngineType {

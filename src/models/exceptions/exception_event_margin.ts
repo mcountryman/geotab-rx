@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IExceptionEvent } from "../exceptions/exception_event";
-import { IDevice } from "../device";
-import { IDriver } from "../driver";
+import { IExceptionEvent } from '../exceptions/exception_event';
+import { IDevice } from '../device';
+import { IDriver } from '../driver';
 
 /** Base class for all Exceptions. */
 export interface IExceptionEventMargin {

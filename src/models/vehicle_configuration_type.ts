@@ -3,5 +3,5 @@
 /** The type of . */
 export enum VehicleConfigurationType {
   /** WiFi Hotspot */
-  Hotspot = "Hotspot",
+  Hotspot = 'Hotspot',
 }

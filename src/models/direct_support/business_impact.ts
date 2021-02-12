@@ -3,13 +3,13 @@
 /** The business impact enum for support tickets. */
 export enum BusinessImpact {
   /** Unknown Impact */
-  Unknown = "Unknown",
+  Unknown = 'Unknown',
   /** Critical Impact */
-  Critical = "Critical",
+  Critical = 'Critical',
   /** Major Impact */
-  Major = "Major",
+  Major = 'Major',
   /** Moderate Impact */
-  Moderate = "Moderate",
+  Moderate = 'Moderate',
   /** Limited Impact */
-  Limited = "Limited",
+  Limited = 'Limited',
 }

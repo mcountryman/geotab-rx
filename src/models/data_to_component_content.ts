@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITextMessageContentType } from "./text_message_content_type";
+import { ITextMessageContentType } from './text_message_content_type';
 
 /**  Message that can deliver data to a component of a GO device. */
 export interface IDataToComponentContent extends ITextMessageContentType {

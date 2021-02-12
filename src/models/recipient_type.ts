@@ -6,99 +6,99 @@ export enum RecipientType {
    * Recipient will be notified via a normal priority log that will appear in their Notifications.
    * A is required.
    */
-  LogOnly = "LogOnly",
+  LogOnly = 'LogOnly',
   /**
    * Recipient will be notified via either a simple email. A or valid Address is required.
    * Optionally includes an EmailTemplate (NotificationBinaryFile).
    */
-  Email = "Email",
+  Email = 'Email',
   /**
    * Recipient will be notified with a popup notification in the MyGeotab application
    * that will also appear in their Notifications. A is required.
    */
-  LogPopup = "LogPopup",
+  LogPopup = 'LogPopup',
   /**
    * Recipient will be notified with an urgent popup in the MyGeotab application that
    * will also appear in their Notifications. A is required.
    */
-  LogUrgentPopup = "LogUrgentPopup",
+  LogUrgentPopup = 'LogUrgentPopup',
   /**
    * Recipient will be notified with an alarm sound in the MyGeotab application. A and
    * are required.
    */
-  Alarm = "Alarm",
+  Alarm = 'Alarm',
   /** Recipient will be notified via the related Address. */
-  WebService = "WebService",
+  WebService = 'WebService',
   /** Recipient will be notified via a text message in the vehicle (for example, Garmin). */
-  TextMessage = "TextMessage",
+  TextMessage = 'TextMessage',
   /**
    * Recipient must be prompted via a text message in the vehicle (for example, Garmin)
    * to select their status.
    */
-  ChangeStatus = "ChangeStatus",
+  ChangeStatus = 'ChangeStatus',
   /** Beep three times rapidly using the GO device buzzer. */
-  BeepThreeTimesRapidly = "BeepThreeTimesRapidly",
+  BeepThreeTimesRapidly = 'BeepThreeTimesRapidly',
   /** Beep three times using the GO device buzzer. */
-  BeepThreeTimes = "BeepThreeTimes",
+  BeepThreeTimes = 'BeepThreeTimes',
   /** Beep ten times rapidly using the GO device buzzer. */
-  BeepTenTimesRapidly = "BeepTenTimesRapidly",
+  BeepTenTimesRapidly = 'BeepTenTimesRapidly',
   /**
    * Recipient will be notified with a popup notification in the MyGeotab application
    * that will also appear in their Notifications.
    */
-  LogPopupInfo = "LogPopupInfo",
+  LogPopupInfo = 'LogPopupInfo',
   /**
    * Recipient will be notified via the related WebRequestTemplate (NotificationBinaryFile).
    * A WebRequestTemplate is required.
    */
-  WebRequest = "WebRequest",
+  WebRequest = 'WebRequest',
   /**
    * The vehicle associate with the will be assigned to the designated group (removed
    * from sibling groups). A is required.
    */
-  AssignToGroup = "AssignToGroup",
+  AssignToGroup = 'AssignToGroup',
   /**
    * Recipient will be notified via audio from a text to speech application connected
    * to the .
    */
-  TextToSpeech = "TextToSpeech",
+  TextToSpeech = 'TextToSpeech',
   /**
    * Recipient will be notified with a popup notification in the MyGeotab application
    * that will also appear in their Notifications. A is required.
    */
-  LogNewsPopup = "LogNewsPopup",
+  LogNewsPopup = 'LogNewsPopup',
   /**
    * Beep three times rapidly using the GO device buzzer. The device will beep even if
    * there is a delay in the data and may beep after the event causing the exception
    * has ended.
    */
-  BeepThreeTimesRapidlyAllowDelay = "BeepThreeTimesRapidlyAllowDelay",
+  BeepThreeTimesRapidlyAllowDelay = 'BeepThreeTimesRapidlyAllowDelay',
   /**
    * Beep three times using the GO device buzzer. The device will beep even if there
    * is a delay in the data and may beep after the event causing the exception has ended.
    */
-  BeepThreeTimesAllowDelay = "BeepThreeTimesAllowDelay",
+  BeepThreeTimesAllowDelay = 'BeepThreeTimesAllowDelay',
   /**
    * Beep ten times rapidly using the GO device buzzer. The device will beep even if
    * there is a delay in the data and may beep after the event causing the exception
    * has ended.
    */
-  BeepTenTimesRapidlyAllowDelay = "BeepTenTimesRapidlyAllowDelay",
+  BeepTenTimesRapidlyAllowDelay = 'BeepTenTimesRapidlyAllowDelay',
   /**
    * Recipient will be notified via audio from a GoTalk IOX. The GoTalk will speak even
    * if there is a delay in the data and may beep after the event causing the exception
    * has ended.
    */
-  TextToSpeechAllowDelay = "TextToSpeechAllowDelay",
+  TextToSpeechAllowDelay = 'TextToSpeechAllowDelay',
   /** TripType change will be added. */
-  TripTypeChange = "TripTypeChange",
+  TripTypeChange = 'TripTypeChange',
   /**
    * Recipients within a group will be notified via simple email. A valid group name
    * is required. Optionally includes an EmailTemplate (NotificationBinaryFile).
    */
-  EmailToGroup = "EmailToGroup",
+  EmailToGroup = 'EmailToGroup',
   /** Hos will be enabled. */
-  HosEnabled = "HosEnabled",
+  HosEnabled = 'HosEnabled',
   /** Hos will be disabled. */
-  HosDisabled = "HosDisabled",
+  HosDisabled = 'HosDisabled',
 }

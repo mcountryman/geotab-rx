@@ -3,7 +3,7 @@
 /** The {@link IBinaryPayload} type. */
 export enum BinaryPayloadType {
   /** BinaryPayload has no type. */
-  None = "None",
+  None = 'None',
   /** Represents a payload of type {@link IRequestLocation}. */
-  RequestLocation = "RequestLocation",
+  RequestLocation = 'RequestLocation',
 }

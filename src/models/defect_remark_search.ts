@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from "./search";
-import { IDVIRDefectSearch } from "./d_v_i_r_defect_search";
-import { IUserSearch } from "./user_search";
+import { ISearch } from './search';
+import { IDVIRDefectSearch } from './d_v_i_r_defect_search';
+import { IUserSearch } from './user_search';
 
 /** The object used to specify the arguments when searching for (s). */
 export interface IDefectRemarkSearch extends ISearch {

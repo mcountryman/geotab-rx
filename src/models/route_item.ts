@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRoutePlanItem } from "./route_plan_item";
-import { ILogRecord } from "./log_record";
+import { IRoutePlanItem } from './route_plan_item';
+import { ILogRecord } from './log_record';
 
 /** Represents a {@link ILogRecord} in proximity of a particular. {@link IRoutePlanItem} */
 export interface IRouteItem extends IRoutePlanItem {

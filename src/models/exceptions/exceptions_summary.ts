@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IExceptionsActivity } from "../exceptions/exceptions_activity";
+import { IExceptionsActivity } from '../exceptions/exceptions_activity';
 
 /**
  *  The Exceptions summary class.
