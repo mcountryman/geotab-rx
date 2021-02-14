@@ -1,10 +1,11 @@
+import { of } from "rxjs";
+import { fromFetch } from "rxjs/fetch";
 import { mocked } from "ts-jest/utils";
-import fetch from "isomorphic-fetch";
 import { FetchHttpAdapter } from "../../../src/rpc/adapters/fetch_adapter";
 
-jest.mock("isomorphic-fetch");
+jest.mock("rxjs/fetch");
 
-const mockedFetch = mocked(fetch);
+const mockedFetch = mocked(fromFetch);
 
 describe("rpc/adapters/fetch_adapter", () => {
   test("Returns string promise", (done) => {
@@ -13,10 +14,11 @@ describe("rpc/adapters/fetch_adapter", () => {
     const response = "TEST_JSON_RESPONSE";
     const adapter = new FetchHttpAdapter();
 
-    mockedFetch.mockResolvedValue({
-      text: () => Promise.resolve(response),
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } as any);
+    mockedFetch.mockReturnValue(
+      of(({
+        text: () => Promise.resolve(response),
+      } as any) as Response)
+    );
 
     adapter.post(url, body).subscribe({
       next: (res) => expect(res.body).toBe(response),
