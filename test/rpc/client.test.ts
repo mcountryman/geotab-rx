@@ -1,6 +1,6 @@
 import { from } from "rxjs";
 import { delay, map, mergeMap, take, toArray } from "rxjs/operators";
-import { RpcClient } from "../../rpc/client";
+import { RpcClient } from "../../src/rpc/client";
 import {
   echoHttpAdapter,
   httpErrorHttpAdapter,

@@ -6,7 +6,7 @@ import {
   IRpcBatchRequest,
   IRpcRequest,
   IRpcResponse,
-} from "../../rpc";
+} from "../../src/rpc";
 
 export const RPC_ERROR_CODE = 420.69;
 export const RPC_ERROR_MESSAGE = "THIS_IS_A_BAD_RPC_RESPONSE";

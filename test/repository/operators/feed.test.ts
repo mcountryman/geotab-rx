@@ -1,11 +1,11 @@
 import { from } from "rxjs";
 import { map, tap } from "rxjs/operators";
-import { feed } from "../../../repository/operators";
+import { feed } from "../../../src/repository/operators";
 import { mockRepo } from "../../helpers/repo_helper";
 
 describe("repository/operators/feed", () => {
   /**
-   * Tests for changed request/response as well as the caching of fromVersion within 
+   * Tests for changed request/response as well as the caching of fromVersion within
    * observable pipe.
    */
   test("Validate fromVersion handling", (done) => {

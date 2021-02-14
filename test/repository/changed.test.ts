@@ -1,10 +1,10 @@
 import { map, tap } from "rxjs/operators";
-import { changed } from "../../repository";
+import { changed } from "../../src/repository";
 import { mockRepo } from "../helpers/repo_helper";
 
 describe("repository/changed", () => {
   /**
-   * Ensures {@link changed} creates a valid `GetFeed` request and processes response 
+   * Ensures {@link changed} creates a valid `GetFeed` request and processes response
    * correctly.
    */
   test("Validate request/response", (done) => {

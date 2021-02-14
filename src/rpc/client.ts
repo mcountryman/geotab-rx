@@ -1,7 +1,6 @@
 import {
   BehaviorSubject,
   from,
-  iif,
   merge,
   Observable,
   of,
@@ -18,7 +17,6 @@ import {
   publish,
   refCount,
   switchMap,
-  tap,
   timeout,
   withLatestFrom,
 } from "rxjs/operators";
@@ -59,18 +57,6 @@ export interface IRpcClientOpts {
 }
 
 export class RpcClient implements IRpcClient {
-  get endPoint(): string {
-    return this.endPoint$.getValue();
-  }
-
-  set endPoint(value: string) {
-    this.endPoint$.next(value);
-  }
-
-  set credentials(value: ICredentials | undefined) {
-    this.credentials$.next(value);
-  }
-
   constructor(opts: IRpcClientOpts) {
     this.endPoint$ = new BehaviorSubject(opts.endPoint);
     this._timeoutMs = opts.timeoutMs ?? 5000;
@@ -94,6 +80,21 @@ export class RpcClient implements IRpcClient {
       publish(),
       refCount()
     );
+  }
+
+  /** @inheritdoc */
+  getEndPoint(): string {
+    return this.endPoint$.getValue();
+  }
+
+  /** @inheritdoc */
+  setEndPoint(value: string) {
+    this.endPoint$.next(value);
+  }
+
+  /** @inheritdoc */
+  setCredentials(value: ICredentials | undefined) {
+    this.credentials$.next(value);
   }
 
   /** @inheritdoc */
@@ -261,9 +262,9 @@ function withHttpAdapter<T>(opts: IRpcClientOpts) {
   const adapter$ = opts.adapter
     ? of(opts.adapter)
     : from(import("./adapters/fetch_adapter")).pipe(
-      map((imp) => imp.FetchHttpAdapter),
-      map((FetchHttpAdapter) => new FetchHttpAdapter())
-    );
+        map((imp) => imp.FetchHttpAdapter),
+        map((FetchHttpAdapter) => new FetchHttpAdapter())
+      );
 
   return (observer: Observable<T>) => observer.pipe(withLatestFrom(adapter$));
 }

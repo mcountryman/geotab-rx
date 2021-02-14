@@ -4,12 +4,12 @@ import { Repo, RepoEntity, RepoSearch, Search } from "./types";
 
 /**
  * Find entities using supplied parameters.
- * 
+ *
  * @remarks
- * 
- * {@link Search.limit} determines how many records should be returned.  The default is 
+ *
+ * {@link Search.limit} determines how many records should be returned.  The default is
  * all records.
- * 
+ *
  * @param repo - The repo to find entities in.
  * @param search - The search conditions.
  * @returns Observable collection of entities found.

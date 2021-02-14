@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
-import { Repo } from "../../repository/types";
-import { IRpcRequest, IRpcResponse } from "../../rpc/types";
+import { Repo } from "../../src/repository/types";
+import { IRpcRequest, IRpcResponse } from "../../src/rpc/types";
 import { mockRpcClient } from "./client_helpers";
 
 export function mockRepo<TEntity, TSearch = unknown>(

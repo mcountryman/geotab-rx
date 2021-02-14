@@ -1,5 +1,5 @@
 import { map } from "rxjs/operators";
-import { authenticate } from "../authenticate";
+import { authenticate } from "../src/authenticate";
 import { mockRpcClient } from "./helpers/client_helpers";
 
 describe("authenticate(...)", () => {
@@ -21,13 +21,13 @@ describe("authenticate(...)", () => {
     );
 
     // Assign client endPoint for use in `authenticate` call
-    client.endPoint = endPoint;
+    client.setEndPoint(endPoint);
 
     authenticate(client, { username: "" }).subscribe({
       next: (result) => {
         // Ensure result and client endpoints match test endpoint
         expect(result.endPoint).toBe(endPoint);
-        expect(client.endPoint).toBe(endPoint);
+        expect(client.getEndPoint()).toBe(endPoint);
       },
       error: done,
       complete: done,
@@ -55,7 +55,7 @@ describe("authenticate(...)", () => {
       next: (result) => {
         // Ensure result and client endpoints match pathed endpoint
         expect(result.endPoint).toBe(`https://${path}/apiv1`);
-        expect(client.endPoint).toBe(`https://${path}/apiv1`);
+        expect(client.getEndPoint()).toBe(`https://${path}/apiv1`);
       },
       error: done,
       complete: done,
@@ -82,7 +82,6 @@ describe("authenticate(...)", () => {
       next: (result) => {
         // Ensure response credentials are passed through to result and client
         expect(result.credentials).toBe(credentials);
-        expect(client.credentials).toBe(credentials);
       },
       error: done,
       complete: done,

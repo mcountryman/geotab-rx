@@ -1,5 +1,5 @@
 import { map, tap } from "rxjs/operators";
-import { create } from "../../repository";
+import { create } from "../../src/repository";
 import { mockRepo } from "../helpers/repo_helper";
 
 describe("repository/create", () => {
@@ -13,7 +13,7 @@ describe("repository/create", () => {
     const entityType = "TEST_ENTITY_TYPE";
     const repo = mockRepo(entityType, (req$) =>
       req$.pipe(
-        tap(req => {
+        tap((req) => {
           // Check method name
           expect(req.method).toBe("Add");
           // Check typeName (pulled from repository)

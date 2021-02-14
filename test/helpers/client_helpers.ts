@@ -1,12 +1,16 @@
 import { Observable, of, throwError } from "rxjs";
 import { switchMap } from "rxjs/operators";
-import { IRpcClient, IRpcRequest, IRpcResponse } from "../../rpc";
+import { IRpcClient, IRpcRequest, IRpcResponse } from "../../src/rpc";
 
 export function mockRpcClient(
   op: (req$: Observable<IRpcRequest>) => Observable<IRpcResponse>
 ): IRpcClient {
+  let endPoint = "";
+
   return {
-    endPoint: "",
+    getEndPoint: () => endPoint,
+    setEndPoint: (value) => (endPoint = value),
+    setCredentials: (_) => {},
     call<TRes, TParams>(method: string, params: TParams) {
       return op(
         of({

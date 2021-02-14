@@ -48,7 +48,7 @@ jobs:
 
       - run: yarn
       - run: yarn build
-      - run: yarn doc
+      - run: yarn build:doc
         env:
           CI: true
 

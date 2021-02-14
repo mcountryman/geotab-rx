@@ -1,10 +1,10 @@
 import { map, tap } from "rxjs/operators";
-import { count } from "../../repository/count";
+import { count } from "../../src/repository/count";
 import { mockRepo } from "../helpers/repo_helper";
 
 describe("repository/count", () => {
   /**
-   * Ensures {@link count} creates a valid `GetCountOf` request and processes response 
+   * Ensures {@link count} creates a valid `GetCountOf` request and processes response
    * correctly.
    */
   test("Validate request/response", (done) => {

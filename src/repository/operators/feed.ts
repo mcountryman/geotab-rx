@@ -6,9 +6,9 @@ import { Repo, RepoEntity, RepoSearch, Search } from "../types";
 /**
  * Transforms observable into stream of changed entities in supplied repository matching
  * conditions supplied by search parameter.
- * 
+ *
  * @see {@link changed} For underlying change call documentation.
- * 
+ *
  * @param repo - The repository to monitor for changes.
  * @param search - The search parameters.
  */

@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { first, map, tap } from "rxjs/operators";
+import { map, tap } from "rxjs/operators";
 import { ICredentials } from "./models/credentials";
 import { ILoginResult } from "./models/login_result";
 import { IRpcClient } from "./rpc";
@@ -28,12 +28,12 @@ export function authenticate(
       endPoint:
         result.path !== "ThisServer"
           ? PATHED_END_POINT.replace("{{path}}", result.path)
-          : client.endPoint,
+          : client.getEndPoint(),
       credentials: result.credentials,
     })),
     tap((result) => {
-      client.endPoint = result.endPoint;
-      client.credentials = result.credentials;
+      client.setEndPoint(result.endPoint);
+      client.setCredentials(result.credentials);
     })
   );
 }
