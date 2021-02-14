@@ -17,7 +17,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn build:esm5 && yarn build:types",
+    "build": "concurrently yarn:build:doc yarn:build:cjs yarn:build:esm yarn:build:esm5 yarn:build:types",
     "build:doc": "typedoc",
     "build:cjs": "tsc -b ./tsconfig.cjs.json",
     "build:esm": "tsc -b ./tsconfig.esm.json",
@@ -51,6 +51,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
+    "concurrently": "^5.3.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
