@@ -3,11 +3,11 @@
 /** An enum representing invalid user exception types. */
 export enum InvalidUserType {
   /** User session is expired. */
-  Default = 'Default',
+  Default = "Default",
   /** User session is expired. */
-  SessionExpired = 'SessionExpired',
+  SessionExpired = "SessionExpired",
   /** User is locked out. */
-  UserLockout = 'UserLockout',
+  UserLockout = "UserLockout",
   /** User session is invalid. */
-  SessionInvalid = 'SessionInvalid',
+  SessionInvalid = "SessionInvalid",
 }

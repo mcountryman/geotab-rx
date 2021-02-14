@@ -3,71 +3,71 @@
 /** The status of the notification. */
 export enum NotificationStatus {
   /** Status is unknown until first attempt to open downloader */
-  StatusUnknown = 'StatusUnknown',
+  StatusUnknown = "StatusUnknown",
   /** User has disabled Radio Downloader */
-  StatusDisabled = 'StatusDisabled',
+  StatusDisabled = "StatusDisabled",
   /** Enabled but no device found */
-  StatusDisconnected = 'StatusDisconnected',
+  StatusDisconnected = "StatusDisconnected",
   /** Enabled and connected */
-  StatusConnected = 'StatusConnected',
+  StatusConnected = "StatusConnected",
   /** Debug status */
-  StatusDebug = 'StatusDebug',
+  StatusDebug = "StatusDebug",
   /** Idle */
-  StatusIdle = 'StatusIdle',
+  StatusIdle = "StatusIdle",
   /** Stop */
-  StatusStopped = 'StatusStopped',
+  StatusStopped = "StatusStopped",
   /** Unlocked */
-  StatusUnlocked = 'StatusUnlocked',
+  StatusUnlocked = "StatusUnlocked",
   /** Running without available aiding data */
-  StatusRunningNoAidingDataAvailable = 'StatusRunningNoAidingDataAvailable',
+  StatusRunningNoAidingDataAvailable = "StatusRunningNoAidingDataAvailable",
   /** Running */
-  StatusRunning = 'StatusRunning',
+  StatusRunning = "StatusRunning",
   /** FTDI not installed */
-  StatusFTDINotInstalled = 'StatusFTDINotInstalled',
+  StatusFTDINotInstalled = "StatusFTDINotInstalled",
   /** Trying to lock */
-  StatusTryingToLock = 'StatusTryingToLock',
+  StatusTryingToLock = "StatusTryingToLock",
   /** Authentication failed */
-  StatusAuthenticationFailed = 'StatusAuthenticationFailed',
+  StatusAuthenticationFailed = "StatusAuthenticationFailed",
   /** Authentication not supported */
-  StatusAuthenticationNotSupported = 'StatusAuthenticationNotSupported',
+  StatusAuthenticationNotSupported = "StatusAuthenticationNotSupported",
   /** Authentication scheme not provided */
-  StatusAuthenticationSchemeNotProvided = 'StatusAuthenticationSchemeNotProvided',
+  StatusAuthenticationSchemeNotProvided = "StatusAuthenticationSchemeNotProvided",
   /** Unknown response from server */
-  StatusUnknownResponseFromServer = 'StatusUnknownResponseFromServer',
+  StatusUnknownResponseFromServer = "StatusUnknownResponseFromServer",
   /** Server not found */
-  StatusServerNotFound = 'StatusServerNotFound',
+  StatusServerNotFound = "StatusServerNotFound",
   /** Proxy server not found */
-  StatusProxyServerNotFound = 'StatusProxyServerNotFound',
+  StatusProxyServerNotFound = "StatusProxyServerNotFound",
   /** Timeout */
-  StatusTimeout = 'StatusTimeout',
+  StatusTimeout = "StatusTimeout",
   /** Proxy timeout */
-  StatusProxyTimeout = 'StatusProxyTimeout',
+  StatusProxyTimeout = "StatusProxyTimeout",
   /** Device registration failed. */
-  StatusDeviceRegistrationFailed = 'StatusDeviceRegistrationFailed',
+  StatusDeviceRegistrationFailed = "StatusDeviceRegistrationFailed",
   /** Connecting */
-  StatusConnecting = 'StatusConnecting',
+  StatusConnecting = "StatusConnecting",
   /** Update message count failed */
-  UpdateMessageCountsFailed = 'UpdateMessageCountsFailed',
+  UpdateMessageCountsFailed = "UpdateMessageCountsFailed",
   /** Invalid Orbcomm Customer */
-  InvalidOrbcommCustomer = 'InvalidOrbcommCustomer',
+  InvalidOrbcommCustomer = "InvalidOrbcommCustomer",
   /** Thread finish timeout */
-  ThreadFinishTimeout = 'ThreadFinishTimeout',
+  ThreadFinishTimeout = "ThreadFinishTimeout",
   /** Waiting for database upgrade */
-  StatusWaitingForUpgrade = 'StatusWaitingForUpgrade',
+  StatusWaitingForUpgrade = "StatusWaitingForUpgrade",
   /** User cleared status */
-  StatusUserCleared = 'StatusUserCleared',
+  StatusUserCleared = "StatusUserCleared",
   /** Status missing */
-  StatusMissing = 'StatusMissing',
+  StatusMissing = "StatusMissing",
   /** Service Manager connected */
-  StatusServiceManagerConnected = 'StatusServiceManagerConnected',
+  StatusServiceManagerConnected = "StatusServiceManagerConnected",
   /** Cache Cleared */
-  CacheCleared = 'CacheCleared',
+  CacheCleared = "CacheCleared",
   /** Cache Busy */
-  CacheBusy = 'CacheBusy',
+  CacheBusy = "CacheBusy",
   /** An Exception occurred */
-  StatusExceptionOccurred = 'StatusExceptionOccurred',
+  StatusExceptionOccurred = "StatusExceptionOccurred",
   /** An Exception occurred */
-  StatusDeviceDeleted = 'StatusDeviceDeleted',
+  StatusDeviceDeleted = "StatusDeviceDeleted",
   /** Status delayed */
-  StatusDelayed = 'StatusDelayed',
+  StatusDelayed = "StatusDelayed",
 }

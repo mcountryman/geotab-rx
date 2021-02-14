@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRestInfo } from './rest_info';
-import { IDeferralInfo } from './deferral_info';
+import { IRestInfo } from "./rest_info";
+import { IDeferralInfo } from "./deferral_info";
 
 /**
  *  DaySummary.

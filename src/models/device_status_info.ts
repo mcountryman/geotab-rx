@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { IExceptionEvent } from './exceptions/exception_event';
-import { IDevice } from './device';
-import { IDriver } from './driver';
-import { IGroup } from './group';
+import { IEntityWithVersion } from "./entity_with_version";
+import { IExceptionEvent } from "./exceptions/exception_event";
+import { IDevice } from "./device";
+import { IDriver } from "./driver";
+import { IGroup } from "./group";
 
 /**
  * Represents the current state of a vehicle by providing information such as the vehicle

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from '../name_entity';
+import { INameEntity } from "../name_entity";
 
 /**
  * Describes the unit of measure (UOM) for engine data logs. In the case where no unit

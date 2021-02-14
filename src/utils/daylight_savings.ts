@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
-import { ITimeZoneInfoWithRules } from '../models/time_zone_info_with_rules';
-import { IRpcClient } from '../rpc';
+import { Observable } from "rxjs";
+import { ITimeZoneInfoWithRules } from "../models/time_zone_info_with_rules";
+import { IRpcClient } from "../rpc";
 
 export function getDaylightSavingsRules(
   client: IRpcClient,
@@ -8,7 +8,7 @@ export function getDaylightSavingsRules(
 ): Observable<ITimeZoneInfoWithRules> {
   // TODO: Add timeZoneId validation?
 
-  return client.call('GetDaylightSavingRules', {
+  return client.call("GetDaylightSavingRules", {
     timeZoneId,
   });
 }

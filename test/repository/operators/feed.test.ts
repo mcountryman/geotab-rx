@@ -1,25 +1,25 @@
-import { from } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { feed } from '../../../src/repository/operators';
-import { mockRepo } from '../../helpers/repo_helper';
+import { from } from "rxjs";
+import { map, tap } from "rxjs/operators";
+import { feed } from "../../../src/repository/operators";
+import { mockRepo } from "../../helpers/repo_helper";
 
-describe('repository/operators/feed', () => {
+describe("repository/operators/feed", () => {
   /**
    * Tests for changed request/response as well as the caching of fromVersion within
    * observable pipe.
    */
-  test('Validate fromVersion handling', done => {
-    const entityId = 'TEST_ENTITY_ID';
-    const entityName = 'TEST_ENTITY_NAME';
-    const entityType = 'TEST_ENTITY_TYPE';
+  test("Validate fromVersion handling", (done) => {
+    const entityId = "TEST_ENTITY_ID";
+    const entityName = "TEST_ENTITY_NAME";
+    const entityType = "TEST_ENTITY_TYPE";
 
     let fromVersion: number | undefined = undefined;
 
-    const repo = mockRepo(entityType, req$ =>
+    const repo = mockRepo(entityType, (req$) =>
       req$.pipe(
-        tap(req => {
+        tap((req) => {
           // Check method name
-          expect(req.method).toBe('GetFeed');
+          expect(req.method).toBe("GetFeed");
           // Check typeName (pulled from repository)
           expect(req.params.typeName).toBe(entityType);
           // Check search.id (pulled from args)
@@ -31,7 +31,7 @@ describe('repository/operators/feed', () => {
 
           fromVersion = req.params.fromVersion;
         }),
-        map(req => ({
+        map((req) => ({
           ...req,
           result: {
             data: [{ id: entityId, name: entityName }],

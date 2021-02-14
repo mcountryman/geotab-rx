@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRule } from '../exceptions/rule';
+import { IRule } from "../exceptions/rule";
 
 /** A Exceptiopn Rule which represents DBNull database value. */
 export interface INoRule extends IRule {

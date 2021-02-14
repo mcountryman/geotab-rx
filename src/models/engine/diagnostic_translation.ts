@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from '../name_entity';
-import { IDiagnostic } from '../engine/diagnostic';
+import { INameEntity } from "../name_entity";
+import { IDiagnostic } from "../engine/diagnostic";
 
 /**
  *  Vehicle diagnostic translation. Note: this class should only be used for migration

@@ -6,37 +6,37 @@
  */
 export enum BinaryDataType {
   /** No data. */
-  None = 'None',
+  None = "None",
   /** Jpeg image. */
-  Jpeg = 'Jpeg',
+  Jpeg = "Jpeg",
   /** ASCII text data. */
-  Ascii = 'Ascii',
+  Ascii = "Ascii",
   /** Engine Serial Number. */
-  EngineSerialNumber = 'EngineSerialNumber',
+  EngineSerialNumber = "EngineSerialNumber",
   /** Software Version. */
-  SoftwareVersion = 'SoftwareVersion',
+  SoftwareVersion = "SoftwareVersion",
   /** Calibration Id. */
-  CalibrationId = 'CalibrationId',
+  CalibrationId = "CalibrationId",
   /** ECU Make. */
-  EcuMake = 'EcuMake',
+  EcuMake = "EcuMake",
   /** ECU Model. */
-  EcuModel = 'EcuModel',
+  EcuModel = "EcuModel",
   /** Data reported by the manufacturer. */
-  ManufacturerData = 'ManufacturerData',
+  ManufacturerData = "ManufacturerData",
   /** Data about the manufacturer part number reported by the ECU. */
-  EcuManufacturerPartNumber = 'EcuManufacturerPartNumber',
+  EcuManufacturerPartNumber = "EcuManufacturerPartNumber",
   /** SData about the manufacturer serial number reported by the ECU. */
-  EcuManufacturerSerialNumber = 'EcuManufacturerSerialNumber',
+  EcuManufacturerSerialNumber = "EcuManufacturerSerialNumber",
   /** Software Version 1. */
-  SoftwareVersionSection1 = 'SoftwareVersionSection1',
+  SoftwareVersionSection1 = "SoftwareVersionSection1",
   /** Software Version 2. */
-  SoftwareVersionSection2 = 'SoftwareVersionSection2',
+  SoftwareVersionSection2 = "SoftwareVersionSection2",
   /** Software Version 3. */
-  SoftwareVersionSection3 = 'SoftwareVersionSection3',
+  SoftwareVersionSection3 = "SoftwareVersionSection3",
   /** Software Version Full. */
-  SoftwareVersionFull = 'SoftwareVersionFull',
+  SoftwareVersionFull = "SoftwareVersionFull",
   /** A grouping of OBD-II data that forms a snapshot of the state of the vehicle. */
-  VariableEngineDataSnapshot = 'VariableEngineDataSnapshot',
+  VariableEngineDataSnapshot = "VariableEngineDataSnapshot",
   /** Third Party Data. */
-  ThirdPartyData = 'ThirdPartyData',
+  ThirdPartyData = "ThirdPartyData",
 }

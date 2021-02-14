@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { DutyStatusDeferralType } from './duty_status_deferral_type';
+import { DutyStatusDeferralType } from "./duty_status_deferral_type";
 
 /**
  *  RestInfo.

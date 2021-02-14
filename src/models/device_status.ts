@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IAddressLookupData } from './address_lookup_data';
-import { DeviceStatusLevel } from './device_status_level';
-import { IDevice } from './device';
+import { IEntity } from "./entity";
+import { IAddressLookupData } from "./address_lookup_data";
+import { DeviceStatusLevel } from "./device_status_level";
+import { IDevice } from "./device";
 
 /**
  * A class that represents the current status for a {@link IDevice}, including last

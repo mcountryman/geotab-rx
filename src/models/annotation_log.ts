@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { IDutyStatusLog } from './duty_status_log';
-import { IUser } from './user';
+import { IEntityWithVersion } from "./entity_with_version";
+import { IDutyStatusLog } from "./duty_status_log";
+import { IUser } from "./user";
 
 /**
  * An AnnotationLog is a comment that can be associated with a . The is the author

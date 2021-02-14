@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ILock } from '../lock/lock';
+import { ILock } from "../lock/lock";
 
 /**
  *  The Lock record.

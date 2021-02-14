@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGenericTicket } from '../direct_support/generic_ticket';
-import { BusinessImpact } from '../direct_support/business_impact';
+import { IGenericTicket } from "../direct_support/generic_ticket";
+import { BusinessImpact } from "../direct_support/business_impact";
 
 /** A training ticket. */
 export interface ISupportTicket extends IGenericTicket {

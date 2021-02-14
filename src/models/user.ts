@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from './name_entity_with_version';
-import { IDisplayMeasurementProfile } from './engine/display_diagnostic/display_measurement_profile';
-import { IGroup } from './group';
-import { UserAuthenticationType } from './user_authentication_type';
-import { ICertificate } from './certificate';
+import { INameEntityWithVersion } from "./name_entity_with_version";
+import { IDisplayMeasurementProfile } from "./engine/display_diagnostic/display_measurement_profile";
+import { IGroup } from "./group";
+import { UserAuthenticationType } from "./user_authentication_type";
+import { ICertificate } from "./certificate";
 
 /** A user of the system. A user can be a MyGeotab user or a user that is a {@link IDriver}. */
 export interface IUser extends INameEntityWithVersion {

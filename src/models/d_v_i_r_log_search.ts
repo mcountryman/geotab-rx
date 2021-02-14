@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IUserSearch } from './user_search';
-import { IGroupSearch } from './group_search';
-import { IDeviceSearch } from './device_search';
-import { ITrailerSearch } from './trailer_search';
-import { DVIRLogType } from './d_v_i_r_log_type';
+import { ISearch } from "./search";
+import { IUserSearch } from "./user_search";
+import { IGroupSearch } from "./group_search";
+import { IDeviceSearch } from "./device_search";
+import { ITrailerSearch } from "./trailer_search";
+import { DVIRLogType } from "./d_v_i_r_log_type";
 
 /**
  *  The object used to specify the arguments when searching for {@link IDVIRLog}(s).

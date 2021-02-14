@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs';
-import { Repo } from './types';
+import { Observable } from "rxjs";
+import { Repo } from "./types";
 
 /**
  * Gets the count of entities in the supplied repository. Entities that are currently
@@ -11,7 +11,7 @@ import { Repo } from './types';
 export function count<TRepo extends Repo<unknown>>(
   repo: Repo<TRepo>
 ): Observable<number> {
-  return repo.client.call('GetCountOf', {
+  return repo.client.call("GetCountOf", {
     typeName: repo.typeName,
   });
 }

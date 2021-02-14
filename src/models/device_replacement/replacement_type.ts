@@ -3,7 +3,7 @@
 /** Replacement type for the device. */
 export enum ReplacementType {
   /** Default replacement type */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
   /** Type of replacement is Sunset. */
-  Sunset = 'Sunset',
+  Sunset = "Sunset",
 }

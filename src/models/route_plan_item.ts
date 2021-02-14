@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IRoute } from './route';
-import { IZone } from './zone';
+import { IEntity } from "./entity";
+import { IRoute } from "./route";
+import { IZone } from "./zone";
 
 /**  The class representing an individual item in a planned {@link IRoute}. */
 export interface IRoutePlanItem extends IEntity {

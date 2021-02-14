@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from '../../entity';
-import { IDisplayMeasurementProfileDetail } from '../../engine/display_diagnostic/display_measurement_profile_detail';
+import { IEntity } from "../../entity";
+import { IDisplayMeasurementProfileDetail } from "../../engine/display_diagnostic/display_measurement_profile_detail";
 
 /**
  *  Class to track Diagnostic to DisplayUnitOfMeasure for a given DisplayMeasurementProfile.

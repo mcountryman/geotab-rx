@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDuplicateException } from './duplicate_exception';
+import { IDuplicateException } from "./duplicate_exception";
 
 /**
  * An exception that occurs when adding a new user or when updating an existing user

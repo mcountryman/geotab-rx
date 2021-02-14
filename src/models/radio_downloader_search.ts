@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { RadioDownloaderStatus } from './radio_downloader_status';
-import { RadioDownloaderType } from './radio_downloader_type';
+import { ISearch } from "./search";
+import { RadioDownloaderStatus } from "./radio_downloader_status";
+import { RadioDownloaderType } from "./radio_downloader_type";
 
 /**
  *  The object used to specify the arguments when searching for a {@link IRadioDownloader}.

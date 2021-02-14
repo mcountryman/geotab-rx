@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationData } from './notification_data';
-import { IExceptionEvent } from './exceptions/exception_event';
-import { NotificationType } from './notification_type';
+import { INotificationData } from "./notification_data";
+import { IExceptionEvent } from "./exceptions/exception_event";
+import { NotificationType } from "./notification_type";
 
 /** The notification data pertaining to Exception Rules. */
 export interface INotificationExceptionData extends INotificationData {

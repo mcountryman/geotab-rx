@@ -3,13 +3,13 @@
 /** The language used by a GoTalk attached to a. {@link IGoDevice} */
 export enum GoTalkLanguage {
   /** English */
-  English = 'English',
+  English = "English",
   /** French */
-  French = 'French',
+  French = "French",
   /** Spanish */
-  Spanish = 'Spanish',
+  Spanish = "Spanish",
   /** German */
-  German = 'German',
+  German = "German",
   /** Italian */
-  Italian = 'Italian',
+  Italian = "Italian",
 }

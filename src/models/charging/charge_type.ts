@@ -3,9 +3,9 @@
 /** Represents the current type of the charge. */
 export enum ChargeType {
   /** Alternating Current. */
-  AC = 'AC',
+  AC = "AC",
   /** Direct Current. */
-  DC = 'DC',
+  DC = "DC",
   /** Charge type is unknown. */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
 }

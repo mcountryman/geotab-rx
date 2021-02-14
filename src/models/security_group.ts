@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISystemSecurityClearance } from './system_security_clearance';
+import { ISystemSecurityClearance } from "./system_security_clearance";
 
 /**
  * This is a . The sub tree of this group is used to manage security to various parts

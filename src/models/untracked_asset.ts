@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from './device';
+import { IDevice } from "./device";
 
 /**
  * An untracked asset that is used in MyGeotab without a serial number. This is used

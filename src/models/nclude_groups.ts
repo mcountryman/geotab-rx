@@ -9,11 +9,11 @@
  */
 export enum IncludeGroups {
   /** Include Children groups in the query results. */
-  Child = 'Child',
+  Child = "Child",
   /** Include Parent groups in the query results. */
-  Parent = 'Parent',
+  Parent = "Parent",
   /** Include Parent and Children groups in the query results. */
-  ParentAndChild = 'ParentAndChild',
+  ParentAndChild = "ParentAndChild",
   /** Directly related groups only in the query results. */
-  Direct = 'Direct',
+  Direct = "Direct",
 }

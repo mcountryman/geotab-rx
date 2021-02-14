@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGroup } from './group';
-import { DefectSeverity } from './defect_severity';
-import { DefectAssetType } from './defect_asset_type';
+import { IGroup } from "./group";
+import { DefectSeverity } from "./defect_severity";
+import { DefectAssetType } from "./defect_asset_type";
 
 /**
  *  Represents a Defect entity. This defines the one to one relationship between a

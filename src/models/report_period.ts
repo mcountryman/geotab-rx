@@ -3,45 +3,45 @@
 /** Used to represent the duration for which the report is generated. */
 export enum ReportPeriod {
   /** None period */
-  None = 'None',
+  None = "None",
   /** For the previous hour */
-  PreviousHour = 'PreviousHour',
+  PreviousHour = "PreviousHour",
   /** For today. */
-  Today = 'Today',
+  Today = "Today",
   /** For yesterday */
-  Yesterday = 'Yesterday',
+  Yesterday = "Yesterday",
   /** For this week */
-  ThisWeek = 'ThisWeek',
+  ThisWeek = "ThisWeek",
   /** For previous week */
-  LastWeek = 'LastWeek',
+  LastWeek = "LastWeek",
   /** For this month */
-  ThisMonth = 'ThisMonth',
+  ThisMonth = "ThisMonth",
   /** For previous month */
-  LastMonth = 'LastMonth',
+  LastMonth = "LastMonth",
   /** Previous 24 hours */
-  PreviousDay = 'PreviousDay',
+  PreviousDay = "PreviousDay",
   /** Previous 7 days */
-  PreviousWeek = 'PreviousWeek',
+  PreviousWeek = "PreviousWeek",
   /** Last three months */
-  LastThreeMonths = 'LastThreeMonths',
+  LastThreeMonths = "LastThreeMonths",
   /** Previous four weeks */
-  PreviousFourWeeks = 'PreviousFourWeeks',
+  PreviousFourWeeks = "PreviousFourWeeks",
   /** Last six months */
-  LastSixMonths = 'LastSixMonths',
+  LastSixMonths = "LastSixMonths",
   /** Last twelve months */
-  LastTwelveMonths = 'LastTwelveMonths',
+  LastTwelveMonths = "LastTwelveMonths",
   /** Year to date. */
-  YearToDate = 'YearToDate',
+  YearToDate = "YearToDate",
   /** Previous two weeks */
-  PreviousTwoWeeks = 'PreviousTwoWeeks',
+  PreviousTwoWeeks = "PreviousTwoWeeks",
   /** Custom time period, not available through user interface */
-  Custom = 'Custom',
+  Custom = "Custom",
   /** The this working week */
-  ThisWorkingWeek = 'ThisWorkingWeek',
+  ThisWorkingWeek = "ThisWorkingWeek",
   /** The last working week */
-  LastWorkingWeek = 'LastWorkingWeek',
+  LastWorkingWeek = "LastWorkingWeek",
   /** The previous thirty days */
-  PreviousThirtyDays = 'PreviousThirtyDays',
+  PreviousThirtyDays = "PreviousThirtyDays",
   /** The last quarter */
-  LastQuarter = 'LastQuarter',
+  LastQuarter = "LastQuarter",
 }

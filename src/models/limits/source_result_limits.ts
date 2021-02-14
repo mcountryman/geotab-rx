@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { LimitSource } from '../limits/limit_source';
-import { IResultLimitOverride } from '../limits/result_limit_override';
+import { LimitSource } from "../limits/limit_source";
+import { IResultLimitOverride } from "../limits/result_limit_override";
 
 /** Result limits for a given source. */
 export interface ISourceResultLimits {

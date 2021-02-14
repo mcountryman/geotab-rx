@@ -3,7 +3,7 @@
 /** WebRequest Template Http Verb. */
 export enum WebRequestTemplateHttpVerb {
   /** The get http verb */
-  Get = 'Get',
+  Get = "Get",
   /** The post http verb */
-  Post = 'Post',
+  Post = "Post",
 }

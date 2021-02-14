@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
+import { IEntity } from "./entity";
 
 /** The class representing an Employee. */
 export interface IEmployee extends IEntity {

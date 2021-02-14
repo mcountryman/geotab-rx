@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from '../search';
-import { IDeviceSearch } from '../device_search';
-import { IDiagnosticSearch } from '../engine/diagnostic_search';
-import { IGroupSearch } from '../group_search';
-import { FaultState } from '../engine/fault_state';
-import { IControllerSearch } from '../engine/controller_search';
+import { ISearch } from "../search";
+import { IDeviceSearch } from "../device_search";
+import { IDiagnosticSearch } from "../engine/diagnostic_search";
+import { IGroupSearch } from "../group_search";
+import { FaultState } from "../engine/fault_state";
+import { IControllerSearch } from "../engine/controller_search";
 
 /**
  *  The object used to specify the arguments when searching for a<br> .<br> This search

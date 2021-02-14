@@ -1,8 +1,8 @@
-import { from, Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ICoordinate } from '../models/coordinate';
-import { IReverseGeocodeAddress } from '../models/reverse_geocode_address';
-import { IRpcClient } from '../rpc';
+import { from, Observable } from "rxjs";
+import { mergeMap } from "rxjs/operators";
+import { ICoordinate } from "../models/coordinate";
+import { IReverseGeocodeAddress } from "../models/reverse_geocode_address";
+import { IRpcClient } from "../rpc";
 
 type GetAddressesOpts = IGetAddressesOpts | ICoordinate[];
 
@@ -20,10 +20,10 @@ export function getAddresses(
     opts instanceof Array ? ({ coordinates: opts } as IGetAddressesOpts) : opts;
 
   return client
-    .call<IReverseGeocodeAddress[]>('GetAddresses', {
+    .call<IReverseGeocodeAddress[]>("GetAddresses", {
       coordinates,
       hosAddresses,
       movingAddresses,
     })
-    .pipe(mergeMap(arr => from(arr)));
+    .pipe(mergeMap((arr) => from(arr)));
 }

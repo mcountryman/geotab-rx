@@ -1,10 +1,10 @@
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { ICredentials } from './models/credentials';
-import { ILoginResult } from './models/login_result';
-import { IRpcClient } from './rpc';
+import { Observable } from "rxjs";
+import { map, tap } from "rxjs/operators";
+import { ICredentials } from "./models/credentials";
+import { ILoginResult } from "./models/login_result";
+import { IRpcClient } from "./rpc";
 
-const PATHED_END_POINT = 'https://{{path}}/apiv1';
+const PATHED_END_POINT = "https://{{path}}/apiv1";
 
 export interface IAuthenticateOpts {
   username: string;
@@ -23,11 +23,11 @@ export function authenticate(
   opts: IAuthenticateOpts
 ): Observable<IAuthenticateResult> {
   const credentials = optsToCredentials(opts);
-  return client.call<ILoginResult>('Authenticate', credentials).pipe(
+  return client.call<ILoginResult>("Authenticate", credentials).pipe(
     map((result) => ({
       endPoint:
-        result.path !== 'ThisServer'
-          ? PATHED_END_POINT.replace('{{path}}', result.path)
+        result.path !== "ThisServer"
+          ? PATHED_END_POINT.replace("{{path}}", result.path)
           : client.getEndPoint(),
       credentials: result.credentials,
     })),

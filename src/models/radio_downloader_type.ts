@@ -3,7 +3,7 @@
 /** The type of Radio Downloader. */
 export enum RadioDownloaderType {
   /** Connects to Checkmate via USB cable */
-  Usb = 'Usb',
+  Usb = "Usb",
   /** Connects to Checkmate via Ethernet cable */
-  Ethernet = 'Ethernet',
+  Ethernet = "Ethernet",
 }

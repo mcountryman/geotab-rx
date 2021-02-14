@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
+import { IEntity } from "./entity";
 
 /** Representation of risk-based data belonging to a . */
 export interface IRiskData {

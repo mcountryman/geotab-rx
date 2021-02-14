@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from '../name_entity';
-import { IDiagnostic } from '../engine/diagnostic';
-import { IFailureMode } from '../engine/failure_mode';
+import { INameEntity } from "../name_entity";
+import { IDiagnostic } from "../engine/diagnostic";
+import { IFailureMode } from "../engine/failure_mode";
 
 /**  The optional summary code references for specific items referencing records. */
 export interface IFlashCode extends INameEntity {

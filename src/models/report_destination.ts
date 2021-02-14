@@ -3,15 +3,15 @@
 /** Used to specify where the destination of the scheduled report. */
 export enum ReportDestination {
   /** None destination */
-  None = 'None',
+  None = "None",
   /** Email destination in Excel format */
-  EmailExcel = 'EmailExcel',
+  EmailExcel = "EmailExcel",
   /** Dashboard destination */
-  Dashboard = 'Dashboard',
+  Dashboard = "Dashboard",
   /** Normal report destination */
-  NormalReport = 'NormalReport',
+  NormalReport = "NormalReport",
   /** Email destination in pdf format */
-  EmailPdf = 'EmailPdf',
+  EmailPdf = "EmailPdf",
   /** Email destination in interactive dashboard format */
-  InteractiveDashboard = 'InteractiveDashboard',
+  InteractiveDashboard = "InteractiveDashboard",
 }

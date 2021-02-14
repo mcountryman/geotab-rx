@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from '../name_entity';
+import { INameEntity } from "../name_entity";
 
 /**
  *  Standard Parameter Group Number (PGN). Where there is no parameter group it is

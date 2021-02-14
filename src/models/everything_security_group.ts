@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISystemSecurityClearance } from './system_security_clearance';
+import { ISystemSecurityClearance } from "./system_security_clearance";
 
 /**
  * This is a {@link ISystemSecurityClearance} with an Id of . {@link IUser}(s) that

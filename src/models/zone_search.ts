@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IGroupSearch } from './group_search';
-import { IncludeGroups } from './nclude_groups';
-import { IBoundingBox } from './geographical/bounding_box';
-import { IZoneTypeSearch } from './zone_type_search';
+import { ISearch } from "./search";
+import { IGroupSearch } from "./group_search";
+import { IncludeGroups } from "./nclude_groups";
+import { IBoundingBox } from "./geographical/bounding_box";
+import { IZoneTypeSearch } from "./zone_type_search";
 
 /**  The object used to specify the arguments when searching for (s). */
 export interface IZoneSearch extends ISearch {

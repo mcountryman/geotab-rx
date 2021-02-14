@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISystemSecurityClearance } from './system_security_clearance';
+import { ISystemSecurityClearance } from "./system_security_clearance";
 
 /**
  * This is a with an Id of . A user see that have their security assigned to this group

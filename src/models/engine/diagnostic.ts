@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from '../name_entity_with_version';
-import { IController } from '../engine/controller';
-import { DiagnosticType } from '../engine/diagnostic_type';
-import { IEngineType } from '../engine/engine_type';
-import { FaultResetMode } from '../engine/fault_reset_mode';
-import { ISource } from '../engine/source';
-import { IUnitOfMeasure } from '../engine/unit_of_measure';
-import { ValidLoggingPeriod } from '../valid_logging_period';
+import { INameEntityWithVersion } from "../name_entity_with_version";
+import { IController } from "../engine/controller";
+import { DiagnosticType } from "../engine/diagnostic_type";
+import { IEngineType } from "../engine/engine_type";
+import { FaultResetMode } from "../engine/fault_reset_mode";
+import { ISource } from "../engine/source";
+import { IUnitOfMeasure } from "../engine/unit_of_measure";
+import { ValidLoggingPeriod } from "../valid_logging_period";
 
 /**
  * Vehicle diagnostic information from the engine computer that can either be measurement

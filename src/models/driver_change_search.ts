@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IDeviceSearch } from './device_search';
-import { IUserSearch } from './user_search';
-import { DriverChangeType } from './driver_change_type';
+import { ISearch } from "./search";
+import { IDeviceSearch } from "./device_search";
+import { IUserSearch } from "./user_search";
+import { DriverChangeType } from "./driver_change_type";
 
 /** The object used to specify the arguments when searching for a {@link IDriverChange}. */
 export interface IDriverChangeSearch extends ISearch {

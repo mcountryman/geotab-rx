@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IExceptionsSummary } from '../exceptions/exceptions_summary';
+import { IExceptionsSummary } from "../exceptions/exceptions_summary";
 
 /**
  *  The trip exceptions summary class.

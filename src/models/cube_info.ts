@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from './name_entity';
-import { CubeType } from './cube_type';
+import { INameEntity } from "./name_entity";
+import { CubeType } from "./cube_type";
 
 /** The object model for containing the data related to generated cube metadata */
 export interface ICubeInfo extends INameEntity {

@@ -3,9 +3,9 @@
 /** The state of the. {@link IDeviceConnection} */
 export enum DeviceConnectionStatus {
   /** The device is currently connected and active */
-  Active = 'Active',
+  Active = "Active",
   /** The connection is inactive and was terminated normally */
-  Disconnected = 'Disconnected',
+  Disconnected = "Disconnected",
   /** The device is currently connected but not active */
-  Inactive = 'Inactive',
+  Inactive = "Inactive",
 }

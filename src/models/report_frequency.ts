@@ -3,27 +3,27 @@
 /** The frequency with which reports can be generated. */
 export enum ReportFrequency {
   /** The default frequency, none. */
-  None = 'None',
+  None = "None",
   /** Every 5 minutes. */
-  FiveMinutes = 'FiveMinutes',
+  FiveMinutes = "FiveMinutes",
   /** Every 30 minutes. */
-  ThirtyMinutes = 'ThirtyMinutes',
+  ThirtyMinutes = "ThirtyMinutes",
   /** Every hour. */
-  Hourly = 'Hourly',
+  Hourly = "Hourly",
   /** Daily */
-  Daily = 'Daily',
+  Daily = "Daily",
   /** Weekly */
-  Weekly = 'Weekly',
+  Weekly = "Weekly",
   /** Monthly */
-  Monthly = 'Monthly',
+  Monthly = "Monthly",
   /** Add hoc - when ever needed. */
-  WhenNeed = 'WhenNeed',
+  WhenNeed = "WhenNeed",
   /** Every minute */
-  Minute = 'Minute',
+  Minute = "Minute",
   /** Every two weeks */
-  BiWeekly = 'BiWeekly',
+  BiWeekly = "BiWeekly",
   /** Every four weeks */
-  FourWeeks = 'FourWeeks',
+  FourWeeks = "FourWeeks",
   /** Every quarter */
-  Quarterly = 'Quarterly',
+  Quarterly = "Quarterly",
 }

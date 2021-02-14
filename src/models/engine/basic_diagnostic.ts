@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDiagnostic } from '../engine/diagnostic';
+import { IDiagnostic } from "../engine/diagnostic";
 
 /**
  * Information from the engine computer that can either be measurement data or fault

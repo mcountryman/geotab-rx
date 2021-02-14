@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from '../../entity';
+import { IEntity } from "../../entity";
 
 /**
  *  Contains the link between User and DisplayMeasurementProfile.

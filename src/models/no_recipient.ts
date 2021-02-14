@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IRecipient } from './recipient';
-import { RecipientType } from './recipient_type';
-import { IUser } from './user';
+import { IRecipient } from "./recipient";
+import { RecipientType } from "./recipient_type";
+import { IUser } from "./user";
 
 /** No Recipient. */
 export interface INoRecipient extends IRecipient {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationData } from './notification_data';
-import { NotificationStatus } from './notification_status';
+import { INotificationData } from "./notification_data";
+import { NotificationStatus } from "./notification_status";
 
 /** The information data associated with a notification. */
 export interface INotificationInfoData extends INotificationData {

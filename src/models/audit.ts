@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from './name_entity_with_version';
-import { IUser } from './user';
+import { INameEntityWithVersion } from "./name_entity_with_version";
+import { IUser } from "./user";
 
 /**
  * Entry of events, operations and issues for tracking purposes. Entries can be added

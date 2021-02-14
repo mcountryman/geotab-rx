@@ -6,7 +6,7 @@ import {
   of,
   Subject,
   throwError,
-} from 'rxjs';
+} from "rxjs";
 import {
   bufferTime,
   catchError,
@@ -19,10 +19,10 @@ import {
   switchMap,
   timeout,
   withLatestFrom,
-} from 'rxjs/operators';
-import uuid from 'uuid-random';
-import { IRpcClient } from '.';
-import { ICredentials } from '../models/credentials';
+} from "rxjs/operators";
+import uuid from "uuid-random";
+import { IRpcClient } from ".";
+import { ICredentials } from "../models/credentials";
 import {
   IHttpAdapter,
   IHttpResponse,
@@ -33,9 +33,9 @@ import {
   IRpcResponse,
   makeNullableSubject,
   RpcError,
-} from './types';
+} from "./types";
 
-const BATCH_METHOD = 'ExecuteMultiCall';
+const BATCH_METHOD = "ExecuteMultiCall";
 
 export interface IRpcClientOpts {
   /** The default HTTP endPoint. */
@@ -110,7 +110,7 @@ export class RpcClient implements IRpcClient {
         id,
         method,
         params,
-        jsonrpc: '2.0',
+        jsonrpc: "2.0",
       });
     }).pipe(
       first((res) => res.id === id),
@@ -161,7 +161,7 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
           // Pipe results as direct `IRpcResponse`s
           if (batchRes.result) {
             if (!(batchRes.result instanceof Array))
-              return throwErr({ code: 69, message: '' });
+              return throwErr({ code: 69, message: "" });
 
             return from(batchRes.result).pipe(
               map((res, i) => toOkResponse(batchReq.params.calls[i], res))
@@ -172,7 +172,7 @@ function flattenResponses<TRpcRequest extends IRpcRequest>(req: TRpcRequest) {
           if (res.error) return throwErr(res.error);
 
           // Malformed response
-          return throwErr({ code: 69, message: '' });
+          return throwErr({ code: 69, message: "" });
         }
 
         return of(res);
@@ -211,7 +211,7 @@ function toBatch<TReq extends IRpcRequest>(
             calls,
             credentials,
           },
-          jsonrpc: '2.0',
+          jsonrpc: "2.0",
         })
       )
     );
@@ -243,7 +243,7 @@ function toOkResponse<TReq extends IRpcRequest, TRes>(
   return {
     id: req.id,
     result,
-    jsonrpc: '2.0',
+    jsonrpc: "2.0",
   };
 }
 
@@ -254,14 +254,14 @@ function toErrResponse<TReq extends IRpcRequest>(
   return {
     id: req.id,
     error: err,
-    jsonrpc: '2.0',
+    jsonrpc: "2.0",
   };
 }
 
 function withHttpAdapter<T>(opts: IRpcClientOpts) {
   const adapter$ = opts.adapter
     ? of(opts.adapter)
-    : from(import('./adapters/fetch_adapter')).pipe(
+    : from(import("./adapters/fetch_adapter")).pipe(
         map((imp) => imp.FetchHttpAdapter),
         map((FetchHttpAdapter) => new FetchHttpAdapter())
       );

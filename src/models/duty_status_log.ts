@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { IAnnotationLog } from './annotation_log';
-import { IUser } from './user';
-import { IAddressLookupData } from './address_lookup_data';
-import { DutyStatusLogType } from './duty_status_log_type';
-import { DutyStatusOrigin } from './duty_status_origin';
-import { IDevice } from './device';
-import { DutyStatusState } from './duty_status_state';
-import { DutyStatusMalfunctionTypes } from './duty_status_malfunction_types';
-import { DutyStatusDeferralType } from './duty_status_deferral_type';
+import { IEntityWithVersion } from "./entity_with_version";
+import { IAnnotationLog } from "./annotation_log";
+import { IUser } from "./user";
+import { IAddressLookupData } from "./address_lookup_data";
+import { DutyStatusLogType } from "./duty_status_log_type";
+import { DutyStatusOrigin } from "./duty_status_origin";
+import { IDevice } from "./device";
+import { DutyStatusState } from "./duty_status_state";
+import { DutyStatusMalfunctionTypes } from "./duty_status_malfunction_types";
+import { DutyStatusDeferralType } from "./duty_status_deferral_type";
 
 /**
  *  A DutyStatusLog is a record of duty status for Hours of Service regulations. The

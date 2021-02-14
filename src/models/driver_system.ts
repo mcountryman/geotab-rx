@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDriver } from './driver';
-import { IGroup } from './group';
+import { IDriver } from "./driver";
+import { IGroup } from "./group";
 
 /** A driver that is a system driver. */
 export interface IDriverSystem extends IDriver {

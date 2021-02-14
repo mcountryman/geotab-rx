@@ -3,15 +3,15 @@
 /** The mode of the {@link IRule}. */
 export enum ExceptionRuleMode {
   /** Checked inside a zone. */
-  Inside = 'Inside',
+  Inside = "Inside",
   /** Checked outside a zone. */
-  Outside = 'Outside',
+  Outside = "Outside",
   /** Check for stop inside a zone. */
-  StopInside = 'StopInside',
+  StopInside = "StopInside",
   /** Check for stop outside a zone. */
-  StopOutside = 'StopOutside',
+  StopOutside = "StopOutside",
   /** Entering a zone. */
-  EnteringZone = 'EnteringZone',
+  EnteringZone = "EnteringZone",
   /** Exiting a zone. */
-  ExitingZone = 'ExitingZone',
+  ExitingZone = "ExitingZone",
 }

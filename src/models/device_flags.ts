@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { VehicleFeatureCategory } from './vehicle_feature_category';
+import { VehicleFeatureCategory } from "./vehicle_feature_category";
 
 /** The plan a device is on. */
 export interface IDeviceFlags {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { DutyStatusViolationType } from './duty_status_violation_type';
+import { DutyStatusViolationType } from "./duty_status_violation_type";
 
 /**
  *  The duration of time remaining for a specific {@link IDutyStatusViolationType}.

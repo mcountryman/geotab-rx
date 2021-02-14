@@ -3,9 +3,9 @@
 /** Enum for the possible relay states. */
 export enum RelayState {
   /** Off. */
-  Off = 'Off',
+  Off = "Off",
   /** On. */
-  On = 'On',
+  On = "On",
   /** Driver key controlled. */
-  DriverKey = 'DriverKey',
+  DriverKey = "DriverKey",
 }

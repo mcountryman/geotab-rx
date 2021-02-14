@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDatabaseMoveFile } from '../web/database_move_file';
+import { IDatabaseMoveFile } from "../web/database_move_file";
 
 /**
  *  The results of initializing a database move.

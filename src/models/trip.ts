@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IDevice } from './device';
-import { IDriver } from './driver';
+import { IEntity } from "./entity";
+import { IDevice } from "./device";
+import { IDriver } from "./driver";
 
 /**
  *  This is a vehicles trip and a summary of the driving activity during that trip.

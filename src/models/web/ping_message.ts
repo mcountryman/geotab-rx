@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { PingMessageType } from '../web/ping_message_type';
+import { PingMessageType } from "../web/ping_message_type";
 
 /**
  *  A ping message.

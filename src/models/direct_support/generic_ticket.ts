@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IComment } from '../direct_support/comment';
+import { IComment } from "../direct_support/comment";
 
 /** Represents generic support ticket. */
 export interface IGenericTicket {

@@ -8,20 +8,20 @@
  */
 export enum ExceptionRuleBaseType {
   /** Custom Exception rule. All user created rules are custom rules. */
-  Custom = 'Custom',
+  Custom = "Custom",
   /** Route Definition base rule */
-  RouteDefinition = 'RouteDefinition',
+  RouteDefinition = "RouteDefinition",
   /**
    * Stock (canned) exception rule. These are the common rules available to switch on/off
    * in MyGeotab.
    */
-  Stock = 'Stock',
+  Stock = "Stock",
   /**
    * Zone stop rule. When a {@link IZone}'s MustIdentifyStops property is set to true,
    * the system creates a rule to identify when a device is stopped in the zone. These
    * rules are of type ZoneStop.
    */
-  ZoneStop = 'ZoneStop',
+  ZoneStop = "ZoneStop",
   /** Unknown base type. */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
 }

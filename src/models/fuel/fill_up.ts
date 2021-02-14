@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IFuelUsedEvent } from '../fuel/fuel_used_event';
-import { FuelUpEventConfidences } from '../fuel/fuel_up_event_confidences';
-import { IFillUpExtrema } from '../fuel/fill_up_extrema';
-import { IFuelTankCapacity } from '../fuel/fuel_tank_capacity';
-import { IFuelTransaction } from '../fuel/fuel_transaction';
+import { IFuelUsedEvent } from "../fuel/fuel_used_event";
+import { FuelUpEventConfidences } from "../fuel/fuel_up_event_confidences";
+import { IFillUpExtrema } from "../fuel/fill_up_extrema";
+import { IFuelTankCapacity } from "../fuel/fuel_tank_capacity";
+import { IFuelTransaction } from "../fuel/fuel_transaction";
 
 /** An event representing adding fuel to a vehicle. */
 export interface IFillUp extends IFuelUsedEvent {

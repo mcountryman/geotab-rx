@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IUnitOfMeasure } from '../../engine/unit_of_measure';
+import { IUnitOfMeasure } from "../../engine/unit_of_measure";
 
 /**
  * Base implementation of which converts measurements units using basic value multiplied

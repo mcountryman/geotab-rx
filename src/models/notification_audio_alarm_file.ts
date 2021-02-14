@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationBinaryFile } from './notification_binary_file';
-import { NotificationBinaryFileType } from './notification_binary_file_type';
+import { INotificationBinaryFile } from "./notification_binary_file";
+import { NotificationBinaryFileType } from "./notification_binary_file_type";
 
 /** Custom Notification Alert sound. */
 export interface INotificationAudioAlarmFile extends INotificationBinaryFile {

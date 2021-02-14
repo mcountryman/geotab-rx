@@ -6,16 +6,16 @@
  */
 export enum DbUnavailableState {
   /** The none */
-  None = 'None',
+  None = "None",
   /** The database server connection failure (for any reason). */
-  ConnectionFailure = 'ConnectionFailure',
+  ConnectionFailure = "ConnectionFailure",
   /** The unknown database */
-  UnknownDatabase = 'UnknownDatabase',
+  UnknownDatabase = "UnknownDatabase",
   /** The database is being initialized. */
-  Initializing = 'Initializing',
+  Initializing = "Initializing",
   /**
    * The database operation aborted (for any reason: Timeout, inconsistent transaction,
    * concurrency, cache busy, etc.
    */
-  OperationAborted = 'OperationAborted',
+  OperationAborted = "OperationAborted",
 }

@@ -6,40 +6,40 @@
  */
 export enum FuelUpEventConfidences {
   /** None */
-  None = 'None',
+  None = "None",
   /** Fuel level based {@link IFuelUpEvent} */
-  FuelLevel = 'FuelLevel',
+  FuelLevel = "FuelLevel",
   /** The {@link IFuelUpEvent} that matched on trip stop date. */
-  TripStop = 'TripStop',
+  TripStop = "TripStop",
   /** The based {@link IFuelUpEvent} */
-  FuelTransaction = 'FuelTransaction',
+  FuelTransaction = "FuelTransaction",
   /**  based {@link IFuelUpEvent} that has a matched device */
-  DeviceMatchedFuelTransaction = 'DeviceMatchedFuelTransaction',
+  DeviceMatchedFuelTransaction = "DeviceMatchedFuelTransaction",
   /**  based {@link IFuelUpEvent} that has matched trip stop by location */
-  LocationMatchedFuelTransaction = 'LocationMatchedFuelTransaction',
+  LocationMatchedFuelTransaction = "LocationMatchedFuelTransaction",
   /**  based {@link IFuelUpEvent} that has matched trip stop by date */
-  TripStopFuelTransaction = 'TripStopFuelTransaction',
+  TripStopFuelTransaction = "TripStopFuelTransaction",
   /**
    * Fuel level based {@link IFuelTransaction} based {@link IFuelUpEvent} by datetime
    * and device
    */
-  DeviceFuelLevelMatchedFuelTransaction = 'DeviceFuelLevelMatchedFuelTransaction',
+  DeviceFuelLevelMatchedFuelTransaction = "DeviceFuelLevelMatchedFuelTransaction",
   /**
    * Fuel level based {@link IFuelTransaction} based {@link IFuelUpEvent} where locations
    * match
    */
-  LocationFuelLevelMatchedFuelTransaction = 'LocationFuelLevelMatchedFuelTransaction',
+  LocationFuelLevelMatchedFuelTransaction = "LocationFuelLevelMatchedFuelTransaction",
   /** The {@link IDevice} was not communicating at the time of transaction */
-  NotCommunicating = 'NotCommunicating',
+  NotCommunicating = "NotCommunicating",
   /**
    * Fuel level based {@link IFuelUpEvent} could not be determined as there is not enough
    * data
    */
-  FuelLevelIndeterminate = 'FuelLevelIndeterminate',
+  FuelLevelIndeterminate = "FuelLevelIndeterminate",
   /**  based {@link IFuelUpEvent} that has a matched driver */
-  DriverMatchedFuelTransaction = 'DriverMatchedFuelTransaction',
+  DriverMatchedFuelTransaction = "DriverMatchedFuelTransaction",
   /** Fuel used inconsistent */
-  FuelUsedInconsistent = 'FuelUsedInconsistent',
+  FuelUsedInconsistent = "FuelUsedInconsistent",
   /** The {@link IDevice} is reporting electric energy usage. */
-  EngineElectricEnergy = 'EngineElectricEnergy',
+  EngineElectricEnergy = "EngineElectricEnergy",
 }

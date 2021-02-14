@@ -6,7 +6,7 @@ export enum FaultResetMode {
    * The engine {@link IFaultData} instances. These instances will continue to grow until
    * the fault condition ends.
    */
-  None = 'None',
+  None = "None",
   /** The engine {@link IFaultData} instance. */
-  AutoReset = 'AutoReset',
+  AutoReset = "AutoReset",
 }

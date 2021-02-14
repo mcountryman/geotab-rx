@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITextContent } from './text_content';
-import { IDateRange } from './date_range';
+import { ITextContent } from "./text_content";
+import { IDateRange } from "./date_range";
 
 /**
  *  Message content that can send a GPS location to a device. Derived from {@link ITextContent}.

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from '../entity_with_version';
-import { FuelTransactionProductType } from '../fuel/fuel_transaction_product_type';
+import { IEntityWithVersion } from "../entity_with_version";
+import { FuelTransactionProductType } from "../fuel/fuel_transaction_product_type";
 
 /** Log of fueling events. */
 export interface IFuelEvent extends IEntityWithVersion {

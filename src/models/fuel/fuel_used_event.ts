@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IFuelEvent } from '../fuel/fuel_event';
-import { IDevice } from '../device';
-import { IDriver } from '../driver';
+import { IFuelEvent } from "../fuel/fuel_event";
+import { IDevice } from "../device";
+import { IDriver } from "../driver";
 
 /** An event representing fuel used for a vehicle. */
 export interface IFuelUsedEvent extends IFuelEvent {

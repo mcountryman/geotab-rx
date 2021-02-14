@@ -1,5 +1,5 @@
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ICredentials } from '../models/credentials';
+import { BehaviorSubject, Observable } from "rxjs";
+import { ICredentials } from "../models/credentials";
 
 /** The rpc call represented as request object */
 export interface IRpcRequest<
@@ -23,7 +23,7 @@ export interface IRpcRequest<
    */
   params: TParams;
   /** The string specifying the version of the JSON-RPC protocol. MUST be exactly "2.0". */
-  jsonrpc: '2.0';
+  jsonrpc: "2.0";
 }
 
 export interface IRpcResponse<TResult = unknown> {
@@ -45,7 +45,7 @@ export interface IRpcResponse<TResult = unknown> {
    */
   result?: TResult;
   /** The string specifying the version of the JSON-RPC protocol. MUST be exactly "2.0". */
-  jsonrpc: '2.0';
+  jsonrpc: "2.0";
 }
 
 /** Represents batch request parameters. */
@@ -58,7 +58,7 @@ export interface IRpcBatchRequestParams {
 /**  Represents batched JSONRPC request. */
 export interface IRpcBatchRequest extends IRpcRequest<IRpcBatchRequestParams> {
   /** The GeoTab batch call method name. */
-  method: 'ExecuteMultiCall';
+  method: "ExecuteMultiCall";
 }
 
 /** Represents batched JSONRPC response. */

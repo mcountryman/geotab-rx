@@ -3,13 +3,13 @@
 /** The type of . */
 export enum CubeType {
   /** No cube type is specified */
-  None = 'None',
+  None = "None",
   /** ExceptionEvent Cube for Device */
-  ExceptionEventByDevice = 'ExceptionEventByDevice',
+  ExceptionEventByDevice = "ExceptionEventByDevice",
   /** ExceptionEvent Cube for Driver */
-  ExceptionEventByDriver = 'ExceptionEventByDriver',
+  ExceptionEventByDriver = "ExceptionEventByDriver",
   /** Trip Cube for Device */
-  TripSummaryByDevice = 'TripSummaryByDevice',
+  TripSummaryByDevice = "TripSummaryByDevice",
   /** Trip Cube for Driver */
-  TripSummaryByDriver = 'TripSummaryByDriver',
+  TripSummaryByDriver = "TripSummaryByDriver",
 }

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from './name_entity';
-import { WidgetType } from './widget_type';
-import { ReportPeriod } from './report_period';
-import { IUser } from './user';
+import { INameEntity } from "./name_entity";
+import { WidgetType } from "./widget_type";
+import { ReportPeriod } from "./report_period";
+import { IUser } from "./user";
 
 /**
  * Widget class represents a single widget that is a part of dashboard displayed on

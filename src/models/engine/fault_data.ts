@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from '../entity';
-import { IController } from '../engine/controller';
-import { IDevice } from '../device';
-import { IDiagnostic } from '../engine/diagnostic';
-import { IUser } from '../user';
-import { IFailureMode } from '../engine/failure_mode';
-import { FaultLampState } from '../engine/fault_lamp_state';
-import { FaultState } from '../engine/fault_state';
-import { IFlashCode } from '../engine/flash_code';
-import { DtcSeverity } from '../engine/dtc_severity';
-import { DtcClass } from '../engine/dtc_class';
+import { IEntity } from "../entity";
+import { IController } from "../engine/controller";
+import { IDevice } from "../device";
+import { IDiagnostic } from "../engine/diagnostic";
+import { IUser } from "../user";
+import { IFailureMode } from "../engine/failure_mode";
+import { FaultLampState } from "../engine/fault_lamp_state";
+import { FaultState } from "../engine/fault_state";
+import { IFlashCode } from "../engine/flash_code";
+import { DtcSeverity } from "../engine/dtc_severity";
+import { DtcClass } from "../engine/dtc_class";
 
 /**
  *  A record that represents a fault code record from the engine system of the specific

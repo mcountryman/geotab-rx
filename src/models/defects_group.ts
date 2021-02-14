@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDefect } from './defect';
+import { IDefect } from "./defect";
 
 /**
  * This is a with an Id of . This is the root defect group for vehicle and trailer

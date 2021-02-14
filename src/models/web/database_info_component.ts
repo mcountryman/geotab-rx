@@ -3,19 +3,19 @@
 /** Components for info and performance evaluation. */
 export enum DatabaseInfoComponent {
   /** Database name. */
-  DatabaseName = 'DatabaseName',
+  DatabaseName = "DatabaseName",
   /** System Settings in milliseconds. */
-  SystemSettingsReadMillis = 'SystemSettingsReadMillis',
+  SystemSettingsReadMillis = "SystemSettingsReadMillis",
   /** Time to read log record in milliseconds. */
-  LogRecordReadMillis = 'LogRecordReadMillis',
+  LogRecordReadMillis = "LogRecordReadMillis",
   /** Time to read and count entities in milliseconds. */
-  EntityCountMillis = 'EntityCountMillis',
+  EntityCountMillis = "EntityCountMillis",
   /** Time to read last user access date in milliseconds. */
-  LastUserAccessReadMillis = 'LastUserAccessReadMillis',
+  LastUserAccessReadMillis = "LastUserAccessReadMillis",
   /** Time to get database location in milliseconds. */
-  DatabaseLocationMillis = 'DatabaseLocationMillis',
+  DatabaseLocationMillis = "DatabaseLocationMillis",
   /** Time to get database uploader statistics in milliseconds. */
-  UploaderStatsMillis = 'UploaderStatsMillis',
+  UploaderStatsMillis = "UploaderStatsMillis",
   /** Time taken to move between actions of measuring individual components. */
-  OutsideComponentsMillis = 'OutsideComponentsMillis',
+  OutsideComponentsMillis = "OutsideComponentsMillis",
 }

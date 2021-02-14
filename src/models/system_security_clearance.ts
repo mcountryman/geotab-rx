@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISecurityClearance } from './security_clearance';
+import { ISecurityClearance } from "./security_clearance";
 
 /** The base class for (s) that are system entities. */
 export interface ISystemSecurityClearance extends ISecurityClearance {

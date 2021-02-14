@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ILeg } from '../geographical/leg';
+import { ILeg } from "../geographical/leg";
 
 /** A sequential set of {@link IStep}s that make up directions. */
 export interface IDirections {

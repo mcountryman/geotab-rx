@@ -7,9 +7,9 @@
  */
 export enum DutyStatusDeferralType {
   /** No deferral applied. */
-  None = 'None',
+  None = "None",
   /** Day one of deferral. */
-  DayOne = 'DayOne',
+  DayOne = "DayOne",
   /** Day two of deferral. */
-  DayTwo = 'DayTwo',
+  DayTwo = "DayTwo",
 }

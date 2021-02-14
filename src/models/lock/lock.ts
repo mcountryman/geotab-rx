@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from '../entity';
-import { ILockType } from '../lock/lock_type';
+import { IEntity } from "../entity";
+import { ILockType } from "../lock/lock_type";
 
 /**
  *  A Process lock record.

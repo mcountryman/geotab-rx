@@ -3,27 +3,27 @@
 /** Represents the type of product purchased in a {@link IFuelTransaction}. */
 export enum FuelTransactionProductType {
   /** Unknown product type */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
   /** A non-fuel purchase */
-  NonFuel = 'NonFuel',
+  NonFuel = "NonFuel",
   /** Regular grade gasoline (86-87 Octane : 90-91 Ron) */
-  Regular = 'Regular',
+  Regular = "Regular",
   /** Mid grade gasoline (88-89 Octane : 92-93 Ron) */
-  Midgrade = 'Midgrade',
+  Midgrade = "Midgrade",
   /** Premium grade gasoline (90-91 Octane : 94-95 Ron) */
-  Premium = 'Premium',
+  Premium = "Premium",
   /** Super grade gasoline (92-94+ Octane : 96-99+ Ron) */
-  Super = 'Super',
+  Super = "Super",
   /** Diesel fuel */
-  Diesel = 'Diesel',
+  Diesel = "Diesel",
   /** E85 (Ethanol 85%) */
-  E85 = 'E85',
+  E85 = "E85",
   /** CNG (Compressed Natural Gas) */
-  CNG = 'CNG',
+  CNG = "CNG",
   /** LPG (Liquid Propane Gas) */
-  LPG = 'LPG',
+  LPG = "LPG",
   /** Hydrogen */
-  Hydrogen = 'Hydrogen',
+  Hydrogen = "Hydrogen",
   /** Diesel exhaust fluid */
-  DieselExhaustFluid = 'DieselExhaustFluid',
+  DieselExhaustFluid = "DieselExhaustFluid",
 }

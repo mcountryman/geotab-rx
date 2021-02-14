@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from './name_entity';
+import { INameEntity } from "./name_entity";
 
 /**
  *  A group is one element in a hierarchical tree. Each group can have none or many

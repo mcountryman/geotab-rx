@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IWorkTime } from './work_time';
-import { IWorkTimeHolidayGroupId } from './work_time_holiday_group_id';
+import { IWorkTime } from "./work_time";
+import { IWorkTimeHolidayGroupId } from "./work_time_holiday_group_id";
 
 /** A work time that is a system supplied work time. */
 export interface IWorkTimeSystem extends IWorkTime {

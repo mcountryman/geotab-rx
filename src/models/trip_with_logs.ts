@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ILogRecord } from './log_record';
-import { ITrip } from './trip';
+import { ILogRecord } from "./log_record";
+import { ITrip } from "./trip";
 
 /**
  *  A device trip.

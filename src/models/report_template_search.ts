@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { ReportDataSource } from './report_data_source';
+import { ISearch } from "./search";
+import { ReportDataSource } from "./report_data_source";
 
 /**
  *  The object used to specify the arguments when searching for {@link IReportTemplate}(s).

@@ -1,8 +1,8 @@
-import { Observable } from 'rxjs';
-import { ICredentials } from '../models/credentials';
+import { Observable } from "rxjs";
+import { ICredentials } from "../models/credentials";
 
-export * from './types';
-export * from './client';
+export * from "./types";
+export * from "./client";
 
 /**
  * Handles invocation of JSONRPC requests and parses responses into observable streams.

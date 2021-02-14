@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IGroupSearch } from './group_search';
-import { UserAuthenticationType } from './user_authentication_type';
+import { ISearch } from "./search";
+import { IGroupSearch } from "./group_search";
+import { UserAuthenticationType } from "./user_authentication_type";
 
 /** The object used to specify the arguments when searching for a {@link IDriver}. */
 export interface IUserSearch extends ISearch {

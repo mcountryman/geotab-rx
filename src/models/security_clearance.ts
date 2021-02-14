@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGroup } from './group';
-import { ISecurityFilter } from './security_filter';
+import { IGroup } from "./group";
+import { ISecurityFilter } from "./security_filter";
 
 /**
  *  Represents a with (s) that are used to determine security access to different parts

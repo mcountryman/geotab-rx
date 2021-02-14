@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IApplicationVersionInformation } from './application_version_information';
+import { IApplicationVersionInformation } from "./application_version_information";
 
 /** Software version information for the server. */
 export interface IVersionInformation {

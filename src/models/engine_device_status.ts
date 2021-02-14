@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDeviceStatus } from './device_status';
+import { IDeviceStatus } from "./device_status";
 
 /**
  *  An extended version of {@link IDeviceStatus} that includes a count of active {@link

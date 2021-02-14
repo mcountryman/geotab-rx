@@ -1,7 +1,7 @@
-import { from, Observable, OperatorFunction } from 'rxjs';
-import { filter, mergeMap, switchMap, tap } from 'rxjs/operators';
-import { changed } from '../changed';
-import { Repo, RepoEntity, RepoSearch, Search } from '../types';
+import { from, Observable, OperatorFunction } from "rxjs";
+import { filter, mergeMap, switchMap, tap } from "rxjs/operators";
+import { changed } from "../changed";
+import { Repo, RepoEntity, RepoSearch, Search } from "../types";
 
 /**
  * Transforms observable into stream of changed entities in supplied repository matching
@@ -22,9 +22,9 @@ export function feed<
     let fromVersion: number | undefined = undefined;
     return in$.pipe(
       switchMap(() => changed(repo, search, fromVersion)),
-      tap(feed => (fromVersion = feed.toVersion)),
-      filter(feed => !!feed.data),
-      mergeMap(feed => from(feed.data!))
+      tap((feed) => (fromVersion = feed.toVersion)),
+      filter((feed) => !!feed.data),
+      mergeMap((feed) => from(feed.data!))
     );
   };
 }

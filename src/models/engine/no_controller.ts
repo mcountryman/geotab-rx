@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IController } from '../engine/controller';
-import { ISource } from '../engine/source';
+import { IController } from "../engine/controller";
+import { ISource } from "../engine/source";
 
 /** An object representing NoController. */
 export interface INoController extends IController {

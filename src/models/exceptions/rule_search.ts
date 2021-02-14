@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from '../search';
-import { ExceptionRuleBaseType } from '../exceptions/exception_rule_base_type';
-import { ExceptionRuleCategory } from '../exceptions/exception_rule_category';
-import { IGroupSearch } from '../group_search';
-import { IZoneType } from '../zone_type';
+import { ISearch } from "../search";
+import { ExceptionRuleBaseType } from "../exceptions/exception_rule_base_type";
+import { ExceptionRuleCategory } from "../exceptions/exception_rule_category";
+import { IGroupSearch } from "../group_search";
+import { IZoneType } from "../zone_type";
 
 /**  The object used to specify the arguments when searching for a {@link IRule}. */
 export interface IRuleSearch extends ISearch {

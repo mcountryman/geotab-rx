@@ -6,9 +6,9 @@
  */
 export enum UserSupportType {
   /** A {@link IUser} support contact whom will be redirected all calls. */
-  Call = 'Call',
+  Call = "Call",
   /** A {@link IUser} as a training support contact. */
-  Training = 'Training',
+  Training = "Training",
   /** A {@link IUser} as a procurement support contact. */
-  Procurement = 'Procurement',
+  Procurement = "Procurement",
 }

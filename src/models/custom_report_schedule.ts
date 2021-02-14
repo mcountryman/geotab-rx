@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { ReportDestination } from './report_destination';
-import { ReportFrequency } from './report_frequency';
-import { IGroup } from './group';
-import { IUser } from './user';
-import { ReportPeriod } from './report_period';
-import { IReportTemplate } from './report_template';
+import { IEntity } from "./entity";
+import { ReportDestination } from "./report_destination";
+import { ReportFrequency } from "./report_frequency";
+import { IGroup } from "./group";
+import { IUser } from "./user";
+import { ReportPeriod } from "./report_period";
+import { IReportTemplate } from "./report_template";
 
 /** Used to represent the schedule for emailed reports and dashboard graphic elements. */
 export interface ICustomReportSchedule extends IEntity {

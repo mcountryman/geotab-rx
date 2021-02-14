@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IEmployee } from './employee';
-import { IRoute } from './route';
+import { IEntity } from "./entity";
+import { IEmployee } from "./employee";
+import { IRoute } from "./route";
 
 /**
  *  The {@link IEmployee} / {@link IRoute} association.

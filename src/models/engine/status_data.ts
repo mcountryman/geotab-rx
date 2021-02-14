@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from '../entity_with_version';
-import { IDevice } from '../device';
-import { IDiagnostic } from '../engine/diagnostic';
-import { IController } from '../engine/controller';
+import { IEntityWithVersion } from "../entity_with_version";
+import { IDevice } from "../device";
+import { IDiagnostic } from "../engine/diagnostic";
+import { IController } from "../engine/controller";
 
 /**
  *  A record that represents an engine status record from the engine system of the

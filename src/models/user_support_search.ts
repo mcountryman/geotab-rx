@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IUserSearch } from './user_search';
-import { UserSupportType } from './user_support_type';
+import { ISearch } from "./search";
+import { IUserSearch } from "./user_search";
+import { UserSupportType } from "./user_support_type";
 
 /**
  *  The object used to specify the arguments when searching for a .

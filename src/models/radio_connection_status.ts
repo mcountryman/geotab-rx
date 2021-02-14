@@ -3,7 +3,7 @@
 /** The status of the radio connection. */
 export enum RadioConnectionStatus {
   /** Failed status. */
-  Failed = 'Failed',
+  Failed = "Failed",
   /** Success status. */
-  Success = 'Success',
+  Success = "Success",
 }

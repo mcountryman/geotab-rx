@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { FirmwareType } from './firmware_type';
+import { IEntity } from "./entity";
+import { FirmwareType } from "./firmware_type";
 
 /**
  * Represents a binary firmware image of a particular type and version. Various items

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { GroupSearchRelation } from './group_search_relation';
+import { ISearch } from "./search";
+import { GroupSearchRelation } from "./group_search_relation";
 
 /** Group search list */
 export interface IGroupListSearch extends ISearch {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { FuelTaxRoadType } from './fuel_tax_road_type';
+import { FuelTaxRoadType } from "./fuel_tax_road_type";
 
 /** Fuel tax attributes. */
 export interface IFuelTaxAttributes {

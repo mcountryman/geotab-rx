@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationData } from './notification_data';
+import { INotificationData } from "./notification_data";
 
 /**
  * The notification data associated with application exceptions that can be resolved

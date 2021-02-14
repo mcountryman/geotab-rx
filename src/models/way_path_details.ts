@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IWay } from './way';
+import { IWay } from "./way";
 
 /** A list of way segments and details. */
 export interface IWayPathDetails {

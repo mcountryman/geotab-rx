@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IGroupSearch } from './group_search';
-import { IDeviceSearch } from './device_search';
-import { ITrailerSearch } from './trailer_search';
+import { IGroupSearch } from "./group_search";
+import { IDeviceSearch } from "./device_search";
+import { ITrailerSearch } from "./trailer_search";
 
 /** The object used to specify the arguments when searching for a {@link IDefect}. */
 export interface IDefectSearch extends IGroupSearch {

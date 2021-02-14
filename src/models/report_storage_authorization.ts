@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IReportStorage } from './report_storage';
-import { IUser } from './user';
+import { IEntity } from "./entity";
+import { IReportStorage } from "./report_storage";
+import { IUser } from "./user";
 
 /**
  * The {@link IReportStorageAuthorization} links a report to a user who is authorised

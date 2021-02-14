@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { IUser } from './user';
-import { ITextMessageContentType } from './text_message_content_type';
-import { IDevice } from './device';
+import { IEntityWithVersion } from "./entity_with_version";
+import { IUser } from "./user";
+import { ITextMessageContentType } from "./text_message_content_type";
+import { IDevice } from "./device";
 
 /**
  *  A message to send or received from a device. When working with text messages it

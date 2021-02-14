@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { DriverChangeType } from './driver_change_type';
-import { IDevice } from './device';
-import { IDriver } from './driver';
+import { IEntityWithVersion } from "./entity_with_version";
+import { DriverChangeType } from "./driver_change_type";
+import { IDevice } from "./device";
+import { IDriver } from "./driver";
 
 /**  Information about timing of a {@link IDriver} change. */
 export interface IDriverChange extends IEntityWithVersion {

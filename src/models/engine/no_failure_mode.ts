@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IFailureMode } from '../engine/failure_mode';
-import { ISource } from '../engine/source';
+import { IFailureMode } from "../engine/failure_mode";
+import { ISource } from "../engine/source";
 
 /** A for diagnostics with no real world failure mode. */
 export interface INoFailureMode extends IFailureMode {

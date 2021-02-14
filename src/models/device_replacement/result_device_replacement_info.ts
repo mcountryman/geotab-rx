@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEligibility } from '../device_replacement/eligibility';
-import { IReplacement } from '../device_replacement/replacement';
-import { IDevicePlanDetails } from '../device_replacement/device_plan_details';
+import { IEligibility } from "../device_replacement/eligibility";
+import { IReplacement } from "../device_replacement/replacement";
+import { IDevicePlanDetails } from "../device_replacement/device_plan_details";
 
 /** Device Recall/Replacement Information to be sent to UI. */
 export interface IResultDeviceReplacementInfo {

@@ -3,11 +3,11 @@
 /**  The origin of a . */
 export enum DutyStatusOrigin {
   /** Automatic recorded by device */
-  Automatic = 'Automatic',
+  Automatic = "Automatic",
   /** Manual entry by driver. */
-  Manual = 'Manual',
+  Manual = "Manual",
   /** Other authenticated user. */
-  OtherUser = 'OtherUser',
+  OtherUser = "OtherUser",
   /** Unassigned driver. */
-  Unassigned = 'Unassigned',
+  Unassigned = "Unassigned",
 }

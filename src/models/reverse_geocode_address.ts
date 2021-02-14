@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IZone } from './zone';
+import { IZone } from "./zone";
 
 /**  The address and {@link IZone} (if any found) returned by a reverse geocode operation. */
 export interface IReverseGeocodeAddress {

@@ -6,15 +6,15 @@
  */
 export enum UserAuthenticationType {
   /** None or unknown. */
-  None = 'None',
+  None = "None",
   /** Authentication using passwords. */
-  BasicAuthentication = 'BasicAuthentication',
+  BasicAuthentication = "BasicAuthentication",
   /** Authentication using Windows Domains. */
-  WindowsAuthentication = 'WindowsAuthentication',
+  WindowsAuthentication = "WindowsAuthentication",
   /** MyAdmin global user */
-  MyAdmin = 'MyAdmin',
+  MyAdmin = "MyAdmin",
   /** Authentication using SAML. */
-  SAML = 'SAML',
+  SAML = "SAML",
   /** Authentication using Certificate. */
-  ClientCertificate = 'ClientCertificate',
+  ClientCertificate = "ClientCertificate",
 }

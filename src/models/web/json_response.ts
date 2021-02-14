@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IJsonRpcError } from '../web/json_rpc_error';
+import { IJsonRpcError } from "../web/json_rpc_error";
 
 /** A JSON-RPC response without error. */
 export interface IJsonResponse<T> {

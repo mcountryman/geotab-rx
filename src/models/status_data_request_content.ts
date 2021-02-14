@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDataToComponentContent } from './data_to_component_content';
+import { IDataToComponentContent } from "./data_to_component_content";
 
 /** Message to request status data. */
 export interface IStatusDataRequestContent extends IDataToComponentContent {

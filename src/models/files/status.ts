@@ -3,11 +3,11 @@
 /** The status of an uploaded file. */
 export enum Status {
   /** The status is unknown. */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
   /** The file is being processed. */
-  Processing = 'Processing',
+  Processing = "Processing",
   /** The file is ready. */
-  Ready = 'Ready',
+  Ready = "Ready",
   /** Media file has not been upload. */
-  NoFile = 'NoFile',
+  NoFile = "NoFile",
 }

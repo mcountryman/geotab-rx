@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISystemGroupBase } from './system_group_base';
+import { ISystemGroupBase } from "./system_group_base";
 
 /** This is a system group see that is the root of all groups. */
 export interface IRootGroup extends ISystemGroupBase {

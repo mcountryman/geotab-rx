@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
+import { IEntity } from "./entity";
 
 /**
  * An object representing a {@link IX509Certificate2} used to check if a message came

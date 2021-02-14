@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ITextMessageContentType } from './text_message_content_type';
+import { ITextMessageContentType } from "./text_message_content_type";
 
 /**  The contents of a GPS Text Message. See also:. {@link ILocationContent} */
 export interface ITextContent extends ITextMessageContentType {

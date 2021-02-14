@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
+import { IEntity } from "./entity";
 
 /** The object model for containing the data related to change log for cube data */
 export interface ICubeDataChangeLog extends IEntity {

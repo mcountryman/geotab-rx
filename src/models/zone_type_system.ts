@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IZoneType } from './zone_type';
+import { IZoneType } from "./zone_type";
 
 /** Base class for all system zone types. */
 export interface IZoneTypeSystem extends IZoneType {

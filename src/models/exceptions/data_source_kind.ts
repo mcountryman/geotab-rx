@@ -3,23 +3,23 @@
 /** Kinds of data sources fro. {@link ICondition} */
 export enum DataSourceKind {
   /** None */
-  None = 'None',
+  None = "None",
   /** None */
-  Any = 'Any',
+  Any = "Any",
   /** Instance of . */
-  LogRecord = 'LogRecord',
+  LogRecord = "LogRecord",
   /** Instance of . */
-  FaultData = 'FaultData',
+  FaultData = "FaultData",
   /** Instance of . */
-  StatusData = 'StatusData',
+  StatusData = "StatusData",
   /** Instance of . */
-  NotificationDataApplicationException = 'NotificationDataApplicationException',
+  NotificationDataApplicationException = "NotificationDataApplicationException",
   /** . */
-  ExceptionEvent = 'ExceptionEvent',
+  ExceptionEvent = "ExceptionEvent",
   /** {@link IDouble}. */
-  Numeric = 'Numeric',
+  Numeric = "Numeric",
   /** . */
-  WorkTime = 'WorkTime',
+  WorkTime = "WorkTime",
   /** . */
-  DVIRDefect = 'DVIRDefect',
+  DVIRDefect = "DVIRDefect",
 }

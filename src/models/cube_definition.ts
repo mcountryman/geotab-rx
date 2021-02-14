@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { CubeType } from './cube_type';
+import { CubeType } from "./cube_type";
 
 /** Contains the dimension columns of the cube along with its type */
 export interface ICubeDefinition {

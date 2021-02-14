@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationNewsDataInfo } from '../notification_news_data_info';
+import { INotificationNewsDataInfo } from "../notification_news_data_info";
 
 /** The message of maintenance notification in the provided languages. */
 export interface ILocalizedNews {

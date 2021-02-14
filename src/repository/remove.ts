@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
-import { IEntity } from '../models/entity';
-import { Repo, RepoEntity } from './types';
+import { Observable } from "rxjs";
+import { IEntity } from "../models/entity";
+import { Repo, RepoEntity } from "./types";
 
 /**
  * Permanently removes an entity and it's associated data from supplied repository.  The
@@ -21,9 +21,9 @@ export function remove<
   TEntity extends IEntity = RepoEntity<TRepo>
 >(
   repo: TRepo,
-  entity: Partial<TEntity> & Pick<TEntity, 'id'>
+  entity: Partial<TEntity> & Pick<TEntity, "id">
 ): Observable<void> {
-  return repo.client.call('Remove', {
+  return repo.client.call("Remove", {
     entity,
     typeName: repo.typeName,
   });

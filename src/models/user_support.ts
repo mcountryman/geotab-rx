@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IUser } from './user';
-import { UserSupportType } from './user_support_type';
+import { IEntity } from "./entity";
+import { IUser } from "./user";
+import { UserSupportType } from "./user_support_type";
 
 /** A user's support. */
 export interface IUserSupport extends IEntity {

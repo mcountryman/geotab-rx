@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from './name_entity_with_version';
-import { IZoneType } from './zone_type';
-import { IGroup } from './group';
+import { INameEntityWithVersion } from "./name_entity_with_version";
+import { IZoneType } from "./zone_type";
+import { IGroup } from "./group";
 
 /**
  * Sometimes referred to as a "Geofence", a zone is a virtual geographic boundary,

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IUser } from './user';
-import { IGroup } from './group';
-import { IKey } from './key';
+import { IUser } from "./user";
+import { IGroup } from "./group";
+import { IKey } from "./key";
 
 /**
  *  A driver in the system, and it is derived from {@link IUser}, with key ids and

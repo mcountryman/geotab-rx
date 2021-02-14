@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from './name_entity';
-import { IEventType } from './event_type';
+import { INameEntity } from "./name_entity";
+import { IEventType } from "./event_type";
 
 /** The rule describing an event. */
 export interface IEventRule extends INameEntity {

@@ -3,9 +3,9 @@
 /**  The severity of a defect for a . */
 export enum DefectSeverity {
   /** Normal defect severity */
-  Normal = 'Normal',
+  Normal = "Normal",
   /** Critical defect severity (vehicle or trailer is unsafe to operate) */
-  Critical = 'Critical',
+  Critical = "Critical",
   /** Severity level for Unregulated Defects (vehicle or trailer is safe to operate) */
-  Unregulated = 'Unregulated',
+  Unregulated = "Unregulated",
 }

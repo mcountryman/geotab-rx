@@ -3,11 +3,11 @@
 /** the user categories */
 export enum UserCategory {
   /** User category not defined */
-  NotDefined = 'NotDefined',
+  NotDefined = "NotDefined",
   /** Active user */
-  Active = 'Active',
+  Active = "Active",
   /** Suspended user */
-  Suspended = 'Suspended',
+  Suspended = "Suspended",
   /** Archived user */
-  Historical = 'Historical',
+  Historical = "Historical",
 }

@@ -7,9 +7,9 @@
  */
 export enum Error {
   /** No lock error */
-  None = 'None',
+  None = "None",
   /** The unauthorized error */
-  Unauthorized = 'Unauthorized',
+  Unauthorized = "Unauthorized",
   /** The database unavailable error */
-  DbUnavailable = 'DbUnavailable',
+  DbUnavailable = "DbUnavailable",
 }

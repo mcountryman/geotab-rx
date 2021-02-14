@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from '../../name_entity_with_version';
-import { IDisplayMeasurementProfileDetailsHelper } from '../../engine/display_diagnostic/display_measurement_profile_details_helper';
+import { INameEntityWithVersion } from "../../name_entity_with_version";
+import { IDisplayMeasurementProfileDetailsHelper } from "../../engine/display_diagnostic/display_measurement_profile_details_helper";
 
 /**
  *  Contains the DisplayMeasurementProfile for conversion information for each profile.

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from './device';
-import { IGroup } from './group';
-import { ICustomParameter } from './custom_parameter';
-import { IEngineType } from './engine/engine_type';
-import { GoTalkLanguage } from './go_talk_language';
-import { HosOption } from './hos_option';
+import { IDevice } from "./device";
+import { IGroup } from "./group";
+import { ICustomParameter } from "./custom_parameter";
+import { IEngineType } from "./engine/engine_type";
+import { GoTalkLanguage } from "./go_talk_language";
+import { HosOption } from "./hos_option";
 
 /**
  * The base device for all Geotab GO products. Additional properties can be seen in

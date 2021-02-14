@@ -3,13 +3,13 @@
 /** The source from which tank capacity was derived. */
 export enum FuelTankCapacitySource {
   /** Unknown */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
   /** Engine reported tank capacity diagnostic */
-  DiagnosticTankCapacity = 'DiagnosticTankCapacity',
+  DiagnosticTankCapacity = "DiagnosticTankCapacity",
   /** Estimate derived from fuel level (percent) and fuel used diagnostics */
-  EstimateFuelLevel = 'EstimateFuelLevel',
+  EstimateFuelLevel = "EstimateFuelLevel",
   /** Estimate derived from fuel level (volume) */
-  EstimateFuelUnits = 'EstimateFuelUnits',
+  EstimateFuelUnits = "EstimateFuelUnits",
   /** Manually entered tank capacity as stored. */
-  DeviceTankCapacity = 'DeviceTankCapacity',
+  DeviceTankCapacity = "DeviceTankCapacity",
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISystemGroupBase } from './system_group_base';
+import { ISystemGroupBase } from "./system_group_base";
 
 /**
  * This is a system group see with an Id of . It contains private groups for all users,

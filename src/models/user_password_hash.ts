@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IUser } from './user';
+import { IEntity } from "./entity";
+import { IUser } from "./user";
 
 /**
  * A password hash. May represent a currently valid hash, or could represent a previous

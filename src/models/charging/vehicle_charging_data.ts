@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IStatusData } from '../engine/status_data';
-import { ITrip } from '../trip';
+import { IStatusData } from "../engine/status_data";
+import { ITrip } from "../trip";
 
 /** Contains the vehicle's status data pertaining to charging */
 export interface IVehicleChargingData {

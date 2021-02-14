@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { INotificationApplicationExceptionData } from './notification_application_exception_data';
-import { INotificationExceptionForUsersData } from './notification_exception_for_users_data';
-import { INotificationExceptionData } from './notification_exception_data';
-import { INotificationInfoData } from './notification_info_data';
-import { INotificationNewsData } from './notification_news_data';
-import { INotificationMessageData } from './notification_message_data';
-import { INotificationUserModifiedData } from './notification_user_modified_data';
-import { INotificationForAdminUsersData } from './notification_for_admin_users_data';
-import { IRecipient } from './recipient';
-import { INotificationData } from './notification_data';
+import { IEntityWithVersion } from "./entity_with_version";
+import { INotificationApplicationExceptionData } from "./notification_application_exception_data";
+import { INotificationExceptionForUsersData } from "./notification_exception_for_users_data";
+import { INotificationExceptionData } from "./notification_exception_data";
+import { INotificationInfoData } from "./notification_info_data";
+import { INotificationNewsData } from "./notification_news_data";
+import { INotificationMessageData } from "./notification_message_data";
+import { INotificationUserModifiedData } from "./notification_user_modified_data";
+import { INotificationForAdminUsersData } from "./notification_for_admin_users_data";
+import { IRecipient } from "./recipient";
+import { INotificationData } from "./notification_data";
 
 /**
  *  This class represents a notification that has to be send to a recipient.

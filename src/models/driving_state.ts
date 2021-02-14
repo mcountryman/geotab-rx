@@ -3,15 +3,15 @@
 /** The current driving state of a vehicle. */
 export enum DrivingState {
   /** There is no status */
-  None = 'None',
+  None = "None",
   /** The vehicle is driving */
-  Driving = 'Driving',
+  Driving = "Driving",
   /** The vehicle is idling or driving slowly */
-  IdlingOrDrivingSlowly = 'IdlingOrDrivingSlowly',
+  IdlingOrDrivingSlowly = "IdlingOrDrivingSlowly",
   /** The vehicle is stopped */
-  Stopped = 'Stopped',
+  Stopped = "Stopped",
   /** The vehicle is idling */
-  Idling = 'Idling',
+  Idling = "Idling",
   /** The vehicle is parked */
-  Parked = 'Parked',
+  Parked = "Parked",
 }

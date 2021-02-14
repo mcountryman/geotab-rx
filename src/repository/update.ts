@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
-import { IEntity } from '../models/entity';
-import { Repo, RepoEntity } from './types';
+import { Observable } from "rxjs";
+import { IEntity } from "../models/entity";
+import { Repo, RepoEntity } from "./types";
 
 /**
  * Update supplied entity in supplied repo.
@@ -14,9 +14,9 @@ export function update<
   TEntity extends IEntity = RepoEntity<TRepo>
 >(
   repo: TRepo,
-  entity: Partial<TEntity> & Pick<TEntity, 'id'>
+  entity: Partial<TEntity> & Pick<TEntity, "id">
 ): Observable<string> {
-  return repo.client.call('Set', {
+  return repo.client.call("Set", {
     entity,
     typeName: repo.typeName,
   });

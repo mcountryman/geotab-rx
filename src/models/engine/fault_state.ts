@@ -6,9 +6,9 @@
  */
 export enum FaultState {
   /** None, FaultState Not Indicated (). */
-  None = 'None',
+  None = "None",
   /** Pending fault code. */
-  Pending = 'Pending',
+  Pending = "Pending",
   /** Active fault code. */
-  Active = 'Active',
+  Active = "Active",
 }

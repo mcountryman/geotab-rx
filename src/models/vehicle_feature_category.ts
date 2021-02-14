@@ -6,33 +6,33 @@
  */
 export enum VehicleFeatureCategory {
   /** An unknown device. */
-  UnknownDevice = 'UnknownDevice',
+  UnknownDevice = "UnknownDevice",
   /** Third-party Garmin device. */
-  Garmin = 'Garmin',
+  Garmin = "Garmin",
   /** Third-party Iridium device. */
-  Iridium = 'Iridium',
+  Iridium = "Iridium",
   /** Legacy hours of service device. */
-  Hos = 'Hos',
+  Hos = "Hos",
   /** External NFC device. */
-  Nfc = 'Nfc',
+  Nfc = "Nfc",
   /** External GoTalk device. */
-  GoTalk = 'GoTalk',
+  GoTalk = "GoTalk",
   /** Third-party Mobileye device. */
-  Mobileye = 'Mobileye',
+  Mobileye = "Mobileye",
   /** Third-party Valor device. */
-  Valor = 'Valor',
+  Valor = "Valor",
   /** External Wi-Fi device. */
-  WiFi = 'WiFi',
+  WiFi = "WiFi",
   /** Third-party salt spreader device. */
-  SaltSpreader = 'SaltSpreader',
+  SaltSpreader = "SaltSpreader",
   /** Active tracking. */
-  GoActive = 'GoActive',
+  GoActive = "GoActive",
   /** OBD Alert setting present. */
-  OBDPresent = 'OBDPresent',
+  OBDPresent = "OBDPresent",
   /** OBD Alert setting enabled. */
-  OBDEnabled = 'OBDEnabled',
+  OBDEnabled = "OBDEnabled",
   /** Garmin hours of service. */
-  GarminHos = 'GarminHos',
+  GarminHos = "GarminHos",
   /** Geotab Drive hours of service. */
-  GeotabDriveHos = 'GeotabDriveHos',
+  GeotabDriveHos = "GeotabDriveHos",
 }

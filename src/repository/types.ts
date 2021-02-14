@@ -1,4 +1,4 @@
-import { IRpcClient } from '../rpc';
+import { IRpcClient } from "../rpc";
 
 export type Search<TSearch> = DeepPartial<TSearch> & ILimit;
 

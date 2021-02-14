@@ -3,19 +3,19 @@
 /** Continents list. */
 export enum Continent {
   /** Unknown */
-  Unknown = 'Unknown',
+  Unknown = "Unknown",
   /** Asia */
-  Asia = 'Asia',
+  Asia = "Asia",
   /** Africa */
-  Africa = 'Africa',
+  Africa = "Africa",
   /** North America */
-  NorthAmerica = 'NorthAmerica',
+  NorthAmerica = "NorthAmerica",
   /** South America */
-  SouthAmerica = 'SouthAmerica',
+  SouthAmerica = "SouthAmerica",
   /** Antarctica */
-  Antarctica = 'Antarctica',
+  Antarctica = "Antarctica",
   /** Europe */
-  Europe = 'Europe',
+  Europe = "Europe",
   /** Australia */
-  Australia = 'Australia',
+  Australia = "Australia",
 }

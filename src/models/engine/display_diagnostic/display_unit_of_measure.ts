@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntityWithVersion } from '../../name_entity_with_version';
+import { INameEntityWithVersion } from "../../name_entity_with_version";
 
 /**
  *  Contains the conversion between the base UnitOfMeasure to the DisplayUnitOfMeasure.

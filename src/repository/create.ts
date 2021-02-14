@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs';
-import { Repo, RepoEntity } from './types';
+import { Observable } from "rxjs";
+import { Repo, RepoEntity } from "./types";
 
 /**
  * Adds a new entity to the database. In most cases, the entity being added will need to
@@ -14,7 +14,7 @@ export function create<
   TRepo extends Repo<TEntity>,
   TEntity = RepoEntity<TRepo>
 >(repo: TRepo, entity: TEntity): Observable<string> {
-  return repo.client.call('Add', {
+  return repo.client.call("Add", {
     entity,
     typeName: repo.typeName,
   });

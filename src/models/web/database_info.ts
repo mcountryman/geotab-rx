@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ProcessingStatus } from '../web/processing_status';
+import { ProcessingStatus } from "../web/processing_status";
 
 /** Information about the performance of a hosted database. */
 export interface IDatabaseInfo {

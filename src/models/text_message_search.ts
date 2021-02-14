@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { IDeviceSearch } from './device_search';
-import { IGroupSearch } from './group_search';
-import { IUserSearch } from './user_search';
-import { MessageContentType } from './message_content_type';
+import { ISearch } from "./search";
+import { IDeviceSearch } from "./device_search";
+import { IGroupSearch } from "./group_search";
+import { IUserSearch } from "./user_search";
+import { MessageContentType } from "./message_content_type";
 
 /** The object used to specify the arguments when searching for a {@link ITextMessage}. */
 export interface ITextMessageSearch extends ISearch {

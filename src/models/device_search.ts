@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISearch } from './search';
-import { DeviceType } from './device_type';
-import { IGroupSearch } from './group_search';
-import { IGroupListSearch } from './group_list_search';
+import { ISearch } from "./search";
+import { DeviceType } from "./device_type";
+import { IGroupSearch } from "./group_search";
+import { IGroupListSearch } from "./group_list_search";
 
 /** The object used to specify the arguments when searching for a {@link IDevice}. */
 export interface IDeviceSearch extends ISearch {

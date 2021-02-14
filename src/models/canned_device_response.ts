@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IDevice } from './device';
+import { IEntity } from "./entity";
+import { IDevice } from "./device";
 
 /** Represents a canned response to a text message for a device. Used by Garmin service. */
 export interface ICannedDeviceResponse extends IEntity {

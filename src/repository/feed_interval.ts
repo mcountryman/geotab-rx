@@ -1,6 +1,6 @@
-import { interval, Observable } from 'rxjs';
-import { feed } from './operators';
-import { Repo, RepoEntity, RepoSearch, Search } from './types';
+import { interval, Observable } from "rxjs";
+import { feed } from "./operators";
+import { Repo, RepoEntity, RepoSearch, Search } from "./types";
 
 export type FeedOpts<TSearch> = Search<TSearch> & IInterval;
 

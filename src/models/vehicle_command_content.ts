@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDataToComponentContent } from './data_to_component_content';
-import { VehicleCommand } from './vehicle_command';
+import { IDataToComponentContent } from "./data_to_component_content";
+import { VehicleCommand } from "./vehicle_command";
 
 /** Message content to send {@link IVehicleCommand}s to a vehicle. */
 export interface IVehicleCommandContent extends IDataToComponentContent {

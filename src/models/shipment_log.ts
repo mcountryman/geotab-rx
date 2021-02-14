@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { IDevice } from './device';
-import { IUser } from './user';
+import { IEntityWithVersion } from "./entity_with_version";
+import { IDevice } from "./device";
+import { IUser } from "./user";
 
 /**
  *  A ShipmentLog is a record of shipment transported by a specified vehicle for a

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IUser } from './user';
-import { IGroup } from './group';
+import { IUser } from "./user";
+import { IGroup } from "./group";
 
 /** Base class for all system user types. */
 export interface IUserSystem extends IUser {

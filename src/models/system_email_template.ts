@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEmailTemplate } from './email_template';
-import { IReportTemplate } from './report_template';
+import { IEmailTemplate } from "./email_template";
+import { IReportTemplate } from "./report_template";
 
 /** Email template for system. */
 export interface ISystemEmailTemplate extends IEmailTemplate {

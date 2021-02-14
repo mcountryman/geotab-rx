@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INotificationBinaryFile } from './notification_binary_file';
-import { IReportTemplate } from './report_template';
-import { NotificationBinaryFileType } from './notification_binary_file_type';
+import { INotificationBinaryFile } from "./notification_binary_file";
+import { IReportTemplate } from "./report_template";
+import { NotificationBinaryFileType } from "./notification_binary_file_type";
 
 /** Stores custom email notifications. */
 export interface IEmailTemplate extends INotificationBinaryFile {

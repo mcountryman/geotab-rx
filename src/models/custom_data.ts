@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntity } from './entity';
-import { IDevice } from './device';
+import { IEntity } from "./entity";
+import { IDevice } from "./device";
 
 /**
  * Generic Custom Data from a GO unit that was sent through from a third-party device

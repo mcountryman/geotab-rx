@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IDevice } from './device';
-import { ILogRecord } from './log_record';
-import { IRoute } from './route';
+import { IDevice } from "./device";
+import { ILogRecord } from "./log_record";
+import { IRoute } from "./route";
 
 /** Represents a route matched to a device's driving activity. */
 export interface IRouteMatch {

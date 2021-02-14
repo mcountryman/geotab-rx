@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { ISecurityFilter } from './security_filter';
+import { ISecurityFilter } from "./security_filter";
 
 /** This object contains the users UI security configuration. */
 export interface IUIConfiguration {

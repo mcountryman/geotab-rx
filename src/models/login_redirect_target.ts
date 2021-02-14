@@ -7,9 +7,9 @@
  */
 export enum LoginRedirectTarget {
   /** MyGeotab, or the white-labeled equivalent */
-  Manage = 'Manage',
+  Manage = "Manage",
   /** Geotab Drive, or the white-labeled equivalent */
-  Drive = 'Drive',
+  Drive = "Drive",
   /** Logs in a co-driver to Geotab Drive, or the white-labeled equivalent */
-  DriveCoDriver = 'DriveCoDriver',
+  DriveCoDriver = "DriveCoDriver",
 }

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { IEntityWithVersion } from './entity_with_version';
-import { BinaryDataType } from './binary_data_type';
-import { IController } from './engine/controller';
-import { IDevice } from './device';
+import { IEntityWithVersion } from "./entity_with_version";
+import { BinaryDataType } from "./binary_data_type";
+import { IController } from "./engine/controller";
+import { IDevice } from "./device";
 
 /**
  * This is binary data representing anything that can be stored. BinaryData can use

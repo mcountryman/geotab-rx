@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { INameEntity } from '../name_entity';
-import { ILock } from '../lock/lock';
+import { INameEntity } from "../name_entity";
+import { ILock } from "../lock/lock";
 
 /** The Lock permission. */
 export interface IHolder extends INameEntity {

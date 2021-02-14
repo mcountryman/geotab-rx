@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { DatabaseTransferStatus } from '../database/database_transfer_status';
+import { DatabaseTransferStatus } from "../database/database_transfer_status";
 
 /** Information related to a database transfer. */
 export interface IDatabaseTransferInfo {
