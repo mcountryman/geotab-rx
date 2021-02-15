@@ -1,4 +1,5 @@
 /**
+ * - Creates `<rootDir>/dist/.npmignore`.
  * - Creates modified duplicate of `package.json` in `<rootDir>/dist` folder.
  * - Copies `src` dir to `dist`
  * - Updates source maps to point at copied `src` dir.
@@ -15,6 +16,19 @@ const SRC_DIR = join(__dirname, "../src");
 const MANIFEST_TMPL = join(__dirname, "../package.json");
 const MANIFEST_DIST = join(__dirname, "../dist/package.json");
 const DIST_REPLACE = [/^\.\/dist\//, "./"];
+
+/**
+ * Create `<rootDir>/dist/.npmignore`.
+ */
+function createNpmIgnore() {
+  return writeFile(
+    join(__dirname, "../dist/.npmignore"),
+    `
+docs/
+coverage/
+  `
+  );
+}
 
 /**
  * Copy `<rootDir>/package.json` to `<rootDir>/dist/package.json` and update `main`,
@@ -115,6 +129,7 @@ function panic(message, err) {
 }
 
 Promise.all([
+  createNpmIgnore(),
   copyManifest(),
   copySource(),
   updateSourceMaps(join(__dirname, "../dist")),

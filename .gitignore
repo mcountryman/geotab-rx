@@ -11,5 +11,3 @@ bin/
 obj/
 dist/*
 node_modules/
-
-!dist/.npmignore
