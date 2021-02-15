@@ -5,7 +5,7 @@
   "es2015": "./dist/_esm5/index.js",
   "typings": "./dist/index.d.ts",
   "author": "Marvin Countryman <me@maar.vin>",
-  "version": "0.2.3-alpha",
+  "version": "0.2.4-alpha",
   "license": "MIT",
   "repository": "https://github.com/mcountryman/geotab-rx.git",
   "description": "Unofficial Typescript Geotab SDK.",
