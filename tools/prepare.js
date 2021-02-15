@@ -17,6 +17,16 @@ const MANIFEST_TMPL = join(__dirname, "../package.json");
 const MANIFEST_DIST = join(__dirname, "../dist/package.json");
 const DIST_REPLACE = [/^\.\/dist\//, "./"];
 
+Promise.all([
+  createNpmIgnore(),
+  copyManifest(),
+  copyFile(join(__dirname, "../LICENSE.md"), join(__dirname, "../dist/LICENSE.md")),
+  copyFile(join(__dirname, "../README.md"), join(__dirname, "../dist/README.md")),
+  copyFolder(join(__dirname, "../src"), join(__dirname, "../dist/src")),
+  copyFolder(join(__dirname, "../examples"), join(__dirname, "../dist/examples")),
+  updateSourceMaps(join(__dirname, "../dist")),
+]).catch(console.error);
+
 /**
  * Create `<rootDir>/dist/.npmignore`.
  */
@@ -55,24 +65,24 @@ function copyManifest() {
 /**
  * Copy `<rootDir>/src` to `<rootDir>/dist/src`.
  *
- * @param {string} _dir - Defaults to `SRC_DIR`
- * @param {string} _target - Defaults to `<rootDir>/dist/src`
+ * @param {string} source - Defaults to `SRC_DIR`
+ * @param {string} target - Defaults to `<rootDir>/dist/src`
  */
-function copySource(_dir, _target) {
-  _dir = _dir || SRC_DIR;
-  _target = _target || join(__dirname, "../dist/src");
+function copyFolder(source, target) {
+  source = source || SRC_DIR;
+  target = target || join(__dirname, "../dist/src");
 
-  return readdir(_dir)
-    .catch((err) => panic(`Failed to readdir '${_dir}'`, err))
+  return readdir(source)
+    .catch((err) => panic(`Failed to readdir '${source}'`, err))
     .then((paths) =>
       paths
         .map((path) => ({
           // Absolute path to source file
-          path: join(_dir, path),
+          path: join(source, path),
           // Absolute path to dest file
-          target: join(_target, path),
+          target: join(target, path),
           // Absolute path to dest file dir,
-          targetDir: dirname(join(_target, path)),
+          targetDir: dirname(join(target, path)),
         }))
         .map(({ path, target, targetDir }) =>
           // Get source file information
@@ -81,7 +91,7 @@ function copySource(_dir, _target) {
             .then((stats) => {
               return stats.isDirectory()
                 ? // Recurse if directory
-                  copySource(path, target)
+                  copyFolder(path, target)
                 : // mkdir -p if needed, then copy file
                   mkdir(targetDir, { recursive: true })
                     .catch((err) => panic(`Failed to mkdir '${targetDir}'`, err))
@@ -127,10 +137,3 @@ function panic(message, err) {
   console.error(message, err);
   process.exit(1337);
 }
-
-Promise.all([
-  createNpmIgnore(),
-  copyManifest(),
-  copySource(),
-  updateSourceMaps(join(__dirname, "../dist")),
-]).catch(console.error);
