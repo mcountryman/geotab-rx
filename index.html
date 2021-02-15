@@ -83,70 +83,37 @@
 				<p>Using npm</p>
 				<pre><code class="language-bash"><span style="color: #000000">npm i geotab-rx</span>
 </code></pre>
-				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-					<h2>Examples</h2>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting started</h2>
 				</a>
-				<p>User credential authentication</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">geotab</span><span style="color: #000000">, </span><span style="color: #001080">authenticate</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">geotab</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Geotab</span><span style="color: #000000">();</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">authenticate</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">username:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_USERNAME&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_PASSWORD&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">}).</span><span style="color: #795E26">toPromise</span><span style="color: #000000">();</span>
-</code></pre>
-				<p>Log 100 drivers</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">geotab</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">find</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/repository/find&quot;</span><span style="color: #000000">;</span>
-
-<span style="color: #795E26">find</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #001080">users</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">limit:</span><span style="color: #000000"> </span><span style="color: #098658">100</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">isDriver:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">}).</span><span style="color: #795E26">subscribe</span><span style="color: #000000">((</span><span style="color: #001080">driver</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Found driver: &quot;</span><span style="color: #000000">, </span><span style="color: #001080">driver</span><span style="color: #000000">);</span>
-<span style="color: #000000">});</span>
-</code></pre>
-				<p>Monitor ingition changes</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">geotab</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">feedInterval</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/feedInterval&quot;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">map</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;rxjs/operators&quot;</span><span style="color: #000000">;</span>
-
-<span style="color: #795E26">feedInterval</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #001080">statusData</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">intervalMs:</span><span style="color: #000000"> </span><span style="color: #098658">1000</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span>
-<span style="color: #000000">  </span><span style="color: #001080">fromDate:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(</span><span style="color: #267F99">Date</span><span style="color: #000000">.</span><span style="color: #795E26">now</span><span style="color: #000000">() - </span><span style="color: #098658">1000</span><span style="color: #000000"> * </span><span style="color: #098658">60</span><span style="color: #000000"> * </span><span style="color: #098658">60</span><span style="color: #000000">),</span>
-<span style="color: #000000">  </span><span style="color: #001080">deviceSearch:</span><span style="color: #000000"> { </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #001080">env</span><span style="color: #000000">.</span><span style="color: #0070C1">DEVICE_ID_TO_MONITOR</span><span style="color: #000000"> },</span>
-<span style="color: #000000">  </span><span style="color: #001080">diagnosticSearch:</span><span style="color: #000000"> { </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;DiagnosticIgnitionId&quot;</span><span style="color: #000000"> }</span>
-<span style="color: #000000">}),</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">pipe</span><span style="color: #000000">(</span><span style="color: #795E26">map</span><span style="color: #000000">((</span><span style="color: #001080">event</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">event</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000"> === </span><span style="color: #098658">1</span><span style="color: #000000">)),</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #001080">isIgnitionOn</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Ignition is &quot;</span><span style="color: #000000"> + </span><span style="color: #001080">isIgnitionOn</span><span style="color: #000000"> ? </span><span style="color: #A31515">&quot;on&quot;</span><span style="color: #000000"> : </span><span style="color: #A31515">&quot;off&quot;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  })</span>
-</code></pre>
+				<ul>
+					<li>API reference can be found <a href="https://mcountryman.github.io/geotab-rx/">here</a></li>
+					<li>Examples can be found <a href="./examples">here</a>.</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="modules.html">Exports</a>
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/repository.html">repository</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/rpc.html">rpc</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils.html">utils</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/geotab.html" class="tsd-kind-icon">Geotab</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/igeotabopts.html" class="tsd-kind-icon">IGeotab<wbr>Opts</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#default_end_point" class="tsd-kind-icon">DEFAULT_<wbr>END_<wbr>POINT</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#pathed_end_point" class="tsd-kind-icon">PATHED_<wbr>END_<wbr>POINT</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -157,15 +124,17 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>
 		</div>
 	</div>
