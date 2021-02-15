@@ -25,28 +25,27 @@ describe("rpc/client", () => {
    * - Call cancel batched
    */
 
-  test.each([
-    { params: ["simple"] },
-    { params: [420] },
-    { params: [0, 1, 3, 4, 5] },
-  ])("call - echo", async (input) => {
-    const client = new RpcClient({
-      endPoint: "",
-      adapter: echoHttpAdapter,
-    });
+  test.each([{ params: ["simple"] }, { params: [420] }, { params: [0, 1, 3, 4, 5] }])(
+    "call - echo",
+    async (input) => {
+      const client = new RpcClient({
+        endPoint: "",
+        adapter: echoHttpAdapter,
+      });
 
-    return from(input.params)
-      .pipe(
-        mergeMap((param) => client.call<{ param: number }>("echo", { param })),
-        map((res, i) => {
-          expect(res.param).toBe(input.params[i]);
-          return res;
-        }),
-        toArray(),
-        take(1)
-      )
-      .toPromise();
-  });
+      return from(input.params)
+        .pipe(
+          mergeMap((param) => client.call<{ param: number }>("echo", { param })),
+          map((res, i) => {
+            expect(res.param).toBe(input.params[i]);
+            return res;
+          }),
+          toArray(),
+          take(1)
+        )
+        .toPromise();
+    }
+  );
 
   /**
    * Ensures calls that definitely should be batched are in fact batched by creating a mock
@@ -69,9 +68,7 @@ describe("rpc/client", () => {
     const client = new RpcClient({ endPoint: "", adapter });
     return from([0, 1, 2, 3])
       .pipe(
-        mergeMap((params) =>
-          client.call<{ params: number }>("echo", { params })
-        )
+        mergeMap((params) => client.call<{ params: number }>("echo", { params }))
       )
       .subscribe({
         complete: done,

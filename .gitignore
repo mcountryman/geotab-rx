@@ -9,5 +9,5 @@
 
 bin/
 obj/
-dist/
+dist/*
 node_modules/

@@ -30,50 +30,7 @@ Using npm
 npm i geotab-rx
 ```
 
-## Examples
+## Getting started
 
-User credential authentication
-
-```typescript
-import { geotab, authenticate } from "geotab-rx";
-
-const geotab = new Geotab();
-await authenticate(geotab, {
-  username: "MY_USERNAME",
-  password: "MY_PASSWORD",
-}).toPromise();
-```
-
-Log 100 drivers
-
-```typescript
-import { geotab } from "geotab-rx";
-import { find } from "geotab-rx/repository/find";
-
-find(geotab.users, {
-  limit: 100,
-  isDriver: true,
-}).subscribe((driver) => {
-  console.log("Found driver: ", driver);
-});
-```
-
-Monitor ingition changes
-
-```typescript
-import { geotab } from "geotab-rx";
-import { feedInterval } from "geotab-rx/feedInterval";
-import { map } from "rxjs/operators";
-
-feedInterval(geotab.statusData, {
-  intervalMs: 1000,
-  
-  fromDate: new Date(Date.now() - 1000 * 60 * 60),
-  deviceSearch: { id: process.env.DEVICE_ID_TO_MONITOR },
-  diagnosticSearch: { id: "DiagnosticIgnitionId" }
-}),
-  .pipe(map((event) => event.data === 1)),
-  .subscribe(isIgnitionOn => {
-    console.log("Ignition is " + isIgnitionOn ? "on" : "off");
-  })
-```
+- API reference can be found [here](https://mcountryman.github.io/geotab-rx/)
+- Examples can be found [here](./examples).

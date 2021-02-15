@@ -3,7 +3,6 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "esnext",
-    "outDir": "./dist/esm",
-    "declarationDir": "./dist/esm"
+    "outDir": "./dist/_esm"
   }
 }
