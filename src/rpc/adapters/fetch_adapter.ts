@@ -1,5 +1,5 @@
+import fetch from "isomorphic-fetch";
 import { from, Observable } from "rxjs";
-import { fromFetch } from "rxjs/fetch";
 import { map, mergeMap } from "rxjs/operators";
 import { IHttpAdapter, IHttpResponse } from "../types";
 
@@ -8,10 +8,7 @@ import { IHttpAdapter, IHttpResponse } from "../types";
  */
 export class FetchHttpAdapter implements IHttpAdapter {
   post(url: string, body: string): Observable<IHttpResponse> {
-    return fromFetch(url, {
-      body,
-      method: "POST",
-    }).pipe(
+    return from(fetch(url, { body, method: "POST" })).pipe(
       mergeMap((res) => from(res.text())),
       map((body) => ({
         body,
