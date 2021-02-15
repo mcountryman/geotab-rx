@@ -4,7 +4,7 @@ import { IDevice } from "geotab-rx/models/device";
 import { IUser } from "geotab-rx/models/user";
 import { find } from "geotab-rx/repository";
 import { forkJoin, from, Observable, of } from "rxjs";
-import { first, last, map, mergeMap, take, tap, toArray } from "rxjs/operators";
+import { first, map, mergeMap, take, tap, toArray } from "rxjs/operators";
 import { Arguments, Argv, CommandModule } from "yargs";
 
 const WEEK_MS = 1000 * 60 * 60 * 24 * 7;
@@ -29,9 +29,9 @@ export const amIAssignedToVehicleCommand: CommandModule = {
       password: argv.password,
     })
       .pipe(
-        tap({ error: console.error }),
+        tap({ error: (err) => console.error("Failed to login", err) }),
         withUserAndDevice(geotab, argv.username, argv["licensePlate"] as string),
-        withLatestDriverChange(geotab),
+        andWithLatestDriverChange(geotab),
         tap(({ user, device, change }) =>
           change.driver.id === "UnknownDriverId"
             ? console.log(`No-one is assigned to device '${device.name}'`)
@@ -49,19 +49,19 @@ function withUserAndDevice(geotab: Geotab, username: string, licensePlate: strin
     in$.pipe(
       mergeMap((_) =>
         forkJoin({
-          user: find(geotab.users, { name: username }).pipe(take(1)),
+          user: find(geotab.users, { email: username }).pipe(take(1)),
           device: find(geotab.devices, {
             licensePlate: licensePlate,
           }).pipe(take(1)),
         })
       ),
       tap({
-        error: (err) => console.error(`Failed to find user, or device`, err),
+        error: () => console.error("Failed to find user, or device"),
       })
     );
 }
 
-function withLatestDriverChange(geotab: Geotab) {
+function andWithLatestDriverChange(geotab: Geotab) {
   return (in$: Observable<{ user: IUser; device: IDevice }>) =>
     in$.pipe(
       mergeMap(({ user, device }) =>
@@ -70,12 +70,17 @@ function withLatestDriverChange(geotab: Geotab) {
           device: of(device),
           change: find(geotab.driverChanges, {
             fromDate: new Date(Date.now() - WEEK_MS),
-            deviceSearch: device.id,
+            deviceSearch: { id: device.id },
             includeOverlappedChanges: true,
           }).pipe(
+            tap({
+              error: (Î) => console.error("Failed to find driver changes"),
+            }),
             toArray(),
             map((changes) =>
-              changes.sort((a, b) => a.dateTime?.getDate() - b.dateTime?.getDate())
+              changes.sort(
+                (a, b) => Date.parse(a.dateTime as any) - Date.parse(b.dateTime as any)
+              )
             ),
             mergeMap((changes) => from(changes)),
             first()

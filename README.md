@@ -67,7 +67,7 @@ import { map } from "rxjs/operators";
 
 feedInterval(geotab.statusData, {
   intervalMs: 1000,
-  
+
   fromDate: new Date(Date.now() - 1000 * 60 * 60),
   deviceSearch: { id: process.env.DEVICE_ID_TO_MONITOR },
   diagnosticSearch: { id: "DiagnosticIgnitionId" }
