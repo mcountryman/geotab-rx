@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": "src",
+    "moduleResolution": "node"
+  }
+}

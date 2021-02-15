@@ -3,6 +3,12 @@
   "out": "dist/docs",
   "theme": "default",
   "exclude": "(dist[\\\\/]|*.spec.ts)",
-  "entryPoints": ["src/index.ts"],
-  "excludePrivate": true
+  "entryPoints": [
+    "src/index.ts",
+    "src/repository/index.ts",
+    "src/rpc/index.ts",
+    "src/utils/index.ts"
+  ],
+  "excludePrivate": true,
+  "categorizeByGroup": false
 }
