@@ -3,7 +3,7 @@
   <a href="https://www.npmjs.com/package/geotab-rx">
     <img alt="npm" src="https://img.shields.io/npm/v/geotab-rx?style=flat-square">
   </a>
-  <a href="https://bundlephobia.com/result?p=geotab-rx">
+  <a href="https://bundlephobia.com/result?p=geotab-rx@latest">
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/geotab-rx@latest?style=flat-square">
   </a>
   <a href="https://github.com/mcountryman/geotab-rx/blob/main/LICENSE.md">
@@ -21,13 +21,13 @@ An unofficial typescript GeoTab SDK.
 Using yarn
 
 ```bash
-yarn add geotab-rx
+yarn add geotab-rx rxjs isomorphic-fetch
 ```
 
 Using npm
 
 ```bash
-npm i geotab-rx
+npm i geotab-rx rxjs isomorphic-fetch
 ```
 
 ## Getting started
