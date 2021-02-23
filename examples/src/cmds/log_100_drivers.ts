@@ -1,27 +1,22 @@
+import { command } from "cmd-ts";
 import { Geotab } from "geotab-rx";
 import { authenticate } from "geotab-rx/authenticate";
 import { find } from "geotab-rx/repository/find";
 import { switchMap, tap } from "rxjs/operators";
-import { Arguments, Argv, CommandModule } from "yargs";
+import { credentialArgs } from "../utils";
 
-interface IOpts {
-  username: string;
-  password: string;
-}
-
-export const log100Drivers: CommandModule = {
-  command: "log-100-drivers",
-  builder: (yargs: Argv<IOpts>) =>
-    yargs.option("licensePlate", {
-      alias: "l",
-      describe: "The license plate of vehicle to check",
-    }),
-  handler: (argv: Arguments<IOpts>) => {
+export const log100Drivers = command({
+  name: "log-100-drivers",
+  args: {
+    ...credentialArgs,
+  },
+  description: "",
+  handler: (args) => {
     const geotab = new Geotab();
 
     authenticate(geotab, {
-      username: argv.username,
-      password: argv.password,
+      username: args.username,
+      password: args.password,
     })
       .pipe(
         tap({ error: (err) => console.error("Failed to login", err) }),
@@ -34,4 +29,4 @@ export const log100Drivers: CommandModule = {
       )
       .subscribe((driver) => console.log(`Found driver '${driver.firstName}'!`));
   },
-};
+});

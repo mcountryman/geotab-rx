@@ -1,9 +1,11 @@
 {
+  "include": ["src"],
   "compilerOptions": {
     "target": "es5",
     "baseUrl": ".",
     "outDir": "dist",
-    "rootDir": "src",
-    "moduleResolution": "node"
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   }
 }
