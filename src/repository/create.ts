@@ -8,7 +8,7 @@ import { Repo, RepoEntity } from "./types";
  *
  * @example
  * Create a driver change record:
- * ```
+ * ```typescript
  * import { Geotab } from "geotab-rx";
  * import { create } from "geotab-rx/repository/create";
  * import { IUser } from "geotab-rx/models/user";

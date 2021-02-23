@@ -11,7 +11,7 @@ import { Repo, RepoEntity, RepoSearch, Search } from "./types";
  *
  * @example
  * Log new driver changes to console:
- * ```
+ * ```typescript
  * import { interval } from "rxjs";
  * import { switchMap, mergeMap } from "rxjs/operators";
  * import { Geotab } from "geotab-rx";
