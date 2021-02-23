@@ -79,6 +79,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="repository.html#changed" class="tsd-kind-icon">changed</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="repository.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="repository.html#create" class="tsd-kind-icon">create</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="repository.html#feedinterval" class="tsd-kind-icon">feed<wbr>Interval</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="repository.html#find" class="tsd-kind-icon">find</a></li>
@@ -97,7 +98,7 @@
 					<div class="tsd-signature tsd-kind-icon">Feed<wbr>Opts&lt;TSearch&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Search</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TSearch</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">IInterval</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/feed_interval.ts#L5">src/repository/feed_interval.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/feed_interval.ts#L5">src/repository/feed_interval.ts:5</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -120,7 +121,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/changed.ts#L30">src/repository/changed.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/changed.ts#L53">src/repository/changed.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -132,6 +133,28 @@
 									<dt>see</dt>
 									<dd><p><a href="https://geotab.github.io/sdk/software/guides/data-feed/#active-vs-calculated" class="external">https://geotab.github.io/sdk/software/guides/data-feed/#active-vs-calculated</a>
 										for details on which feeds will return udpated results.</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>Log new driver changes to console:</p>
+										<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">interval</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;rxjs&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">switchMap</span><span style="color: #000000">, </span><span style="color: #001080">mergeMap</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;rxjs/operators&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Geotab</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">changes</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/repository/changes&quot;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">monitorChanges</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">: </span><span style="color: #267F99">Geotab</span><span style="color: #000000">, </span><span style="color: #001080">id</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #795E26">interval</span><span style="color: #000000">(</span><span style="color: #098658">1000</span><span style="color: #000000">)</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">pipe</span><span style="color: #000000">(</span>
+<span style="color: #000000">       </span><span style="color: #795E26">switchMap</span><span style="color: #000000">(</span><span style="color: #001080">_</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">         </span><span style="color: #795E26">changed</span><span style="color: #000000">(</span>
+<span style="color: #000000">           </span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #001080">driverChanges</span><span style="color: #000000">,</span>
+<span style="color: #000000">           { </span><span style="color: #001080">deviceSearch:</span><span style="color: #000000"> { </span><span style="color: #001080">id</span><span style="color: #000000"> } }</span>
+<span style="color: #000000">         )</span>
+<span style="color: #000000">       ),</span>
+<span style="color: #000000">       </span><span style="color: #795E26">mergeMap</span><span style="color: #000000">(</span><span style="color: #001080">feed</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">feed</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">),</span>
+<span style="color: #000000">    )</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #001080">change</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`New driver &#039;</span><span style="color: #0000FF">${</span><span style="color: #001080">change</span><span style="color: #000000FF">.</span><span style="color: #001080">driver</span><span style="color: #000000FF">.</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">&#039;!`</span><span style="color: #000000">));</span>
+<span style="color: #000000">}</span>
+</code></pre>
 									</dd>
 									<dt>remarks</dt>
 									<dd><p>It may be required to provide an entity search using from date to &quot;back-fill&quot; or &quot;seed&quot;
@@ -186,16 +209,70 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="create" class="tsd-anchor"></a>
-					<h3>create</h3>
+					<a name="count" class="tsd-anchor"></a>
+					<h3>count</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">create&lt;TRepo, TEntity&gt;<span class="tsd-signature-symbol">(</span>repo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TRepo</span>, entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TEntity</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">count&lt;TRepo&gt;<span class="tsd-signature-symbol">(</span>repo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Repo</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TRepo</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/create.ts#L13">src/repository/create.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/count.ts#L25">src/repository/count.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the count of entities in the supplied repository. Entities that are currently
+									inactive (the Entity&#39;s ActiveTo date is before the current time) are counted as well.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>Log number of users in database:</p>
+										<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Geotab</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">count</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/repository/count&quot;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">logNumberOfUsers</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">: </span><span style="color: #267F99">Geotab</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #795E26">count</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #001080">users</span><span style="color: #000000">)</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #001080">count</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Number of users = &#039;</span><span style="color: #0000FF">${</span><span style="color: #001080">count</span><span style="color: #0000FF">}</span><span style="color: #A31515">&#039;`</span><span style="color: #000000">)</span>
+<span style="color: #000000">    );</span>
+<span style="color: #000000">}</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>TRepo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Repo</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TRepo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>repo: <span class="tsd-signature-type">Repo</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TRepo</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The repository to get size of.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Number of entities in supplied repository.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="create" class="tsd-anchor"></a>
+					<h3>create</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">create&lt;TRepo, TEntity&gt;<span class="tsd-signature-symbol">(</span>repo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TRepo</span>, entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TEntity</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/create.ts#L34">src/repository/create.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -204,6 +281,28 @@
 										be fully constructed. In other words, all its properties need to be defined. These
 									requirements are defined in each entity definition.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>Create a driver change record:</p>
+										<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Geotab</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">create</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/repository/create&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">IUser</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/models/user&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">IDevice</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;geotab-rx/models/device&quot;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">assignDriverToDevice</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">: </span><span style="color: #267F99">Geotab</span><span style="color: #000000">, </span><span style="color: #001080">driver</span><span style="color: #000000">: </span><span style="color: #267F99">IUser</span><span style="color: #000000">, </span><span style="color: #001080">device</span><span style="color: #000000">: </span><span style="color: #267F99">IDevice</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">geotab</span><span style="color: #000000">.</span><span style="color: #001080">driverChanges</span><span style="color: #000000">, {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Driver&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">driver</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">device</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">dateTime:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(),</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #001080">changeId</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Created driver change with id = &#039;</span><span style="color: #0000FF">${</span><span style="color: #001080">changeId</span><span style="color: #0000FF">}</span><span style="color: #A31515">&#039;`</span><span style="color: #000000">)</span>
+<span style="color: #000000">    )</span>
+<span style="color: #000000">}</span>
+</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -223,7 +322,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>entity: <span class="tsd-signature-type">TEntity</span></h5>
+									<h5>entity: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TEntity</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The entity to create.</p>
 									</div>
@@ -246,7 +345,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/feed_interval.ts#L7">src/repository/feed_interval.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/feed_interval.ts#L7">src/repository/feed_interval.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -284,7 +383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/find.ts#L17">src/repository/find.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/find.ts#L17">src/repository/find.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -340,7 +439,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/remove.ts#L19">src/repository/remove.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/remove.ts#L19">src/repository/remove.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,7 +494,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/da958ef/src/repository/update.ts#L12">src/repository/update.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/mcountryman/geotab-rx/blob/672a82d/src/repository/update.ts#L12">src/repository/update.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -461,6 +560,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="repository.html#changed" class="tsd-kind-icon">changed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="repository.html#count" class="tsd-kind-icon">count</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="repository.html#create" class="tsd-kind-icon">create</a>
