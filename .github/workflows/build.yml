@@ -20,9 +20,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn build
-      - run: yarn test
+      - run: yarn test:ci
         env:
           CI: true
+
+      - name: publish coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
     runs-on: ubuntu-latest
@@ -57,12 +62,6 @@ jobs:
         with:
           token: ${{ secrets.NODE_AUTH_TOKEN }}
           package: ./dist/package.json
-
-      - name: publish coverage
-        if: steps.publish.outputs.type != 'none'
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: publish docs
         if: steps.publish.outputs.type != 'none'
