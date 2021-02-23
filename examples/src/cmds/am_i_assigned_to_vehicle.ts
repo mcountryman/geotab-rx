@@ -18,6 +18,7 @@ export const amIAssignedToVehicle = command({
       type: string,
       long: "licensePlate",
       short: "l",
+      description: "The license plate of vehicle to check",
     }),
   },
   description:
