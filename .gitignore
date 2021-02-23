@@ -10,4 +10,5 @@
 bin/
 obj/
 dist/*
+coverage/
 node_modules/

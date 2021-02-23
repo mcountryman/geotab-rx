@@ -9,6 +9,29 @@ import { Repo, RepoEntity, RepoSearch, Search } from "./types";
  * @see {@link https://geotab.github.io/sdk/software/guides/data-feed/#active-vs-calculated}
  * for details on which feeds will return udpated results.
  *
+ * @example
+ * Log new driver changes to console:
+ * ```typescript
+ * import { interval } from "rxjs";
+ * import { switchMap, mergeMap } from "rxjs/operators";
+ * import { Geotab } from "geotab-rx";
+ * import { changes } from "geotab-rx/repository/changes";
+ *
+ * function monitorChanges(geotab: Geotab, id: string) {
+ *   interval(1000)
+ *     .pipe(
+ *        switchMap(_ =>
+ *          changed(
+ *            geotab.driverChanges,
+ *            { deviceSearch: { id } }
+ *          )
+ *        ),
+ *        mergeMap(feed => feed.data),
+ *     )
+ *     .subscribe(change => console.log(`New driver '${change.driver.id}'!`));
+ * }
+ * ```
+ *
  * @remarks
  *
  * It may be required to provide an entity search using from date to "back-fill" or "seed"
