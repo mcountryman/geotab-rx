@@ -9,7 +9,7 @@
   <a href="https://github.com/mcountryman/geotab-rx/blob/main/LICENSE.md">
     <img src="https://img.shields.io/github/license/mcountryman/geotab-rx?style=flat-square">
   </a>
-  <a href="">
+  <a href="https://coveralls.io/github/mcountryman/geotab-rx">
     <img alt="coveralls github" src="https://img.shields.io/coveralls/github/mcountryman/geotab-rx?style=flat-square">
   </a>
 </p>
