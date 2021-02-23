@@ -58,6 +58,12 @@ jobs:
           token: ${{ secrets.NODE_AUTH_TOKEN }}
           package: ./dist/package.json
 
+      - name: publish coverage
+        if: steps.publish.outputs.type != 'none'
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: publish docs
         if: steps.publish.outputs.type != 'none'
         uses: peaceiris/actions-gh-pages@v3
